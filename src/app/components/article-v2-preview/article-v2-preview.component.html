@@ -1,0 +1,4 @@
+<ng-container *ngIf="article">
+  <app-home-page-card *ngIf="type === 'top'" [article]="article" />
+  <app-article-item *ngIf="type === 'bottom'" [article]="article" />
+</ng-container>

@@ -1,0 +1,70 @@
+<header id="header" class="header pt-5 pt-lg-10">
+    <div class="container">
+        <div class="header-wrap d-block position-relative w-100">
+            <div
+                class="header-content shadow-header-middle d-flex align-items-center justify-content-between bg-white p-3">
+                <a class="logo h-40px p-1" [routerLink]="'/'">
+                    
+                    <img class="h-auto logo-css" src="../../../assets/icons/logos/polifacto-the-truth-scale-filled.svg" alt="Polifacto" />
+                    <!-- <img class="h-auto logo-css" src="../../../assets/icons/og.svg" alt="Polifacto" /> -->
+                    <!-- <div class="luminance shine">Polifacto</div> -->
+
+                </a>
+                <div class="d-flex align-items-center">
+                    <nav class="nav d-none d-xl-flex" [ngClass]="{ open: isOpen === true }">
+                        <!-- <div class="text-white w-100 px-5 my-5 d-flex d-xl-none">
+                            <app-nav-search-form />
+                        </div> -->
+                        <ul
+                            class="list menu-list d-flex flex-column flex-xl-row align-items-start align-items-xl-center px-5 p-xl-0">
+                            <app-nav-link [title]="'Politicians'" [url]="'politicians'" />
+                            <app-nav-link [title]="'Statements'" [url]="'/statements'" />
+
+                            <!-- <app-nav-sub-item [title]="'Promises'" [promises]="['Promises of the government of Petr Fiala (2021-2024)', 'Promises of the government of Petr Fiala (2011-2018)']">
+
+                            </app-nav-sub-item> -->
+                            <app-nav-sub-item [title]="'Promises'" [promises]="politicalPartyList"/>
+                            <app-nav-link [title]="'About us'" url="/about-us" />
+                            <!-- <app-nav-link [title]="'Expose'" [url]="'/expose'" /> -->
+                        </ul>
+                        <div *ngIf="false" class="w-100 px-5 d-flex my-5 d-xl-none transition-all duration-300 hover:scale-105">
+                            <a class="btn !bg-[--bg-lime] w-100" routerLink="login">
+                                <span class="mx-2 text-black">
+                                    <font style="vertical-align: inherit">
+                                        <font style="vertical-align: inherit">Log
+                                            in</font>
+                                    </font>
+                                </span>
+                            </a>
+                        </div>
+                    </nav>
+
+                    <!-- <app-nav-search title="Search">
+                        <div class="dropmenu-wrap list">
+                            <app-nav-search-form />
+                        </div>
+                    </app-nav-search> -->
+
+                    <div *ngIf="false" class="menu-item ms-2 ms-xl-10 d-none d-xl-flex transition-all duration-300 hover:scale-105">
+                        <a class="btn !bg-[--bg-lime]" routerLink="login">
+                            <span class="mx-2 text-black">
+                                <font style="vertical-align: inherit">
+                                    <font style="vertical-align: inherit">Log
+                                        in</font>
+                                </font>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="menu-item d-flex d-xl-none ms-2">
+                        <a [ngClass]="{
+                'nav-link d-flex w-40px h-40px': true,
+                open: isOpen === true
+              }" (click)="toggleIsOpen()">
+                            <span class="nav-icon"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

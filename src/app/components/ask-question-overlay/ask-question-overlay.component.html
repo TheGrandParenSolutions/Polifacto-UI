@@ -1,0 +1,311 @@
+<div
+  class="fixed inset-0  z-[9999] bg-black bg-opacity-50 transition-opacity backdrop-blur-sm"
+  *ngIf="modal.isOpen$ | async"
+  [ngClass]="{ hidden: !(modal.isOpen$ | async) }">
+  <div class="max-w-screen-lg mx-auto p-5 rounded">
+    <div class="grid grid-cols-1 md:grid-cols-12 border">
+      <div
+        class="bg-dark md:col-span-4 p-7 text-white rounded-tl-3xl rounded-bl-3xl flex flex-col justify-center items-center">
+        <h3
+          class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-wider">
+          Poli<span class>facto</span>
+        </h3>
+        <p class="mt-4 leading-7 text-white text-center">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s.
+        </p>
+      </div>
+
+      <form (ngSubmit)="postUserQuestionForVerification()"
+        class="md:col-span-8 p-7 bg-white rounded-tr-3xl rounded-br-3xl"
+        [formGroup]="askUsForm">
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3 mb-6 md:mb-0">
+            <label for="email-address-icon"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+              Email</label>
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 start-0 flex items-center ps-2 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                  viewBox="0 0 20 16">
+                  <path
+                    d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                  <path
+                    d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                </svg>
+              </div>
+              <input
+                formControlName="email"
+                type="text" id="email-address-icon"
+                class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="you@gmail.com">
+            </div>
+          </div>
+          <div class="w-full px-3">
+            <label for="email-address-icon"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose
+              related politician</label>
+
+            <button type="button"
+              (click)="toggleDropdown()"
+              class="text-gray-400 w-100 justify-between bg-gray-100 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 me-2 mb-3">
+              <span *ngIf="!selectedPolitician">Select politician</span>
+              <div
+                *ngIf="selectedPolitician"
+                class="flex items-center text-black dark:hover:text-white">
+                <ng-container *ngIf="!selectedPolitician.politicianProfilePic">
+                  <svg class="w-10 h-10 me-2 rounded-full object-cover"
+                    xmlns="http://www.w3.org/2000/svg" width="24px"
+                    height="24px" viewBox="0 0 24 24" fill="none">
+                    <path opacity="0.4"
+                      d="M12 22.01C17.5228 22.01 22 17.5329 22 12.01C22 6.48716 17.5228 2.01001 12 2.01001C6.47715 2.01001 2 6.48716 2 12.01C2 17.5329 6.47715 22.01 12 22.01Z"
+                      fill="#292D32" />
+                    <path
+                      d="M12 6.93994C9.93 6.93994 8.25 8.61994 8.25 10.6899C8.25 12.7199 9.84 14.3699 11.95 14.4299C11.98 14.4299 12.02 14.4299 12.04 14.4299C12.06 14.4299 12.09 14.4299 12.11 14.4299C12.12 14.4299 12.13 14.4299 12.13 14.4299C14.15 14.3599 15.74 12.7199 15.75 10.6899C15.75 8.61994 14.07 6.93994 12 6.93994Z"
+                      fill="#292D32" />
+                    <path
+                      d="M18.7807 19.36C17.0007 21 14.6207 22.01 12.0007 22.01C9.3807 22.01 7.0007 21 5.2207 19.36C5.4607 18.45 6.1107 17.62 7.0607 16.98C9.7907 15.16 14.2307 15.16 16.9407 16.98C17.9007 17.62 18.5407 18.45 18.7807 19.36Z"
+                      fill="#292D32" />
+                  </svg>
+                </ng-container>
+
+                <img *ngIf="selectedPolitician.politicianProfilePic"
+                  class="w-10 h-10 me-2 rounded-full object-cover"
+                  [src]="selectedPolitician.politicianProfilePic"
+                  [alt]="selectedPolitician.politicianName" />
+                {{selectedPolitician.politicianName}}
+              </div>
+              <svg class="w-2.5 h-2.5 ms-3"
+                aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6">
+                <path stroke="black" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+              </svg>
+
+            </button>
+
+            <div id="dropdownUsers"
+              [ngClass]="{ hidden: !openDropdown }"
+              class="z-10 bg-white relative rounded-lg shadow dark:bg-gray-700 w-100">
+              <div
+                class="bg-white rounded-lg shadow w-100 absolute dark:bg-gray-700 w-100absolute z-100">
+                <ul
+                  class="h-auto overflow-auto max-h-52 py-2 overflow-y-auto text-gray-700 dark:text-gray-200"
+                  aria-labelledby="dropdownUsersButton">
+                  <li *ngFor="let politician of politicians">
+                    <div
+                      (click)="selectPolitician(politician)"
+                      class="flex items-center text-lg cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      <img *ngIf="politician.politicianProfilePic"
+                        class="w-10 h-10 me-2 rounded-full object-cover"
+                        [src]="politician?.politicianProfilePic"
+                        [alt]="politician?.politicianName" />
+                      <ng-container *ngIf="!politician.politicianProfilePic">
+                        <svg class="w-10 h-10 me-2 rounded-full object-cover"
+                          xmlns="http://www.w3.org/2000/svg" width="24px"
+                          height="24px" viewBox="0 0 24 24" fill="none">
+                          <path opacity="0.4"
+                            d="M12 22.01C17.5228 22.01 22 17.5329 22 12.01C22 6.48716 17.5228 2.01001 12 2.01001C6.47715 2.01001 2 6.48716 2 12.01C2 17.5329 6.47715 22.01 12 22.01Z"
+                            fill="#292D32" />
+                          <path
+                            d="M12 6.93994C9.93 6.93994 8.25 8.61994 8.25 10.6899C8.25 12.7199 9.84 14.3699 11.95 14.4299C11.98 14.4299 12.02 14.4299 12.04 14.4299C12.06 14.4299 12.09 14.4299 12.11 14.4299C12.12 14.4299 12.13 14.4299 12.13 14.4299C14.15 14.3599 15.74 12.7199 15.75 10.6899C15.75 8.61994 14.07 6.93994 12 6.93994Z"
+                            fill="#292D32" />
+                          <path
+                            d="M18.7807 19.36C17.0007 21 14.6207 22.01 12.0007 22.01C9.3807 22.01 7.0007 21 5.2207 19.36C5.4607 18.45 6.1107 17.62 7.0607 16.98C9.7907 15.16 14.2307 15.16 16.9407 16.98C17.9007 17.62 18.5407 18.45 18.7807 19.36Z"
+                            fill="#292D32" />
+                        </svg>
+                      </ng-container>
+                      {{politician?.politicianName}}
+                    </div>
+                  </li>
+                  <li class="border-t-4 border-gray-200 border-dashed">
+                    <button
+                    type="button"
+                      (click)="openAddPoliticianModal = true;"
+                      class="flex items-center px-4 py-2 text-lg font-medium text-blue-600 border-t border-gray-200 rounded-b-lg dark:border-gray-600 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-500 hover:underline w-100">
+                      <svg class="w-5 h-5 me-2" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                        viewBox="0 0 20 18">
+                        <path
+                          d="M6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Zm11-3h-2V5a1 1 0 0 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 0 0 2 0V9h2a1 1 0 1 0 0-2Z" />
+                      </svg>
+                      Add new politician
+                    </button>
+                  </li>
+
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label for="email-address-icon"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Source
+              url</label>
+
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 start-0 flex items-center ps-2 pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px"
+                  height="24px" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M9.16488 17.6505C8.92513 17.8743 8.73958 18.0241 8.54996 18.1336C7.62175 18.6695 6.47816 18.6695 5.54996 18.1336C5.20791 17.9361 4.87912 17.6073 4.22153 16.9498C3.56394 16.2922 3.23514 15.9634 3.03767 15.6213C2.50177 14.6931 2.50177 13.5495 3.03767 12.6213C3.23514 12.2793 3.56394 11.9505 4.22153 11.2929L7.04996 8.46448C7.70755 7.80689 8.03634 7.47809 8.37838 7.28062C9.30659 6.74472 10.4502 6.74472 11.3784 7.28061C11.7204 7.47809 12.0492 7.80689 12.7068 8.46448C13.3644 9.12207 13.6932 9.45086 13.8907 9.7929C14.4266 10.7211 14.4266 11.8647 13.8907 12.7929C13.7812 12.9825 13.6314 13.1681 13.4075 13.4078M10.5919 10.5922C10.368 10.8319 10.2182 11.0175 10.1087 11.2071C9.57284 12.1353 9.57284 13.2789 10.1087 14.2071C10.3062 14.5492 10.635 14.878 11.2926 15.5355C11.9502 16.1931 12.279 16.5219 12.621 16.7194C13.5492 17.2553 14.6928 17.2553 15.621 16.7194C15.9631 16.5219 16.2919 16.1931 16.9495 15.5355L19.7779 12.7071C20.4355 12.0495 20.7643 11.7207 20.9617 11.3787C21.4976 10.4505 21.4976 9.30689 20.9617 8.37869C20.7643 8.03665 20.4355 7.70785 19.7779 7.05026C19.1203 6.39267 18.7915 6.06388 18.4495 5.8664C17.5212 5.3305 16.3777 5.3305 15.4495 5.8664C15.2598 5.97588 15.0743 6.12571 14.8345 6.34955"
+                    stroke="#000000" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <input
+                formControlName="source"
+                type="text" id="email-address-icon"
+                class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="https://polifacto.in">
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label for="message"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Write the Statement you want us to verify</label>
+            <textarea
+              formControlName="question"
+              id="message" rows="4"
+              class="block p-2.5 w-full text-sm text-gray-900 bg-gray-100 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Please write the statement you want us to verify....."></textarea>
+          </div>
+
+        </div>
+        <div class="flex justify-end">
+          <div class="flex justify-between items-center gap-5">
+            <div class="flex justify-between w-full">
+              <a class="btn outline h-40px px-6 fw-bold "
+                (click)="modal.hideModal()">
+                <span class="fs-7">Cancel</span>
+              </a>
+            </div>
+
+            <div
+              class="hover:scale-105 transition-all duration-500 ease-out">
+              <button type="submit" class="btn outline h-40px px-6 fw-bold ">
+                <span class="fs-7 whitespace-nowrap">Ask us</span>
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2"
+                    d="M1 5h12m0 0L9 1m4 4L9 9" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div [ngClass]="{'hidden': !openAddPoliticianModal}"
+  class="fixed inset-0  z-[9999] bg-black bg-opacity-50 transition-opacity backdrop-blur-sm">
+  <div id="defaultModal" tabindex="-1" aria-hidden="true"
+    class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[9999] justify-center items-center w-full md:inset-0 h-modal md:h-full">
+    <div class="relative p-4 w-full max-w-xl h-full md:h-auto m-auto">
+      <div
+        class="relative p-4 bg-white rounded-[20px] shadow dark:bg-gray-800 sm:p-5">
+        <div
+          class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            Add politician
+          </h3>
+          <br>
+          <h6 style="color: red;" *ngIf="!isFormValid() && addPoliticianForm.touched">Enter all fields</h6>
+          <button (click)="openAddPoliticianModal = false;" type="button"
+            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            data-modal-toggle="defaultModal">
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor"
+              viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path></svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+        </div>
+        <!-- Modal body -->
+        <form (ngSubmit)="addPolitician()" [formGroup]="addPoliticianForm">
+          <div class="grid gap-4 mb-4 sm:grid-cols-2">
+            <div>
+              <label for="name"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white required">Name</label>
+              <input type="text"
+                formControlName="name"
+                name="name" id="name"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Type politician name" required>
+            </div>
+            <div>
+              <label for="Party"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white required">Party</label>
+              <input type="text"
+                formControlName="party"
+                name="Party" id="brand"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                placeholder="Type politician party" required>
+            </div>
+            <div>
+              <label for="Designation"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white required">Designation</label>
+              <select id="Designation"
+                formControlName="designation"
+                required
+                class="bg-gray-50 border w-100 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                <option selected disabled hidden value>Select politician
+                  designation</option>
+                <option class="text-black" value="CM">Chief minister</option>
+                <option class="text-black" value="PM">Prime minister</option>
+                <option class="text-black" value="MLA">MLA</option>
+                <option class="text-black" value="MP">MP</option>
+              </select>
+            </div>
+          </div>
+          <div class="flex justify-end">
+            <div class="flex justify-between items-center gap-5">
+              <div class="flex justify-between w-full">
+                <a class="btn outline h-40px px-6 fw-bold "
+                  (click)="openAddPoliticianModal = false;">
+                  <span class="fs-7">Cancel</span>
+                </a>
+              </div>
+
+              <div
+                class="hover:scale-105 transition-all duration-500 ease-out">
+                <button type="submit" (click)="isFormValid()" [disabled]="addPoliticianForm.valid"
+                  class="btn outline h-40px px-6 fw-bold gap-2">
+                  <svg style="fill: none;" xmlns="http://www.w3.org/2000/svg"
+                    width="24px" height="24px" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15"
+                      stroke="#1C274C" stroke-width="1.5"
+                      stroke-linecap="round" />
+                    <path
+                      d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7"
+                      stroke="#1C274C" stroke-width="1.5"
+                      stroke-linecap="round" />
+                  </svg>
+                  <span class="fs-7 whitespace-nowrap">Add politician</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-spinner></app-spinner>

@@ -1,0 +1,8 @@
+select:required:invalid {
+    color: #AFB4BE;
+  }
+
+.required:after {
+  content: ' *';
+  color: red;
+ }

@@ -1,0 +1,71 @@
+<form (change)="handleChange($event)" (reset)="handleReset($event)">
+  <div class="row g-10 mt-0">
+    <!-- <div class="col col-12 col-lg-4">
+        <a
+          class="btn w-100 h-44px"
+          (click)="areFiltersOpen = !areFiltersOpen"
+        >
+          <span class="text-white">
+            {{areFiltersOpen ? 'Show filters' : 'Hide filters'}}
+          </span>
+        </a>
+      </div> -->
+    <div class="col col-12 col-lg-12 mt-0">
+      <div class="d-flex justify-between">
+        <div class="w-100 mw-350px">
+          <div class="w-100 position-relative">
+            <!-- <input
+                name="q"
+                type="text"
+                class="input outline focus-primary search"
+                placeholder="Enter the statement you're looking for"
+              />
+              <app-search-button></app-search-button> -->
+            <app-nav-search
+              [placeholderText]="placeholderText"
+              (onSearchInputChange)="GetSearchedText($event)"
+            ></app-nav-search>
+          </div>
+        </div>
+        <div>
+          <a class="btn outline mb-2 h-44px me-2 fs-6 px-6" [routerLink]="'/'">
+            <span class="me-2">←</span>
+            <span>Back</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="areFiltersOpen === true" class="col col-12 col-lg-4">
+      <div class="bg-light rounded-l p-5">
+        <!-- <TagFilters tags={props.tags} />
+
+            <VeracityFilters veracities={props.veracities} />
+
+            <ReleasedYearFilters years={props.years} />
+             -->
+        <div class="w-100 mt-5">
+          <div>
+            <input class="btn w-100" type="reset" value="Reset filters" />
+
+            <span class="text-white">Reset filters</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="!min-h-96"
+      [ngClass]="{ 'col col-12': true, 'col-lg-8': areFiltersOpen }"
+    >
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center my-5 my-lg-10">
+    <app-pagination
+      *ngIf="shouldShowPagination && (loader.isLoading$ | async) === false"
+      (changePage)="this.handlePageChange.emit($event)"
+    />
+  </div>
+</form>

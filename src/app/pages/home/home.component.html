@@ -1,0 +1,35 @@
+<div class="container min-h-[500px]">
+    <div class="row g-5 g-lg-10 flex-lg-row-reverse mb-10">
+      <div class="col col-12 col-lg-4 mt-6">
+        <div class="d-flex flex-wrap align-items-center mb-10">
+          <span class="fs-7 fw-bold text-uppercase me-5 my-2">
+            Popular Politicians
+          </span>
+          <div class="symbol-group">
+            <app-speaker [politicians]="politicians" />
+          </div>
+        </div>
+        <app-home-side-bar />
+      </div>
+      <div class="col col-12 col-lg-8 mb-0 mb-lg-10">
+        <div class="mb-5 mb-lg-10">
+          <app-article-tags />
+        </div>
+        <div class="row row-cols-1 g-5 g-lg-10">
+          <app-article-v2-preview *ngFor="let article of topArticles" [type]="'top'" [article]="article" />
+        </div>
+      </div>
+      <div class="col col-12">
+        <div class="row row-cols-1 row-cols-lg-2 g-5 g-lg-10">
+          <app-article-v2-preview *ngFor="let article of bottomArticles | paginate: this.paginationConfig" [article]="article" [type]="'bottom'" />
+        </div>
+      </div>
+      <div class="d-flex justify-content-center my-5 my-lg-10">
+        <app-pagination
+          *ngIf="(loader.isLoading$ | async) === false"
+          (changePage)="this.paginationConfig.currentPage = $event" />
+      </div>
+    </div>
+    
+    <app-user-carousel></app-user-carousel>
+</div>

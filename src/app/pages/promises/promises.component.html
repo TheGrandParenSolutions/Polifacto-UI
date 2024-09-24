@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="section">
+    <div class="row row g-5 mb-5">
+      <div class="col col-12">
+        <div class="d-flex items-center gap-4">
+          <span class="d-flex align-items-center me-2">
+            <img class="h-[150px]" src="../../../assets/icons/hand-shake.svg" alt="hand-shake">
+          </span>
+          <h1 class="display-4 fw-bold m-0 p-0">
+            The promises of the government of {{partyPromise?.shortNameOfParty}}
+          </h1>
+        </div>
+      </div>
+      <div class="col col-12 col-lg-6">
+        <span class="fs-2 fw-bold">Polifacto.in special output to fulfill the promises of the government of {{partyPromise?.shortNameOfParty}}</span>
+      </div>
+    </div>
+    <div class="row g-10">
+      <div class="col col-12 col-lg-6">
+        <div class="mb-4">
+          <span class="fs-6">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita provident deleniti tenetur magnam harum ex dignissimos, error perferendis consequuntur cupiditate eius aliquam natus minus voluptates placeat, nihil, nemo qui iste.
+          </span>
+        </div>
+        <div>
+          <span class="fs-6">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto quod vel accusantium, alias, adipisci minima, odit odio ab ut optio quos magni nisi quis tenetur soluta? Dicta, ducimus! Quibusdam, eveniet!
+          </span>
+        </div>
+      </div>
+      <div class="col col-12 col-lg-6">
+        <div class="mb-4">
+          <span class="fs-6">
+            The results of the analysis show that out of a total of <b>{{partyPromise?.totalPromisesCount}}</b> promises, the government fulfilled <b>{{partyPromise?.fullfilledPromisesCount}}</b> promises,
+            partially fulfilled <b>{{partyPromise?.partlyImplementedPromisesCount}}</b>, and broke the remaining <b>{{partyPromise?.violatedPromisesCount}}</b> promises.
+          </span>
+        </div>
+        <div class="mb-4">
+          <span class="fs-6">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, aliquid pariatur nesciunt debitis, repellendus voluptas ex expedita facilis est velit voluptatibus vitae, itaque repellat iure distinctio ad animi? Aperiam, reiciendis.
+          </span>
+        </div>
+        <div class="mb-4">
+          <span class="fs-6">
+            We prepared the analysis as of September 17, 2021, taking into account possible legislative changes to some
+            promises, we will update it before the parliamentary elections.
+          </span>
+        </div>
+        <div>
+          <span class="fs-6">
+            We thank the Endowment Fund for Independent Journalism for its support.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section mt-10">
+    <h2 class="fs-1 fw-600">
+      {{partyPromise?.totalPromisesCount}} tracked pledges
+    </h2>
+
+    <div>
+      <div class="d-flex flex-wrap my-10">
+        <!-- {props.article.stats?.map(({ key, count }) => ( -->
+        <div class="d-flex flex-wrap align-items-center me-5 me-lg-10 py-2">
+          <app-promise-rating [promiseJudgementType]="promiseJudgementType" />
+        </div>
+        <!-- ))} -->
+      </div>
+
+      <div class="d-none d-md-flex rounded-pill overflow-hidden h-30px">
+        <div *ngFor="let key of (Object.keys(promiseJudgementType??{}))" [ngStyle]="{'width':setWidth(key,promiseJudgementType[key])}">
+          <span class='d-block h-100 mb-4 relative custom-shadow' [ngClass]="setBgColor(key,promiseJudgementType[key])">
+          </span>
+        </div>
+      </div>
+
+      <div class="d-none d-md-flex mt-5">
+        <div *ngFor="let key of (Object.keys(promiseJudgementType??{}))" [ngStyle]="{'width':setWidth(key,promiseJudgementType[key])}">
+          <span class='fs-4 fw-600'>
+            <span class='d-block h-25px mb-4' [ngClass]="setTextColor(key,promiseJudgementType[key])"  *ngIf="setWidth(key,promiseJudgementType[key])">
+              {{setWidth(key,promiseJudgementType[key])}}
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <!-- <div class="row g-10 mt-5">
+        <div data-target="components--filter.content" class="col col-12">
+          <app-governmental-promise [promises]="partyPromise"/>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>

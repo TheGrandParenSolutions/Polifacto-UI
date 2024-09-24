@@ -1,0 +1,8 @@
+<app-loader></app-loader>
+<app-spinner></app-spinner>
+<app-ask-question-overlay/>
+<app-header *ngIf="!isAuthPageActive()"></app-header>
+<main class="!min-h-[500px]" [ngClass]="{'pt-0': isAuthPageActive()}" >
+    <router-outlet></router-outlet>
+</main>
+<app-footer *ngIf="!isAuthPageActive()"></app-footer>

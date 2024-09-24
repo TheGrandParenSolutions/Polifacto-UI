@@ -1,0 +1,51 @@
+<div class="bg-dark-light text-white p-2 p-lg-8 rounded-l mb-10">
+  <div class="w-100 position-relative">
+    <h2 class="display-5 fw-bold mb-4">What is Polifacto?</h2>
+    <div class="fs-6 mb-10 dark-content">
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Polifacto checks the veracity of Czech politicians' claims and popular
+            content on social networks.</font>
+        </font>
+      </p>
+      <ul>
+        <li>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">We are looking for trusted sources that everyone can check.</font>
+          </font>
+        </li>
+        <li>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">We have transparent </font>
+          </font><a href="/stranka/jak-hodnotime-metodika">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">procedures</font>
+            </font>
+          </a>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;"></font>
+            <!-- take to about us -->
+          </font>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">.</font>
+          </font>
+        </li>
+      </ul>
+    </div>
+    <!-- Add introduction video  -->
+    <div class="w-100 position-relative">
+      <app-video-player [thumbnail]="'/assets/images/workshop.jpg'"
+        [videoSrc]="'/assets/media/video-main.mp4'"></app-video-player>
+    </div>
+    <div class="mt-5">
+      <span class="fs-5 mb-4">
+        Shootup your questions now!!
+      </span>
+    </div>
+    <div class="mt-4">
+      <button class="btn !bg-[--bg-lime] w-100" (click)="openAskQuestionOverlay()">
+        <span class="text-dark font-bold">Ask Us</span>
+      </button>
+    </div>
+  </div>
+</div>

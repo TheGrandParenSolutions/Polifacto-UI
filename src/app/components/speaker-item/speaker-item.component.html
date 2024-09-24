@@ -1,0 +1,105 @@
+<div @fadeInOut *ngIf="(loader.isLoading$ | async) === false; else skeleton;"
+  class="col s-speaker transition-all duration-300 border rounded-l border-gray-300 pb-2">
+  <div
+    class="h-100 d-flex flex-column justify-content-between align-items-center">
+    <div class="w-100 p-5">
+      <a class="d-block position-relative"
+        [routerLink]="['./', politicians?.politicianId]">
+        <div class="symbol symbol-square symbol-circle bg-light">
+          <ng-container *ngIf="!politicians?.politicianProfilePic">
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none">
+                <path opacity="0.4"
+                  d="M12 22.01C17.5228 22.01 22 17.5329 22 12.01C22 6.48716 17.5228 2.01001 12 2.01001C6.47715 2.01001 2 6.48716 2 12.01C2 17.5329 6.47715 22.01 12 22.01Z"
+                  fill="#292D32" />
+                <path
+                  d="M12 6.93994C9.93 6.93994 8.25 8.61994 8.25 10.6899C8.25 12.7199 9.84 14.3699 11.95 14.4299C11.98 14.4299 12.02 14.4299 12.04 14.4299C12.06 14.4299 12.09 14.4299 12.11 14.4299C12.12 14.4299 12.13 14.4299 12.13 14.4299C14.15 14.3599 15.74 12.7199 15.75 10.6899C15.75 8.61994 14.07 6.93994 12 6.93994Z"
+                  fill="#292D32" />
+                <path
+                  d="M18.7807 19.36C17.0007 21 14.6207 22.01 12.0007 22.01C9.3807 22.01 7.0007 21 5.2207 19.36C5.4607 18.45 6.1107 17.62 7.0607 16.98C9.7907 15.16 14.2307 15.16 16.9407 16.98C17.9007 17.62 18.5407 18.45 18.7807 19.36Z"
+                  fill="#292D32" />
+              </svg>
+            </div>
+          </ng-container>
+          
+          <img *ngIf="politicians?.politicianProfilePic"
+            [src]="politicians?.politicianProfilePic"
+            [alt]="politicians?.politicianName" />
+        </div>
+        <div
+          class="symbol-label d-flex align-items-center !bg-[--bg-lime] justify-content-center w-45px h-45px rounded-circle">
+          <span class="smallest text-black font-bold lh-1 text-center p-2">
+            {{politicians?.politicianParty | titlecase}}
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="text-center lh-1">
+      <h3 class="fs-4 fw-bold mb-4 whitespace-nowrap">{{politicians?.politicianName | titlecase}}</h3>
+      <div class="mb-4">
+        <span class="fs-6 fw-bold">{{politicians?.politicianDesignation | titlecase}}</span>
+      </div>
+      <div class="text-center mt-4">
+        <a class="btn outline h-40x fs-7"
+          [routerLink]="['./', politicians?.politicianId]">
+          Open Profile
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #skeleton>
+  <div
+    class="col s-speaker transition-all duration-300 border rounded-l border-gray-300 pb-2">
+    <div
+      class="h-100 d-flex flex-column justify-content-between align-items-center">
+      <div class="w-100 p-5">
+        <a class="d-block position-relative"
+          [routerLink]="['./', politicians?.politicianId]">
+          <div class="symbol symbol-square symbol-circle bg-light">
+            <ngx-skeleton-loader
+              count="1"
+              appearance="custom-content"
+              [theme]="{background: 'lightgray', width: '100%', height: '118px'}"></ngx-skeleton-loader>
+          </div>
+          <div
+            class="symbol-label d-flex align-items-center justify-content-center w-45px h-45px rounded-circle bg-dark">
+            <span class="smallest text-white lh-1 text-center p-2">
+              <ngx-skeleton-loader
+                count="1"
+                appearance="line"
+                [theme]="{background: 'lightgray', width: '100%'}" />
+            </span>
+          </div>
+        </a>
+      </div>
+      <div class="text-center lh-1">
+        <h3 class="fs-4 fw-bold mb-4">
+          <ngx-skeleton-loader
+            count="1"
+            appearance="line"
+            [theme]="{background: 'lightgray', width: '100%'}" />
+
+        </h3>
+        <div class="mb-4">
+          <span class="fs-6 fw-bold">
+            <ngx-skeleton-loader
+              count="1"
+              appearance="line"
+              [theme]="{background: 'lightgray', width: '100%'}" />
+
+          </span>
+        </div>
+        <div class="text-center mt-4">
+          <a class="btn outline h-40x fs-7"
+            [routerLink]="['./', politicians?.politicianId]">
+            Open Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row g-10">
+    <div class="col col-12">
+      <div class="d-flex align-items-center gap-4">
+        <div class="me-2">
+          <img
+            src="../../../assets/icons/judgement-statement.svg"
+            class="hover h-[120px]"
+          />
+        </div>
+        <h1 class="display-4 fw-bold m-0 p-0">
+          Overview of verified statements
+        </h1>
+      </div>
+    </div>
+    <!--    Filter can be written here later.                   -->
+    <app-filter-form
+      [areFiltersOpen]="false"
+      [pageSize]="this.paginationConfig.itemsPerPage"
+      [currentPage]="this.paginationConfig.currentPage"
+      [totalCount]="this.paginationConfig.totalItems"
+      (handlePageChange)="this.paginationConfig.currentPage = $event"
+      placeholderText="Enter the statement you're looking for"
+      (onSearchInputChange)="filterStatements($event)"
+    >
+      <app-statement-item
+        *ngFor="let statement of statements | paginate : this.paginationConfig"
+        [politicianWithStatements]="statement"
+        [politicianDetails]="statement.politician[0]"
+      />
+      <div class="" *ngIf="!paginationConfig.totalItems" style="margin: inherit;">
+        <h2><b>No statements found</b></h2>
+      </div>
+    </app-filter-form>
+  </div>
+</div>

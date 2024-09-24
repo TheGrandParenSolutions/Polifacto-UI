@@ -1,0 +1,74 @@
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.accordion-item {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.accordion-item:first-of-type {
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+}
+
+.accordion-header {
+  margin-bottom: 0;
+}
+
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  overflow-anchor: none;
+  transition: color 500s ease-in-out, background-color 500s ease-in-out,
+    border-color 500s ease-in-out, box-shadow 500s ease-in-out,
+    border-radius 500s ease !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff !important;
+  background-color: #111827 !important;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125) !important;
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+  cursor: pointer;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: calc(1rem - 1px) !important;
+  border-top-right-radius: calc(1rem - 1px) !important;
+}
+
+ul li:before {
+  /* the custom styled bullets */
+  content: none !important;
+}
+
+.collapse {
+  visibility: visible !important;
+}
+
+.bg-darkerrr {
+  background-color: black !important;
+  color: #ffff !important;
+}
+
+h2 {
+  font-weight: 800 !important;
+}

@@ -1,0 +1,36 @@
+<li class="menu-item me-10">
+  <a
+    class="menu-link d-flex align-items-center text-black text-none state-hover-color-secondary min-h-40px"
+    (click)="toggleIsOpen()">
+    <span>{{title}}</span>
+    <span class="symbol symbol-20px">
+      <svg [ngClass]="{'rotate-180': isOpen}" xmlns="http://www.w3.org/2000/svg"
+        height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor">
+        <path d="M24 24H0V0h24v24z" fill="none" opacity=".87"></path><path
+          d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z"></path>
+      </svg>
+    </span>
+  </a>
+  <div (click)="toggleIsOpen()"
+    [ngClass]="{' transition-all left-auto': true, 'open': isOpen === true}"
+    data-target="components--nav.submenu">
+    <div [ngClass]="{'hidden': !isOpen}" id="dropdownInformation"
+      class="z-10 bg-dark divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 md:absolute mt-4 transition-all duration-500 ">
+      <ul class="flex flex-col py-2 text-sm text-gray-700 dark:text-gray-200"
+        aria-labelledby="dropdownInformationButton">
+        <li *ngFor="let promise of promises">
+          <a
+            routerLink="promises/{{promise.shortNameOfParty}}/{{promise.startYear}}"
+            class="block text-white px-4 py-2 hover:scale-110 hover: transition-all hover: duration-500 border rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-black  hover:!text-black ">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                {{promise.nameOfParty}} ({{promise.startYear}} -
+                {{promise?.endYear}})
+              </font>
+            </font>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ul>

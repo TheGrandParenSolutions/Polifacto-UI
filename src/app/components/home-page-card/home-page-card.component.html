@@ -1,0 +1,327 @@
+<div
+  @fadeInOut
+  *ngIf="(loader.isLoading$ | async) === false; else skeleton"
+  [routerLink]="['discussion', article.articleId]"
+  class="mb-4 p-2.5 transition-all cursor-pointer duration-300 border rounded-l border-gray-300 hover:shadow-[0_0_11px_rgba(33,33,33,.2)]"
+>
+  <article class="col s-article mb-2 p-2.5">
+    <div class="row g-2 g-lg-5">
+      <div class="col col-12 col-md-5">
+        <div class="d-flex">
+          <a class="illustration d-flex">
+            <img
+              [src]="article?.articleThumbnail"
+              class="w-100"
+              [ngClass]="{'p-[100px]': isBrokenImageLoaded}"
+              alt="image"
+              (error)="isBrokenImageLoaded = true; article.articleThumbnail = BrokenImageUrl;" 
+            />
+          </a>
+        </div>
+
+        <div class="d-flex justify-between align-items-center mt-2">
+          <!-- <div class="symbol-group">
+            <app-speaker [speakers]="article?.articleSpeakerImages" />
+          </div> -->
+          <app-statement-assesment [judgement]="article?.articleVerificationStatus" />
+        </div>
+      </div>
+
+      <div class="col col-12 col-md-7">
+        <h2 class="fs-2 fw-bold mb-2">
+          <a class="text-dark s-title">
+            <font style="vertical-align: inherit">
+              <font
+                style="vertical-align: inherit"
+                [innerHTML]="article?.articleTitle"
+              >
+              </font>
+            </font>
+          </a>
+        </h2>
+        <div class="mb-2">
+          <i>
+            {{ article?.articleSource + ", " + article?.articlePublishedDate }}
+          </i>
+        </div>
+
+        <p
+          class="fs-6 lh-sm"
+          [innerHTML]="article?.articleShortDescription"
+        ></p>
+
+        <div class="mt-4">
+          <a
+            class="btn outline h-40px px-6 fw-bold"
+            [routerLink]="['discussion', article.articleId]"
+          >
+            <span class="fs-7">Read more...</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<ng-template #skeleton>
+  <div
+    class="mb-4 p-5 transition-all duration-300 border rounded-l border-gray-300 hover:shadow-[0_0_11px_rgba(33,33,33,.2)]"
+  >
+    <article class="col s-article mb-2 p-5">
+      <div class="row g-2 g-lg-5">
+        <div class="col col-12 col-md-5">
+          <div class="d-flex">
+            <a class="illustration d-flex">
+              <ngx-skeleton-loader
+                [count]="1"
+                appearance="custom-content"
+                [theme]="{
+                  background: 'lightgray',
+                  width: '250px',
+                  height: '150px'
+                }"
+              >
+                <img [src]="" class="w-100" />
+              </ngx-skeleton-loader>
+            </a>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <div class="symbol-group">
+              <ngx-skeleton-loader
+                [count]="1"
+                appearance="circle"
+                [theme]="{ background: 'lightgray' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+
+            <div>
+              <!-- based on conditions show results -->
+              <span class="fw-bold text-uppercase">
+                <font style="vertical-align: inherit">
+                  <font class="text-[#078738]" style="vertical-align: inherit">
+                    <ngx-skeleton-loader
+                      [count]="1"
+                      appearance="line"
+                      [theme]="{
+                        background: 'lightgray',
+                        width: '100%',
+                        height: '20px'
+                      }"
+                    >
+                    </ngx-skeleton-loader>
+                  </font>
+                </font>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-12 col-md-7">
+          <h2 class="fs-2 fw-bold mb-2">
+            <a class="text-dark s-title">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">
+                  <ngx-skeleton-loader
+                    [count]="1"
+                    appearance="line"
+                    [theme]="{
+                      background: 'lightgray',
+                      width: '100%',
+                      height: '200px'
+                    }"
+                  >
+                  </ngx-skeleton-loader>
+                </font>
+              </font>
+            </a>
+          </h2>
+
+          <div class="mt-4">
+            <a
+              class="btn outline h-40px px-6 fw-bold cursor-default pointer-events-none"
+              href="javascript:void(0)"
+            >
+              <span class="fs-7">Read more...</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div
+    class="mb-4 p-5 transition-all duration-300 border rounded-l border-gray-300 hover:shadow-[0_0_11px_rgba(33,33,33,.2)]"
+  >
+    <article class="col s-article mb-2 p-5">
+      <div class="row g-2 g-lg-5">
+        <div class="col col-12 col-md-5">
+          <div class="d-flex">
+            <a class="illustration d-flex">
+              <ngx-skeleton-loader
+                [count]="1"
+                appearance="custom-content"
+                [theme]="{
+                  background: 'lightgray',
+                  width: '250px',
+                  height: '150px'
+                }"
+              >
+                <img [src]="" class="w-100" />
+              </ngx-skeleton-loader>
+            </a>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <div class="symbol-group">
+              <ngx-skeleton-loader
+                [count]="1"
+                appearance="circle"
+                [theme]="{ background: 'lightgray' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+
+            <div>
+              <!-- based on conditions show results -->
+              <span class="fw-bold text-uppercase">
+                <font style="vertical-align: inherit">
+                  <font class="text-[#078738]" style="vertical-align: inherit">
+                    <ngx-skeleton-loader
+                      [count]="1"
+                      appearance="line"
+                      [theme]="{
+                        background: 'lightgray',
+                        width: '100%',
+                        height: '20px'
+                      }"
+                    >
+                    </ngx-skeleton-loader>
+                  </font>
+                </font>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-12 col-md-7">
+          <h2 class="fs-2 fw-bold mb-2">
+            <a class="text-dark s-title">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">
+                  <ngx-skeleton-loader
+                    [count]="1"
+                    appearance="line"
+                    [theme]="{
+                      background: 'lightgray',
+                      width: '100%',
+                      height: '200px'
+                    }"
+                  >
+                  </ngx-skeleton-loader>
+                </font>
+              </font>
+            </a>
+          </h2>
+
+          <div class="mt-4">
+            <a
+              class="btn outline h-40px px-6 fw-bold cursor-default pointer-events-none"
+              href="javascript:void(0)"
+            >
+              <span class="fs-7">Read more...</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <div
+    class="mb-4 p-5 transition-all duration-300 border rounded-l border-gray-300 hover:shadow-[0_0_11px_rgba(33,33,33,.2)]"
+  >
+    <article class="col s-article mb-2 p-5">
+      <div class="row g-2 g-lg-5">
+        <div class="col col-12 col-md-5">
+          <div class="d-flex">
+            <a class="illustration d-flex">
+              <ngx-skeleton-loader
+                [count]="1"
+                appearance="custom-content"
+                [theme]="{
+                  background: 'lightgray',
+                  width: '250px',
+                  height: '150px'
+                }"
+              >
+                <img [src]="" class="w-100" />
+              </ngx-skeleton-loader>
+            </a>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <div class="symbol-group">
+              <ngx-skeleton-loader
+                [count]="1"
+                appearance="circle"
+                [theme]="{ background: 'lightgray' }"
+              >
+              </ngx-skeleton-loader>
+            </div>
+
+            <div>
+              <!-- based on conditions show results -->
+              <span class="fw-bold text-uppercase">
+                <font style="vertical-align: inherit">
+                  <font class="text-[#078738]" style="vertical-align: inherit">
+                    <ngx-skeleton-loader
+                      [count]="1"
+                      appearance="line"
+                      [theme]="{
+                        background: 'lightgray',
+                        width: '100%',
+                        height: '20px'
+                      }"
+                    >
+                    </ngx-skeleton-loader>
+                  </font>
+                </font>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-12 col-md-7">
+          <h2 class="fs-2 fw-bold mb-2">
+            <a class="text-dark s-title">
+              <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">
+                  <ngx-skeleton-loader
+                    [count]="1"
+                    appearance="line"
+                    [theme]="{
+                      background: 'lightgray',
+                      width: '100%',
+                      height: '200px'
+                    }"
+                  >
+                  </ngx-skeleton-loader>
+                </font>
+              </font>
+            </a>
+          </h2>
+
+          <div class="mt-4">
+            <a
+              class="btn outline h-40px px-6 fw-bold cursor-default pointer-events-none"
+              href="javascript:void(0)"
+            >
+              <span class="fs-7">Read more...</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</ng-template>

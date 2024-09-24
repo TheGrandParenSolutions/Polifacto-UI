@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row g-10">
+    <div class="col col-12 d-flex justify-between">
+      <div class="d-flex align-items-center gap-4">
+        <div>
+          <!-- polifacto-logo -->
+          <img
+            class="h-[120px]"
+            src="../../../assets/icons/politician-comic.svg"
+          />
+        </div>
+        <h1 class="display-4 fw-bold m-0 p-0">Our Politicians</h1>
+      </div>
+    </div>
+    <app-filter-form
+      [areFiltersOpen]="false"
+      [pageSize]="this.paginationConfig.itemsPerPage"
+      [currentPage]="this.paginationConfig.currentPage"
+      [totalCount]="this.paginationConfig.totalItems"
+      placeholderText="Search politicians"
+      (handlePageChange)="this.paginationConfig.currentPage = $event"
+      (onSearchInputChange)="filterPoliticians($event)"
+    >
+      <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-10">
+        <app-speaker-item
+          *ngFor="
+            let politician of politicians | paginate : this.paginationConfig
+          "
+          [politicians]="politician"
+        />
+      </div>
+      <div class="" *ngIf="!paginationConfig.totalItems" style="margin: inherit;">
+        <h2><b>No politicians found</b></h2>
+      </div>
+    </app-filter-form>
+  </div>
+</div>

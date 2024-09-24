@@ -1,0 +1,260 @@
+<div @fadeInOut *ngIf="(loader.isLoading$ | async) === false; else skeleton" class="mb-10 s-statement">
+  <div class="row g-6">
+    <div class="col col-12 col-md-6 col-lg-7">
+      <div class="d-flex p-5">
+        <div class="w-100px min-w-100px">
+          <div class="px-2">
+            <a class="d-block position-relative">
+              <span class="symbol symbol-square symbol-circle">
+                <img *ngIf="politicianDetails?.politicianProfilePic" [src]="politicianDetails?.politicianProfilePic" [alt]="politicianDetails?.politicianName" />
+                <ng-container *ngIf="!politicianDetails?.politicianProfilePic">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      fill="none">
+                      <path opacity="0.4"
+                        d="M12 22.01C17.5228 22.01 22 17.5329 22 12.01C22 6.48716 17.5228 2.01001 12 2.01001C6.47715 2.01001 2 6.48716 2 12.01C2 17.5329 6.47715 22.01 12 22.01Z"
+                        fill="#292D32" />
+                      <path
+                        d="M12 6.93994C9.93 6.93994 8.25 8.61994 8.25 10.6899C8.25 12.7199 9.84 14.3699 11.95 14.4299C11.98 14.4299 12.02 14.4299 12.04 14.4299C12.06 14.4299 12.09 14.4299 12.11 14.4299C12.12 14.4299 12.13 14.4299 12.13 14.4299C14.15 14.3599 15.74 12.7199 15.75 10.6899C15.75 8.61994 14.07 6.93994 12 6.93994Z"
+                        fill="#292D32" />
+                      <path
+                        d="M18.7807 19.36C17.0007 21 14.6207 22.01 12.0007 22.01C9.3807 22.01 7.0007 21 5.2207 19.36C5.4607 18.45 6.1107 17.62 7.0607 16.98C9.7907 15.16 14.2307 15.16 16.9407 16.98C17.9007 17.62 18.5407 18.45 18.7807 19.36Z"
+                        fill="#292D32" />
+                    </svg>
+                  </div>
+                </ng-container>
+              </span>
+              <div
+                class="symbol-label d-flex align-items-center justify-content-center w-40px h-40px rounded-circle !bg-[--bg-lime]">
+                <span class="smallest font-bold text-dark lh-1 text-center p-2">
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">{{politicianDetails?.politicianParty}}</font>
+                  </font>
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="mt-2 text-center w-100">
+            <h3 class="fs-6 fs-600">
+              {{politicianDetails?.politicianName}}
+            </h3>
+          </div>
+        </div>
+        <div class="ps-5">
+          <blockquote class="p-3 fs-6 !bg-[--bg-lime] text-dark font-bold rounded-m mb-2 position-relative min-h-50px">
+            <span class="popover-arrow arrow-east"></span>
+            <span class="fs-6 position-relative" dangerouslySetInnerHTML="__html: statement.content">
+              {{politicianWithStatements?.statementByPolitician}}
+            </span>
+          </blockquote>
+
+          <cite class="mb-2 fs-7">
+            {{politicianDetails?.politicianDesignation}}
+            <br>
+            {{politicianWithStatements?.createdAt | date}}
+          </cite>
+
+
+          <div class="row g-2">
+            <div key="" class="col col-auto">
+              <div class="d-flex align-items-center">
+                <!-- <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8.54664 1.77285L13.9073 7.12848C13.9542 7.17501 13.9914 7.23037 14.0168 7.29136C14.0422 7.35236 14.0553 7.41778 14.0553 7.48386C14.0553 7.54993 14.0422 7.61535 14.0168 7.67635C13.9914 7.73734 13.9542 7.7927 13.9073 7.83923L12.9062 8.84028L12.1955 8.12953L12.8462 7.48386L7.8409 2.47859H4.0419V3.47964H3.04085V2.47859C3.04085 2.2131 3.14632 1.95847 3.33405 1.77074C3.52178 1.58301 3.7764 1.47754 4.0419 1.47754H7.8409C8.10596 1.47866 8.35977 1.58486 8.54664 1.77285ZM8.04611 15.4923C7.98024 15.4927 7.91494 15.48 7.85396 15.4551C7.79297 15.4302 7.73751 15.3935 7.69074 15.3471L2.33511 9.98649C2.14711 9.79962 2.04091 9.54581 2.03979 9.28075V5.48175C2.03979 5.21625 2.14526 4.96163 2.333 4.7739C2.52073 4.58617 2.77535 4.4807 3.04085 4.4807H6.83984C7.10491 4.48181 7.35871 4.58802 7.54559 4.77601L12.9062 10.1316C12.9531 10.1782 12.9904 10.2335 13.0158 10.2945C13.0412 10.3555 13.0543 10.4209 13.0543 10.487C13.0543 10.5531 13.0412 10.6185 13.0158 10.6795C12.9904 10.7405 12.9531 10.7959 12.9062 10.8424L8.40148 15.3471C8.35472 15.3935 8.29925 15.4302 8.23827 15.4551C8.17728 15.48 8.11198 15.4927 8.04611 15.4923ZM3.04085 5.48175V9.28075L8.04611 14.286L11.8451 10.487L6.83984 5.48175H3.04085ZM5.04295 8.48491C5.59582 8.48491 6.04401 8.03672 6.04401 7.48386C6.04401 6.93099 5.59582 6.4828 5.04295 6.4828C4.49009 6.4828 4.0419 6.93099 4.0419 7.48386C4.0419 8.03672 4.49009 8.48491 5.04295 8.48491Z"
+                    fill="#111827" />
+                </svg> -->
+                <!-- <span class="fs-7">{{'Invasion of Ukraine'}}</span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-12 col-md-6 col-lg-5">
+      <app-statement-assesment size="30"  [judgement]="politicianWithStatements.statementJudgement"/>
+      <!-- {statement.assessment.shortExplanation === null ? (
+          <div class="d-block">
+            <div
+              class="scroll-vertical mh-400px my-5 content fs-6"
+              dangerouslySetInnerHTML={{
+                __html: statement.assessment.explanationHtml,
+              }}
+            ></div>
+          </div>
+        ) : ( -->
+      <div class="accordion">
+        <div class="content fs-6">
+          {{politicianWithStatements?.statementInfo}}
+        </div>
+        <div class="accordion-content mh-400px" [ngStyle]="{'height': openExplanation ? '150px': '0px'}">
+          <div class="scroll-vertical mh-400px my-5 h-full content fs-6">
+            {{politicianWithStatements?.statementInfo}}
+          </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center w-100">
+          <a class="accordion-link text-dark text-underline" (click)="openExplanation = !openExplanation">
+            {{openExplanation ? 'Hide section':
+            'Know the Whole Truth'}}
+          </a>
+          <a class="group d-flex text-gray align-items-center text-none cursor-pointer hover:scale-110 hover:!text-black transition-all duration-500 ease-in-out"
+            [routerLink]="['/statement-details', sid]" [state]="{politician: politicianDetails}">
+            <!-- <img class="h-15px" src="/assets/srcs/link.svg"/> -->
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_922_5912)">
+                <path class="group-hover:fill-black" fill-rule="evenodd" clip-rule="evenodd"
+                  d="M13.688 3.22936C14.0527 3.38078 14.3839 3.60269 14.6626 3.88237C15.2257 4.44354 15.5431 5.20529 15.5449 6.0003C15.5468 6.7953 15.2331 7.55854 14.6726 8.12236L10.6726 12.1224C10.3925 12.4028 10.0596 12.625 9.69314 12.776C9.32669 12.9271 8.93394 13.004 8.53758 13.0024C7.74261 13.007 6.97832 12.6959 6.41258 12.1374C6.1329 11.8587 5.91099 11.5275 5.75957 11.1628C5.60816 10.7982 5.53021 10.4072 5.53021 10.0124C5.53021 9.61752 5.60816 9.22656 5.75957 8.86191C5.91099 8.49725 6.1329 8.16608 6.41258 7.88737L7.12258 7.17737L7.82758 7.88737L7.12258 8.59737C6.7473 8.97331 6.53673 9.48294 6.5372 10.0141C6.53767 10.5453 6.74913 11.0546 7.12508 11.4299C7.50102 11.8051 8.01065 12.0157 8.54185 12.0152C9.07304 12.0148 9.5823 11.8033 9.95758 11.4274L13.9576 7.42737C14.1437 7.24122 14.2914 7.02023 14.3921 6.77701C14.4929 6.5338 14.5447 6.27312 14.5447 6.00987C14.5447 5.74661 14.4929 5.48593 14.3921 5.24272C14.2914 4.9995 14.1437 4.77851 13.9576 4.59237C13.7714 4.40622 13.5504 4.25856 13.3072 4.15781C13.064 4.05707 12.8033 4.00522 12.5401 4.00522C12.2768 4.00522 12.0161 4.05707 11.7729 4.15781C11.5297 4.25856 11.3087 4.40622 11.1226 4.59237L10.4126 3.88237C10.6913 3.60269 11.0225 3.38078 11.3871 3.22936C11.7518 3.07794 12.1427 3 12.5376 3C12.9324 3 13.3234 3.07794 13.688 3.22936ZM1.69663 12.2624C1.79773 12.5056 1.94588 12.7265 2.13258 12.9124C2.31842 13.0991 2.53931 13.2472 2.78257 13.3483C3.02582 13.4494 3.28666 13.5014 3.55008 13.5014C3.81351 13.5014 4.07434 13.4494 4.3176 13.3483C4.56086 13.2472 4.78175 13.0991 4.96758 12.9124L5.67758 13.6224C5.10844 14.1868 4.33913 14.5031 3.53758 14.5024C2.74303 14.5123 1.97699 14.2066 1.40758 13.6524C1.12715 13.3736 0.904605 13.0421 0.752744 12.6769C0.600884 12.3118 0.522705 11.9203 0.522705 11.5249C0.522705 11.1294 0.600884 10.7379 0.752744 10.3728C0.904605 10.0076 1.12715 9.67615 1.40758 9.39735L5.40758 5.39735C5.97183 4.8331 6.73711 4.51611 7.53508 4.51611C8.33305 4.51611 9.09833 4.8331 9.66258 5.39735C10.2268 5.9616 10.5438 6.72689 10.5438 7.52485C10.5438 8.32282 10.2268 9.0881 9.66258 9.65235L8.60258 10.7124L7.89258 10.0024L8.95258 8.92735C9.13945 8.74029 9.28736 8.51803 9.38778 8.27343C9.48819 8.02884 9.53911 7.76676 9.53758 7.50235C9.54276 7.23877 9.49497 6.97684 9.39706 6.73206C9.29915 6.48729 9.15311 6.26465 8.96758 6.07735C8.78175 5.89065 8.56086 5.7425 8.3176 5.6414C8.07434 5.54031 7.81351 5.48827 7.55008 5.48827C7.28666 5.48827 7.02582 5.54031 6.78257 5.6414C6.53931 5.7425 6.31842 5.89065 6.13258 6.07735L2.13258 10.0774C1.94588 10.2632 1.79773 10.4841 1.69663 10.7273C1.59554 10.9706 1.5435 11.2314 1.5435 11.4949C1.5435 11.7583 1.59554 12.0191 1.69663 12.2624Z"
+                  fill="#9B9B9B"></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_922_5912">
+                  <rect width="16" height="16" fill="white" transform="translate(0.0375977 0.501953)"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+            <span class="ms-1">Read full article</span>
+          </a>
+        </div>
+      </div>
+      <!-- )} -->
+    </div>
+  </div>
+</div>
+
+
+<ng-template #skeleton>
+  <div class="mb-10 s-statement">
+    <div class="row g-6">
+      <div class="col col-12 col-md-6 col-lg-7">
+        <div class="d-flex">
+          <div class="w-100px min-w-100px">
+            <ngx-skeleton-loader
+                        count="1"
+                        appearance="circle"
+                        [theme]="{background: 'lightgray'}"
+                      >
+            <div class="px-2">
+              <a class="d-block position-relative">
+                <span class="symbol symbol-square symbol-circle">
+                  <img src="/assets/images/kejriwal.jpg" alt="kejriwal" />
+                </span>
+                <div
+                  class="symbol-label d-flex align-items-center justify-content-center w-40px h-40px rounded-circle bg-dark">
+                  <span class="smallest text-white lh-1 text-center p-2">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">
+                      </font>
+                    </font>
+                  </span>
+                </div>
+              </a>
+            </div>
+          </ngx-skeleton-loader>
+
+            <div class="mt-2 text-center w-100">
+              <h3 class="fs-6 fs-600">
+                <ngx-skeleton-loader
+                count="1"
+                appearance="line"
+                [theme]="{background: 'lightgray', width: '100%'}"
+              ></ngx-skeleton-loader>
+              </h3>
+            </div>
+          </div>
+          <div class="ps-5">
+            <ngx-skeleton-loader
+                count="1"
+                appearance="line"
+                [theme]="{background: 'lightgray', height: '50px', width: '500px'}"
+              >
+            <blockquote class="p-3 fs-6 bg-dark text-white rounded-m mb-2 position-relative min-h-50px">
+              <span class="popover-arrow arrow-east"></span>
+              <span class="fs-6 position-relative" >
+              </span>
+            </blockquote>
+          </ngx-skeleton-loader>
+  
+            <cite class="mb-2 fs-7">
+              <ngx-skeleton-loader
+                count="1"
+                appearance="line"
+                [theme]="{background: 'lightgray'}"
+              ></ngx-skeleton-loader>
+              <span>, </span>
+              <ngx-skeleton-loader
+                count="1"
+                appearance="line"
+                [theme]="{background: 'lightgray'}"
+              ></ngx-skeleton-loader>
+            </cite>
+  
+  
+            <div class="row g-2">
+              <div key={tag.id} class="col col-auto">
+                <div class="d-flex align-items-center">
+                  <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M8.54664 1.77285L13.9073 7.12848C13.9542 7.17501 13.9914 7.23037 14.0168 7.29136C14.0422 7.35236 14.0553 7.41778 14.0553 7.48386C14.0553 7.54993 14.0422 7.61535 14.0168 7.67635C13.9914 7.73734 13.9542 7.7927 13.9073 7.83923L12.9062 8.84028L12.1955 8.12953L12.8462 7.48386L7.8409 2.47859H4.0419V3.47964H3.04085V2.47859C3.04085 2.2131 3.14632 1.95847 3.33405 1.77074C3.52178 1.58301 3.7764 1.47754 4.0419 1.47754H7.8409C8.10596 1.47866 8.35977 1.58486 8.54664 1.77285ZM8.04611 15.4923C7.98024 15.4927 7.91494 15.48 7.85396 15.4551C7.79297 15.4302 7.73751 15.3935 7.69074 15.3471L2.33511 9.98649C2.14711 9.79962 2.04091 9.54581 2.03979 9.28075V5.48175C2.03979 5.21625 2.14526 4.96163 2.333 4.7739C2.52073 4.58617 2.77535 4.4807 3.04085 4.4807H6.83984C7.10491 4.48181 7.35871 4.58802 7.54559 4.77601L12.9062 10.1316C12.9531 10.1782 12.9904 10.2335 13.0158 10.2945C13.0412 10.3555 13.0543 10.4209 13.0543 10.487C13.0543 10.5531 13.0412 10.6185 13.0158 10.6795C12.9904 10.7405 12.9531 10.7959 12.9062 10.8424L8.40148 15.3471C8.35472 15.3935 8.29925 15.4302 8.23827 15.4551C8.17728 15.48 8.11198 15.4927 8.04611 15.4923ZM3.04085 5.48175V9.28075L8.04611 14.286L11.8451 10.487L6.83984 5.48175H3.04085ZM5.04295 8.48491C5.59582 8.48491 6.04401 8.03672 6.04401 7.48386C6.04401 6.93099 5.59582 6.4828 5.04295 6.4828C4.49009 6.4828 4.0419 6.93099 4.0419 7.48386C4.0419 8.03672 4.49009 8.48491 5.04295 8.48491Z"
+                      fill="#111827" />
+                  </svg>
+                  <span class="fs-7"><ngx-skeleton-loader
+                    count="1"
+                    appearance="line"
+                    [theme]="{background: 'lightgray'}"
+                  ></ngx-skeleton-loader></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-12 col-md-6 col-lg-5">
+        <app-statement-assesment size="30" />
+        <div class="accordion">
+          <div class="content fs-6">
+            <ngx-skeleton-loader
+                count="1"
+                appearance="line"
+                [theme]="{background: 'lightgray'}"
+              ></ngx-skeleton-loader>
+          </div>
+          <div class="accordion-content mh-400px" [ngStyle]="{'height': openExplanation ? '150px': '0px'}">
+            <div class="scroll-vertical mh-400px my-5 h-full content fs-6">
+              <ngx-skeleton-loader
+                count="1"
+                appearance="line"
+                [theme]="{background: 'lightgray'}"
+              ></ngx-skeleton-loader>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center w-100">
+            <a class="accordion-link text-dark text-underline" (click)="openExplanation = !openExplanation">
+              {{openExplanation ? 'Hide section':
+              'Know the Whole Truth'}}
+            </a>
+            <a class="group d-flex text-gray align-items-center text-none cursor-pointer hover:scale-110 hover:!text-black transition-all duration-500 ease-in-out"
+              >
+              <!-- <img class="h-15px" src="/assets/srcs/link.svg"/> -->
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_922_5912)">
+                  <path class="group-hover:fill-black" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M13.688 3.22936C14.0527 3.38078 14.3839 3.60269 14.6626 3.88237C15.2257 4.44354 15.5431 5.20529 15.5449 6.0003C15.5468 6.7953 15.2331 7.55854 14.6726 8.12236L10.6726 12.1224C10.3925 12.4028 10.0596 12.625 9.69314 12.776C9.32669 12.9271 8.93394 13.004 8.53758 13.0024C7.74261 13.007 6.97832 12.6959 6.41258 12.1374C6.1329 11.8587 5.91099 11.5275 5.75957 11.1628C5.60816 10.7982 5.53021 10.4072 5.53021 10.0124C5.53021 9.61752 5.60816 9.22656 5.75957 8.86191C5.91099 8.49725 6.1329 8.16608 6.41258 7.88737L7.12258 7.17737L7.82758 7.88737L7.12258 8.59737C6.7473 8.97331 6.53673 9.48294 6.5372 10.0141C6.53767 10.5453 6.74913 11.0546 7.12508 11.4299C7.50102 11.8051 8.01065 12.0157 8.54185 12.0152C9.07304 12.0148 9.5823 11.8033 9.95758 11.4274L13.9576 7.42737C14.1437 7.24122 14.2914 7.02023 14.3921 6.77701C14.4929 6.5338 14.5447 6.27312 14.5447 6.00987C14.5447 5.74661 14.4929 5.48593 14.3921 5.24272C14.2914 4.9995 14.1437 4.77851 13.9576 4.59237C13.7714 4.40622 13.5504 4.25856 13.3072 4.15781C13.064 4.05707 12.8033 4.00522 12.5401 4.00522C12.2768 4.00522 12.0161 4.05707 11.7729 4.15781C11.5297 4.25856 11.3087 4.40622 11.1226 4.59237L10.4126 3.88237C10.6913 3.60269 11.0225 3.38078 11.3871 3.22936C11.7518 3.07794 12.1427 3 12.5376 3C12.9324 3 13.3234 3.07794 13.688 3.22936ZM1.69663 12.2624C1.79773 12.5056 1.94588 12.7265 2.13258 12.9124C2.31842 13.0991 2.53931 13.2472 2.78257 13.3483C3.02582 13.4494 3.28666 13.5014 3.55008 13.5014C3.81351 13.5014 4.07434 13.4494 4.3176 13.3483C4.56086 13.2472 4.78175 13.0991 4.96758 12.9124L5.67758 13.6224C5.10844 14.1868 4.33913 14.5031 3.53758 14.5024C2.74303 14.5123 1.97699 14.2066 1.40758 13.6524C1.12715 13.3736 0.904605 13.0421 0.752744 12.6769C0.600884 12.3118 0.522705 11.9203 0.522705 11.5249C0.522705 11.1294 0.600884 10.7379 0.752744 10.3728C0.904605 10.0076 1.12715 9.67615 1.40758 9.39735L5.40758 5.39735C5.97183 4.8331 6.73711 4.51611 7.53508 4.51611C8.33305 4.51611 9.09833 4.8331 9.66258 5.39735C10.2268 5.9616 10.5438 6.72689 10.5438 7.52485C10.5438 8.32282 10.2268 9.0881 9.66258 9.65235L8.60258 10.7124L7.89258 10.0024L8.95258 8.92735C9.13945 8.74029 9.28736 8.51803 9.38778 8.27343C9.48819 8.02884 9.53911 7.76676 9.53758 7.50235C9.54276 7.23877 9.49497 6.97684 9.39706 6.73206C9.29915 6.48729 9.15311 6.26465 8.96758 6.07735C8.78175 5.89065 8.56086 5.7425 8.3176 5.6414C8.07434 5.54031 7.81351 5.48827 7.55008 5.48827C7.28666 5.48827 7.02582 5.54031 6.78257 5.6414C6.53931 5.7425 6.31842 5.89065 6.13258 6.07735L2.13258 10.0774C1.94588 10.2632 1.79773 10.4841 1.69663 10.7273C1.59554 10.9706 1.5435 11.2314 1.5435 11.4949C1.5435 11.7583 1.59554 12.0191 1.69663 12.2624Z"
+                    fill="#9B9B9B"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_922_5912">
+                    <rect width="16" height="16" fill="white" transform="translate(0.0375977 0.501953)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+              <span class="ms-1">Read full article</span>
+            </a>
+          </div>
+        </div>
+        <!-- )} -->
+      </div>
+    </div>
+  </div>
+ 
+</ng-template>
+

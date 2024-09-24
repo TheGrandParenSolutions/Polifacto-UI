@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row g-10">
+        <div class="col col-12">
+            <div class="mb-10">
+                <h1 class="display-4 !text-4xl fw-bold mb-5">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;"  [innerHTML]="article?.articleTitle"></font>
+                    </font>
+                </h1>
+                <!-- if verified -->
+            <div class="mb-5 mb-lg-10">
+                <h2 *ngIf="article?.articleVerificationStatus === 'truth'" class='text-2xl text-uppercase text-primary'>
+                    We have verified
+                </h2>
+                <h2 *ngIf="article?.articleVerificationStatus !== 'truth'" class='text-2xl text-uppercase text-red'>
+                    Verification for this article is under process.
+                </h2>
+                <p class="text-2xl">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                            {{article?.articleSource + ', ' + article?.articlePublishedDate}}
+                         </font>
+                    </font>
+                    
+                </p>
+
+            </div>
+                <p class="text-xl whitespace-pre-line">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;" [innerHTML]="article?.articleFullDescription"></font>
+                    </font>
+                </p>
+            </div>
+            <div *ngIf="article?.articleVideoUrl" class="col col-12">
+                <div>
+                    <div class="w-100 position-relative">
+                        <app-video-player [thumbnail]="'/assets/images/workshop.jpg'"
+                            [videoSrc]="'/assets/media/video-main.mp4'"></app-video-player>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
