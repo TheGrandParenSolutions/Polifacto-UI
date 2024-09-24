@@ -28,6 +28,12 @@
     "strictInjectionParameters": false,
     "strictInputAccessModifiers": false,
     "strictTemplates": false,
-    "ignoreDuringBuilds":true
+    "ignoreDuringBuilds":true,
+    "extenderDiagnostics": {
+      "defaultCategory": "suppress",
+      "checks": {
+        "optionalChainNotNullable": "suppress"
+      }
+    }
   }
 }
