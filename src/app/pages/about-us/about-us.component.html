@@ -1,14 +1,10 @@
 <div id="container-id" class="container">
   <div class="row g-5 g-lg-10" data-controller="components--sticky"
-    data-action="scroll@window->components--sticky#onScroll"
-    data-components--sticky-breakpoint="992">
+    data-action="scroll@window->components--sticky#onScroll" data-components--sticky-breakpoint="992">
 
     <div class="col col-12 col-lg-3 position-relative flex items-end">
-      <nav class="side-nav w-100"
-        [ngClass]="{'fixed': !hasUserReachedTheBottomOfThePage}"
-        data-bs-target="components--sticky.sticky"
-        style="width: 250px !important;"
-        [ngStyle]="{'top': '145px' }">
+      <nav class="side-nav w-100" [ngClass]="{'fixed': !hasUserReachedTheBottomOfThePage}"
+        data-bs-target="components--sticky.sticky" style="width: 250px !important;" [ngStyle]="{'top': '145px' }">
         <h1 class="display-4 fw-bold mb-4 p-0">
           <font style="vertical-align: inherit;">
             <font style="vertical-align: inherit;">About us</font>
@@ -16,8 +12,7 @@
         </h1>
         <ul class="list p-0">
           <li (click)="scrollIntoView(polifactoSection, 'about')">
-            <a
-              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
               [ngClass]="{'active': activeLink === 'about'}">
               <span>
                 <font style="vertical-align: inherit;">
@@ -28,8 +23,7 @@
             </a>
           </li>
           <li (click)="scrollIntoView(evaluationSection,'evaluate')">
-            <a
-              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
               [ngClass]="{'active': activeLink === 'evaluate'}">
               <span>
                 <font style="vertical-align: inherit;">
@@ -40,8 +34,7 @@
             </a>
           </li>
           <li (click)="scrollIntoView(assesmentSection, 'assesment')">
-            <a
-              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
               [ngClass]="{'active': activeLink === 'assesment'}">
               <span>
                 <font style="vertical-align: inherit;">
@@ -52,8 +45,7 @@
             </a>
           </li>
           <li (click)="scrollIntoView(financeSection, 'finance')">
-            <a
-              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
               [ngClass]="{'active': activeLink === 'finance'}">
               <span>
                 <font style="vertical-align: inherit;">
@@ -63,8 +55,7 @@
             </a>
           </li>
           <li (click)="scrollIntoView(ethicsSection, 'ethics')">
-            <a
-              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
               [ngClass]="{'active': activeLink === 'ethics'}">
               <span>
                 <font style="vertical-align: inherit;">
@@ -75,8 +66,7 @@
             </a>
           </li>
           <li (click)="scrollIntoView(faqSection, 'faq')">
-            <a
-              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
               [ngClass]="{'active': activeLink === 'faq'}">
               <span>
                 <font style="vertical-align: inherit;">
@@ -87,8 +77,7 @@
             </a>
           </li>
           <li (click)="scrollIntoView(contactSection, 'contacts')">
-            <a
-              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
               [ngClass]="{'active': activeLink === 'contacts'}">
               <span>
                 <font style="vertical-align: inherit;">
@@ -102,23 +91,20 @@
       </nav>
     </div>
 
-    <div class="col col-12 col-lg-9"
-      data-bs-target="components--sticky.content">
+    <div class="col col-12 col-lg-9" data-bs-target="components--sticky.content">
 
-      <div #polifactoSection class="accordion pb-10" id="co-je-to-polifacto-cz">
+      <div #polifactoSection class="accordion pb-10" id="co-je-to-polifacto-in">
         <h2 class="pb-4 mb-0">
           <font style="vertical-align: inherit">
             <font style="vertical-align: inherit">1. About Polifacto</font>
           </font>
         </h2>
 
-        <div class="accordion-item" id="co-je-to-polifacto-cz">
-          <h2 class="accordion-header" id="heading-co-je-to-polifacto-cz">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-co-je-to-polifacto-cz"
-              aria-expanded="false"
-              aria-controls="collapse-co-je-to-polifacto-cz">
+        <div class="accordion-item" id="co-je-to-polifacto-in">
+          <h2 class="accordion-header" id="heading-co-je-to-polifacto-in">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-co-je-to-polifacto-in" aria-expanded="false"
+              aria-controls="collapse-co-je-to-polifacto-in">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   What is Polifacto?
@@ -126,23 +112,21 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-co-je-to-polifacto-cz"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-co-je-to-polifacto-cz"
-            data-bs-parent="#co-je-to-polifacto-cz" style>
+          <div id="collapse-co-je-to-polifacto-in" class="accordion-collapse collapse"
+            aria-labelledby="heading-co-je-to-polifacto-in" data-bs-parent="#co-je-to-polifacto-in" style>
             <div class="accordion-body">
               <div class="content">
                 <p>
                   <strong>
                     <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">polifactoue</font>
+                      <font style="vertical-align: inherit">Polifacto</font>
                     </font>
                   </strong>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit"> . </font>
+                    <font style="vertical-align: inherit">.</font>
                   </font><strong>
                     <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">cz</font>
+                      <font style="vertical-align: inherit">in</font>
                     </font>
                   </strong>
                   <font style="vertical-align: inherit">
@@ -205,8 +189,7 @@
                   </a>
                   <font style="vertical-align: inherit">
                     <font style="vertical-align: inherit"> or </font>
-                  </font><a
-                    href="https://www.washingtonpost.com/news/fact-checker/">
+                  </font><a href="https://www.washingtonpost.com/news/fact-checker/">
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit">The Washington Post
                         Fact Checker</font>
@@ -220,14 +203,11 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item" id="jak-projekt-polifacto-cz-vznikl">
-          <h2 class="accordion-header"
-            id="heading-jak-projekt-polifacto-cz-vznikl">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-projekt-polifacto-cz-vznikl"
-              aria-expanded="false"
-              aria-controls="collapse-jak-projekt-polifacto-cz-vznikl">
+        <div class="accordion-item" id="jak-projekt-polifacto-in-vznikl">
+          <h2 class="accordion-header" id="heading-jak-projekt-polifacto-in-vznikl">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-projekt-polifacto-in-vznikl" aria-expanded="false"
+              aria-controls="collapse-jak-projekt-polifacto-in-vznikl">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   How did the Polifacto project come about?
@@ -235,10 +215,8 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-jak-projekt-polifacto-cz-vznikl"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-projekt-polifacto-cz-vznikl"
-            data-bs-parent="#co-je-to-polifacto-cz" style>
+          <div id="collapse-jak-projekt-polifacto-in-vznikl" class="accordion-collapse collapse"
+            aria-labelledby="heading-jak-projekt-polifacto-in-vznikl" data-bs-parent="#co-je-to-polifacto-in" style>
             <div class="accordion-body">
               <div class="content">
                 <p>
@@ -265,30 +243,25 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item" id="spolek-polifacto-cz">
-          <h2 class="accordion-header" id="heading-spolek-polifacto-cz">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-spolek-polifacto-cz"
-              aria-expanded="false"
-              aria-controls="collapse-spolek-polifacto-cz">
+        <div class="accordion-item" id="spolek-polifacto-in">
+          <h2 class="accordion-header" id="heading-spolek-polifacto-in">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-spolek-polifacto-in" aria-expanded="false"
+              aria-controls="collapse-spolek-polifacto-in">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit"> IFCN </font>
               </font>
             </button>
           </h2>
-          <div id="collapse-spolek-polifacto-cz"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-spolek-polifacto-cz"
-            data-bs-parent="#co-je-to-polifacto-cz">
+          <div id="collapse-spolek-polifacto-in" class="accordion-collapse collapse"
+            aria-labelledby="heading-spolek-polifacto-in" data-bs-parent="#co-je-to-polifacto-in">
             <div class="accordion-body">
               <div class="content">
                 <p>
                   <font style="vertical-align: inherit">
                     <font style="vertical-align: inherit">Polifacto is
                     </font>
-                  </font><a
-                    href="https://ifcncodeofprinciples.poynter.org/profile/polifactocz">
+                  </font><a href="https://ifcncodeofprinciples.poynter.org/profile/polifactoin">
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit">a signatory</font>
                     </font>
@@ -309,8 +282,7 @@
                       . If you believe that we are not meeting any of the
                       principles, you can
                     </font>
-                  </font><a
-                    href="https://ifcncodeofprinciples.poynter.org/complaints-policy">
+                  </font><a href="https://ifcncodeofprinciples.poynter.org/complaints-policy">
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit">tell</font>
                     </font>
@@ -323,13 +295,11 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item" id="kdo-pripravuje-polifacto-cz">
-          <h2 class="accordion-header" id="heading-kdo-pripravuje-polifacto-cz">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-kdo-pripravuje-polifacto-cz"
-              aria-expanded="false"
-              aria-controls="collapse-kdo-pripravuje-polifacto-cz">
+        <div class="accordion-item" id="kdo-pripravuje-polifacto-in">
+          <h2 class="accordion-header" id="heading-kdo-pripravuje-polifacto-in">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-kdo-pripravuje-polifacto-in" aria-expanded="false"
+              aria-controls="collapse-kdo-pripravuje-polifacto-in">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   Who prepares Polifacto?
@@ -337,18 +307,15 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-kdo-pripravuje-polifacto-cz"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-kdo-pripravuje-polifacto-cz"
-            data-bs-parent="#co-je-to-polifacto-cz">
+          <div id="collapse-kdo-pripravuje-polifacto-in" class="accordion-collapse collapse"
+            aria-labelledby="heading-kdo-pripravuje-polifacto-in" data-bs-parent="#co-je-to-polifacto-in">
             <div class="accordion-body">
               <div class="row g-5">
                 <div class="col col-12">
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/7vcs18h2yxcqx01psgbnip7zb9x6"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/7vcs18h2yxcqx01psgbnip7zb9x6"
                           alt="Petr Gongala" class="w-100" />
                       </span>
                     </div>
@@ -376,7 +343,7 @@
                             that Polifacto will be an inspiration and challenge
                             for others who want to participate in the
                             development of civil society in India."
-                            </font>
+                          </font>
                         </font>
                       </p>
                     </div>
@@ -387,8 +354,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/awhpetigqtzp01d9y87pkx4w7szt"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/awhpetigqtzp01d9y87pkx4w7szt"
                           alt="Jan Fridrichovský" class="w-100" />
                       </span>
                     </div>
@@ -402,8 +368,7 @@
                       <p class="fs-6">
                         <b>
                           <font style="vertical-align: inherit">
-                            <font
-                              style="vertical-align: inherit">Editor-in-chief,
+                            <font style="vertical-align: inherit">Editor-in-chief,
                               member of the board</font>
                           </font>
                         </b>
@@ -424,8 +389,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/480l52megdo3on9lt4zlyths291k"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/480l52megdo3on9lt4zlyths291k"
                           alt="Kamila Žihlová" class="w-100" />
                       </span>
                     </div>
@@ -461,8 +425,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/h8932x8rtrym8smwyn6tlygvt9w5"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/h8932x8rtrym8smwyn6tlygvt9w5"
                           alt="Jakub Cajkář" class="w-100" />
                       </span>
                     </div>
@@ -497,8 +460,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/o3nmvuddx2oussmowppttjmzo6g9"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/o3nmvuddx2oussmowppttjmzo6g9"
                           alt="Natálie Kopecká" class="w-100" />
                       </span>
                     </div>
@@ -533,8 +495,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/pq6bof0ze334w9m5zegy8puirj8c"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/pq6bof0ze334w9m5zegy8puirj8c"
                           alt="Markéta Haderková" class="w-100" />
                       </span>
                     </div>
@@ -571,8 +532,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/r6tiaupfybzrcqfnya9zm6iqux1c"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/r6tiaupfybzrcqfnya9zm6iqux1c"
                           alt="Ondřej Kutman" class="w-100" />
                       </span>
                     </div>
@@ -608,8 +568,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/65bpxqnnks0fqmz36p7z2xt5fha1"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/65bpxqnnks0fqmz36p7z2xt5fha1"
                           alt="Ronja Drahanská" class="w-100" />
                       </span>
                     </div>
@@ -644,8 +603,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/5t5kjfl6pclxn6jsn0ud3c5zjdb3"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/5t5kjfl6pclxn6jsn0ud3c5zjdb3"
                           alt="Ondřej Havránek" class="w-100" />
                       </span>
                     </div>
@@ -680,8 +638,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/7vhgguxkm2r8tiyrtb0huperkqzy"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/7vhgguxkm2r8tiyrtb0huperkqzy"
                           alt="Jan Vlček" class="w-100" />
                       </span>
                     </div>
@@ -716,8 +673,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/7dlt8coiwxc87imry0k3a9sq7jxf"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/7dlt8coiwxc87imry0k3a9sq7jxf"
                           alt="Václav Boháč" class="w-100" />
                       </span>
                     </div>
@@ -731,8 +687,7 @@
                       <p class="fs-6">
                         <b>
                           <font style="vertical-align: inherit">
-                            <font
-                              style="vertical-align: inherit">Webmaster</font>
+                            <font style="vertical-align: inherit">Webmaster</font>
                           </font>
                         </b>
                         <font style="vertical-align: inherit">
@@ -748,8 +703,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/d8m4snu0q94azgz8i04hy9eij9ij"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/d8m4snu0q94azgz8i04hy9eij9ij"
                           alt="Jan Tvrdoň" class="w-100" />
                       </span>
                     </div>
@@ -773,8 +727,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/hcidt3vyd2nhptoellish6tbiwfo"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/hcidt3vyd2nhptoellish6tbiwfo"
                           alt="Alice Minářová" class="w-100" />
                       </span>
                     </div>
@@ -796,8 +749,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/c8m8ohf8579zcv63j2ospx89efnj"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/c8m8ohf8579zcv63j2ospx89efnj"
                           alt="Barbora Marešová" class="w-100" />
                       </span>
                     </div>
@@ -818,8 +770,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/wdd6bmg2cuiuzq3dyn524b4pkfvr"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/wdd6bmg2cuiuzq3dyn524b4pkfvr"
                           alt="Kristina Dědečková" class="w-100" />
                       </span>
                     </div>
@@ -844,8 +795,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/2wot0sx0uohgx9ydn8o5x4j5mynd"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/2wot0sx0uohgx9ydn8o5x4j5mynd"
                           alt="Anna Ledahudcová" class="w-100" />
                       </span>
                     </div>
@@ -870,8 +820,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/5uslai31u0qgd45a5z95grjg1o7b"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/5uslai31u0qgd45a5z95grjg1o7b"
                           alt="Adéla Samková" class="w-100" />
                       </span>
                     </div>
@@ -896,8 +845,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/achah6t35vq2bett63c4s86o5czj"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/achah6t35vq2bett63c4s86o5inj"
                           alt="Jakub Mařík" class="w-100" />
                       </span>
                     </div>
@@ -918,8 +866,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/p7hjhwc2lgd64be1it82747dyxvd"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/p7hjhwc2lgd64be1it82747dyxvd"
                           alt="Alžběta Kabrdová" class="w-100" />
                       </span>
                     </div>
@@ -941,8 +888,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/va9j4xx1t6gl6g8htby5ss10w821"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/va9j4xx1t6gl6g8htby5ss10w821"
                           alt="Anna Chocová" class="w-100" />
                       </span>
                     </div>
@@ -964,8 +910,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/rwvcnxlgezwvntuj7u10rwoj2udt"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/rwvcnxlgezwvntuj7u10rwoj2udt"
                           alt="Oliver Eredia" class="w-100" />
                       </span>
                     </div>
@@ -974,7 +919,7 @@
                       <p class="fs-6">
                         <b>Analytik</b> — Dokončuje studium žurnalistiky a
                         politologie na Masarykově univerzitě. První pořádnou
-                        zkušenost měl na iROZHLAS.cz a jeden semestr strávil
+                        zkušenost měl na iROZHLAS.in a jeden semestr strávil
                         studiem politologie v Německu. Mezi zájmy v oboru patří
                         stranické a politické systémy v Česku, západní Evropě a
                         vývoj demokracie v postkoloniálních zemích.
@@ -987,8 +932,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/v5115eef0vck7neyut9kn4qw5emj"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/v5115eef0vck7neyut9kn4qw5emj"
                           alt="Tomáš Pelc" class="w-100" />
                       </span>
                     </div>
@@ -1008,8 +952,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/pm4r25i33dhsd3nclqytxq4qe64r"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/pm4r25i33dhsd3nclqytxq4qe64r"
                           alt="Barbora Rezková" class="w-100" />
                       </span>
                     </div>
@@ -1029,8 +972,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/ob6slxiqas2swdg904ojj2n3xwni"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/ob6slxiqas2swdg904ojj2n3xwni"
                           alt="Martin Petrov" class="w-100" />
                       </span>
                     </div>
@@ -1051,8 +993,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/twfn3w4azaepz9eh0vay48aex2ub"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/twfn3w4azaepz9eh0vay48aex2ub"
                           alt="Jakub Šindelář" class="w-100" />
                       </span>
                     </div>
@@ -1073,8 +1014,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/8nqs71bgimvp17cfphz7gclrszcq"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/8nqs71bgimvp17cfphz7gclrszcq"
                           alt="Adam Černička" class="w-100" />
                       </span>
                     </div>
@@ -1094,8 +1034,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/h8sqo6nthwoomsz828nxl49pptsy"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/h8sqo6nthwoomsz828nxl49pptsy"
                           alt="Martin Šmejkal" class="w-100" />
                       </span>
                     </div>
@@ -1114,8 +1053,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/v8cnz3rd2kqenkii61dwigvmhn34"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/v8cnz3rd2kqenkii61dwigvmhn34"
                           alt="Anna Spirmanová" class="w-100" />
                       </span>
                     </div>
@@ -1137,8 +1075,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/ft4apzq8ec09d7rfuepo9ougn3i5"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/ft4apzq8ec09d7rfuepo9ougn3i5"
                           alt="Nikola Tettauer Kristenová" class="w-100" />
                       </span>
                     </div>
@@ -1159,8 +1096,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/fzdy0tra3wjep2zj3t5j35877cit"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/fzdy0tra3wjep2zj3t5j35877cit"
                           alt="Adéla Otavová" class="w-100" />
                       </span>
                     </div>
@@ -1183,8 +1119,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/w8s2sgqcd6gv2f1ss94nw00hkg1c"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/w8s2sgqcd6gv2f1ss94nw00hkg1c"
                           alt="Mariana Červinková" class="w-100" />
                       </span>
                     </div>
@@ -1206,8 +1141,7 @@
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
                       <span class="symbol symbol-square symbol-circle">
-                        <img
-                          src="https://dem-prod-s3.ams3.digitaloceanspaces.com/synxc8piuviuactcnln7kf4ugigi"
+                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/synxc8piuviuactcnln7kf4ugigi"
                           alt="Iva Kovačičová" class="w-100" />
                       </span>
                     </div>
@@ -1236,10 +1170,8 @@
 
         <div class="accordion-item" id="co-je-to-factcheck">
           <h2 class="accordion-header" id="heading-co-je-to-factcheck">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-co-je-to-factcheck"
-              aria-expanded="false"
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-co-je-to-factcheck" aria-expanded="false"
               aria-controls="collapse-co-je-to-factcheck">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
@@ -1248,10 +1180,8 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-co-je-to-factcheck"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-co-je-to-factcheck"
-            data-bs-parent="#jak-hodnotime" style>
+          <div id="collapse-co-je-to-factcheck" class="accordion-collapse collapse"
+            aria-labelledby="heading-co-je-to-factcheck" data-bs-parent="#jak-hodnotime" style>
             <div class="accordion-body">
               <div class="content">
                 <p>
@@ -1266,12 +1196,9 @@
           </div>
         </div>
         <div class="accordion-item" id="jak-vybirame-obsah-k-overeni">
-          <h2 class="accordion-header"
-            id="heading-jak-vybirame-obsah-k-overeni">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-vybirame-obsah-k-overeni"
-              aria-expanded="false"
+          <h2 class="accordion-header" id="heading-jak-vybirame-obsah-k-overeni">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-vybirame-obsah-k-overeni" aria-expanded="false"
               aria-controls="collapse-jak-vybirame-obsah-k-overeni">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
@@ -1280,10 +1207,8 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-jak-vybirame-obsah-k-overeni"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-vybirame-obsah-k-overeni"
-            data-bs-parent="#jak-hodnotime">
+          <div id="collapse-jak-vybirame-obsah-k-overeni" class="accordion-collapse collapse"
+            aria-labelledby="heading-jak-vybirame-obsah-k-overeni" data-bs-parent="#jak-hodnotime">
             <div class="accordion-body">
               <div class="content">
                 <p>Ověřujeme vesměs dva typy obsahu:</p>
@@ -1343,8 +1268,7 @@
                 <p>
                   Náš výběr výroků k ověření v posledku závisí na dostupnosti a
                   kvalitě obsahu, a nebude tak nikdy dokonalý. Vítáme proto
-                  <a
-                    href="https://Polifacto/stranka/mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obra">doporučení
+                  <a href="https://Polifacto/stranka/mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obra">doporučení
                     i výtky</a>
                   k hodnocení i výběru.
                 </p>
@@ -1352,14 +1276,11 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item" id="co-projekt-polifacto-cz-nehodnoti">
-          <h2 class="accordion-header"
-            id="heading-co-projekt-polifacto-cz-nehodnoti">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-co-projekt-polifacto-cz-nehodnoti"
-              aria-expanded="false"
-              aria-controls="collapse-co-projekt-polifacto-cz-nehodnoti">
+        <div class="accordion-item" id="co-projekt-polifacto-in-nehodnoti">
+          <h2 class="accordion-header" id="heading-co-projekt-polifacto-in-nehodnoti">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-co-projekt-polifacto-in-nehodnoti" aria-expanded="false"
+              aria-controls="collapse-co-projekt-polifacto-in-nehodnoti">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   What does the Polifacto project not evaluate?
@@ -1367,10 +1288,8 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-co-projekt-polifacto-cz-nehodnoti"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-co-projekt-polifacto-cz-nehodnoti"
-            data-bs-parent="#jak-hodnotime">
+          <div id="collapse-co-projekt-polifacto-in-nehodnoti" class="accordion-collapse collapse"
+            aria-labelledby="heading-co-projekt-polifacto-in-nehodnoti" data-bs-parent="#jak-hodnotime">
             <div class="accordion-body">
               <div class="content">
                 <p>
@@ -1397,12 +1316,9 @@
           </div>
         </div>
         <div class="accordion-item" id="jakym-zpusobem-vyroky-hodnotime">
-          <h2 class="accordion-header"
-            id="heading-jakym-zpusobem-vyroky-hodnotime">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-jakym-zpusobem-vyroky-hodnotime"
-              aria-expanded="false"
+          <h2 class="accordion-header" id="heading-jakym-zpusobem-vyroky-hodnotime">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-jakym-zpusobem-vyroky-hodnotime" aria-expanded="false"
               aria-controls="collapse-jakym-zpusobem-vyroky-hodnotime">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
@@ -1411,10 +1327,8 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-jakym-zpusobem-vyroky-hodnotime"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jakym-zpusobem-vyroky-hodnotime"
-            data-bs-parent="#jak-hodnotime">
+          <div id="collapse-jakym-zpusobem-vyroky-hodnotime" class="accordion-collapse collapse"
+            aria-labelledby="heading-jakym-zpusobem-vyroky-hodnotime" data-bs-parent="#jak-hodnotime">
             <div class="accordion-body">
               <div class="content">
                 <p>
@@ -1519,14 +1433,10 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item"
-          id="jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni">
-          <h2 class="accordion-header"
-            id="heading-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni"
-              aria-expanded="false"
+        <div class="accordion-item" id="jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni">
+          <h2 class="accordion-header" id="heading-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni" aria-expanded="false"
               aria-controls="collapse-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
@@ -1535,8 +1445,7 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni"
-            class="accordion-collapse collapse"
+          <div id="collapse-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni" class="accordion-collapse collapse"
             aria-labelledby="heading-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni"
             data-bs-parent="#jak-hodnotime">
             <div class="accordion-body">
@@ -1573,14 +1482,10 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item"
-          id="jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
-          <h2 class="accordion-header"
-            id="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
-              aria-expanded="false"
+        <div class="accordion-item" id="jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
+          <h2 class="accordion-header" id="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni" aria-expanded="false"
               aria-controls="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
@@ -1589,10 +1494,8 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
-            data-bs-parent="#jak-hodnotime">
+          <div id="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni" class="accordion-collapse collapse"
+            aria-labelledby="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni" data-bs-parent="#jak-hodnotime">
             <div class="accordion-body">
               <div class="content">
                 <p>
@@ -1638,12 +1541,9 @@
           </font>
         </h2>
 
-        <div class="accordion-item"
-          id="mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit">
-          <h2 class="accordion-header"
-            id="heading-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
+        <div class="accordion-item" id="mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit">
+          <h2 class="accordion-header" id="heading-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapse-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit"
               aria-expanded="false"
               aria-controls="collapse-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit">
@@ -1655,8 +1555,7 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit"
+          <div id="collapse-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit"
             class="accordion-collapse collapse"
             aria-labelledby="heading-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit"
             data-bs-parent="#vytky-k-hodnoceni" style>
@@ -1701,8 +1600,7 @@
                   naší činnosti pro nás mohou tyto podněty být důležitým
                   impulsem, zda právě danou věc ověřit. Každým podnětem se
                   zabývají naši editoři a posuzují jej z hlediska naší
-                  <a
-                    href="https://Polifacto/stranka/jak-hodnotime-metodika">metodiky</a>.
+                  <a href="https://Polifacto/stranka/jak-hodnotime-metodika">metodiky</a>.
                   Pokud je vámi navržený výrok
                   ověřitelný a odpovídá našim
                   časovým možnostem a požadavkům vyrovnanosti obsahu, rádi jej
@@ -1714,12 +1612,9 @@
           </div>
         </div>
         <div class="accordion-item" id="provedena-doplneni-a-opravy-hodnoceni">
-          <h2 class="accordion-header"
-            id="heading-provedena-doplneni-a-opravy-hodnoceni">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-provedena-doplneni-a-opravy-hodnoceni"
-              aria-expanded="false"
+          <h2 class="accordion-header" id="heading-provedena-doplneni-a-opravy-hodnoceni">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-provedena-doplneni-a-opravy-hodnoceni" aria-expanded="false"
               aria-controls="collapse-provedena-doplneni-a-opravy-hodnoceni">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
@@ -1728,57 +1623,43 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-provedena-doplneni-a-opravy-hodnoceni"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-provedena-doplneni-a-opravy-hodnoceni"
-            data-bs-parent="#vytky-k-hodnoceni">
+          <div id="collapse-provedena-doplneni-a-opravy-hodnoceni" class="accordion-collapse collapse"
+            aria-labelledby="heading-provedena-doplneni-a-opravy-hodnoceni" data-bs-parent="#vytky-k-hodnoceni">
             <div class="accordion-body">
               <div class="content">
                 <p>
                   Kateřina Konečná, České zájmy v Evropě: Superdebata lídrů, 10.
-                  dubna 2024 (<a
-                    href="https://Polifacto/vyrok/23255">odkaz</a>)<br />Alena
+                  dubna 2024 (<a href="https://Polifacto/vyrok/23255">odkaz</a>)<br />Alena
                   Schillerová, Facebook, 29.
-                  března 2024 (<a
-                    href="https://Polifacto/vyrok/23245">odkaz</a>)<br />Alena
+                  března 2024 (<a href="https://Polifacto/vyrok/23245">odkaz</a>)<br />Alena
                   Schillerová, Facebook, 29.
-                  března 2024 (<a
-                    href="https://Polifacto/vyrok/23239">odkaz</a>)<br />Alena
+                  března 2024 (<a href="https://Polifacto/vyrok/23239">odkaz</a>)<br />Alena
                   Schillerová, Facebook, 29.
-                  března 2024 (<a
-                    href="https://Polifacto/vyrok/23240">odkaz</a>)<br />Alena
+                  března 2024 (<a href="https://Polifacto/vyrok/23240">odkaz</a>)<br />Alena
                   Schillerová, Facebook, 29.
-                  března 2024 (<a
-                    href="https://Polifacto/vyrok/23243">odkaz</a>)<br />Vít
+                  března 2024 (<a href="https://Polifacto/vyrok/23243">odkaz</a>)<br />Vít
                   Rakušan, Partie Terezie
                   Tománkové, 20. srpna 2023
                   (<a href="https://Polifacto/vyrok/22925">odkaz</a>)<br />Eva
                   Decroix, Události, komentáře, 19. června 2023 (<a
                     href="https://Polifacto/vyrok/22849">odkaz</a>).<br />Danuše
-                  Nerudová, Blesk.cz, 3. ledna 2023 (<a
-                    href="https://Polifacto/vyrok/22358">odkaz</a>).<br />Danuše
-                  Nerudová, Blesk.cz, 3. ledna 2023 (<a
-                    href="https://Polifacto/vyrok/22373">odkaz</a>).<br />Josef
+                  Nerudová, Blesk.in, 3. ledna 2023 (<a href="https://Polifacto/vyrok/22358">odkaz</a>).<br />Danuše
+                  Nerudová, Blesk.in, 3. ledna 2023 (<a href="https://Polifacto/vyrok/22373">odkaz</a>).<br />Josef
                   Středula, Interview ČT24, 25. listopadu
                   2022
                   (<a href="https://Polifacto/vyrok/22271">odkaz</a>).<br />Jiří
                   Dolejš, Předvolební debata Českého
                   rozhlasu, 21.
-                  září 2021 (<a
-                    href="https://Polifacto/vyrok/21111">odkaz</a>).<br />Ivan
-                  Bartoš, iDNES.cz, 2. dubna
-                  2021 (<a
-                    href="https://Polifacto/vyrok/20576">odkaz</a>).<br />Ivo
+                  září 2021 (<a href="https://Polifacto/vyrok/21111">odkaz</a>).<br />Ivan
+                  Bartoš, iDNES.in, 2. dubna
+                  2021 (<a href="https://Polifacto/vyrok/20576">odkaz</a>).<br />Ivo
                   Vondrák, Události, komentáře, 8.
-                  března 2021 (<a
-                    href="https://Polifacto/vyrok/20418">odkaz</a>).<br />Olga
+                  března 2021 (<a href="https://Polifacto/vyrok/20418">odkaz</a>).<br />Olga
                   Richterová, Partie Terezie
                   Tománkové, 24. ledna
-                  2021 (<a
-                    href="https://Polifacto/vyrok/20298">odkaz</a>).<br />Vít
+                  2021 (<a href="https://Polifacto/vyrok/20298">odkaz</a>).<br />Vít
                   Rakušan, Interview Plus, 13. ledna
-                  2021 (<a
-                    href="https://Polifacto/vyrok/20231">odkaz</a>).<br />Miloš
+                  2021 (<a href="https://Polifacto/vyrok/20231">odkaz</a>).<br />Miloš
                   Zeman, S prezidentem v Lánech,
                   10. ledna 2021
                   (<a href="https://Polifacto/vyrok/20194">odkaz</a>).<br />Ivan
@@ -1788,85 +1669,65 @@
                   Zdechovský, Seznam Zprávy, 30.
                   listopadu 2020
                   (<a href="https://Polifacto/vyrok/20107">odkaz</a>).<br />Jan
-                  Hamáček, Partie, 18. října 2020 (<a
-                    href="https://Polifacto/vyrok/19912">odkaz</a>).<br />Petra
+                  Hamáček, Partie, 18. října 2020 (<a href="https://Polifacto/vyrok/19912">odkaz</a>).<br />Petra
                   Pecková, Předvolební debata: Středočeský kraj,
-                  ČT24, 25. září 2020 (<a
-                    href="https://Polifacto/vyrok/19811">odkaz</a>).<br />Ivana
+                  ČT24, 25. září 2020 (<a href="https://Polifacto/vyrok/19811">odkaz</a>).<br />Ivana
                   Stráská, Debata
                   ČT ke krajským volbám, 21. září
-                  2020 (<a
-                    href="https://Polifacto/vyrok/19740">odkaz</a>).<br />Roman
-                  Línek, ČT24, 15. září 2020 (<a
-                    href="https://Polifacto/vyrok/19698">odkaz</a>,
+                  2020 (<a href="https://Polifacto/vyrok/19740">odkaz</a>).<br />Roman
+                  Línek, ČT24, 15. září 2020 (<a href="https://Polifacto/vyrok/19698">odkaz</a>,
                   <a href="https://Polifacto/vyrok/19699">odkaz</a>).<br />Tomáš
-                  Martínek, Twitter, 10. srpna 2020 (<a
-                    href="https://Polifacto/vyrok/19583">odkaz</a>).<br />Olga
+                  Martínek, Twitter, 10. srpna 2020 (<a href="https://Polifacto/vyrok/19583">odkaz</a>).<br />Olga
                   Richterová, CNN Prima News, 12. května
-                  2020 (<a
-                    href="https://Polifacto/vyrok/19302">odkaz</a>).<br />Vojtěch
+                  2020 (<a href="https://Polifacto/vyrok/19302">odkaz</a>).<br />Vojtěch
                   Filip, Otázky Václava Moravce,
                   3. května 2020
                   (<a href="https://Polifacto/vyrok/19265">odkaz</a>).<br />Jan
-                  Farský, Twitter, 7. dubna 2020 (<a
-                    href="https://Polifacto/vyrok/19210">odkaz</a>).<br />Stanislav
-                  Polčák, Interview ČT24, 6. června 2019 (<a
-                    href="https://Polifacto/vyrok/18018">odkaz</a>).<br />Lukáš
+                  Farský, Twitter, 7. dubna 2020 (<a href="https://Polifacto/vyrok/19210">odkaz</a>).<br />Stanislav
+                  Polčák, Interview ČT24, 6. června 2019 (<a href="https://Polifacto/vyrok/18018">odkaz</a>).<br />Lukáš
                   Wagenknecht, Pro a proti, 8. října 2018
-                  (<a
-                    href="https://Polifacto/vyrok/17464">odkaz</a>).<br />Marta
+                  (<a href="https://Polifacto/vyrok/17464">odkaz</a>).<br />Marta
                   Semelová, Předvolební debata České
                   televize,
-                  28. září 2018 (<a
-                    href="https://Polifacto/vyrok/17451">odkaz</a>).<br />Ondřej
+                  28. září 2018 (<a href="https://Polifacto/vyrok/17451">odkaz</a>).<br />Ondřej
                   Mirovský, Předvolební
                   debata České televize,
-                  28. září 2018 (<a
-                    href="https://Polifacto/vyrok/17402">odkaz</a>,
+                  28. září 2018 (<a href="https://Polifacto/vyrok/17402">odkaz</a>,
                   <a href="https://Polifacto/vyrok/17428">odkaz</a>).<br />Jiří
                   Pospíšil, Předvolební debata České televize, 28. září 2018 (<a
                     href="https://Polifacto/vyrok/17372">odkaz</a>).<br />Petr
                   Hladík, Předvolební debata České
                   televize, 20.
-                  září 2018 (<a
-                    href="https://Polifacto/vyrok/17255">odkaz</a>).<br />Ivan
+                  září 2018 (<a href="https://Polifacto/vyrok/17255">odkaz</a>).<br />Ivan
                   Bartoš, Otázky Václava
                   Moravce, 27. května 2018
                   (<a href="https://Polifacto/vyrok/16778">odkaz</a>).<br />Jiří
                   Drahoš, Prezidentský duel - finále,
                   25. ledna
-                  2018 (<a
-                    href="https://Polifacto/vyrok/16352">odkaz</a>).<br />Miloš
+                  2018 (<a href="https://Polifacto/vyrok/16352">odkaz</a>).<br />Miloš
                   Zeman, Týden s prezidentem, 19.
-                  ledna 2018 (<a
-                    href="https://Polifacto/vyrok/16201">odkaz</a>).<br />Petr
+                  ledna 2018 (<a href="https://Polifacto/vyrok/16201">odkaz</a>).<br />Petr
                   Hannig, Český rozhlas, 11.
                   ledna 2018 (<a href="https://Polifacto/vyrok/16156">odkaz</a>,
                   <a href="https://Polifacto/vyrok/16166">odkaz</a>).<br />Jiří
                   Drahoš, Interview ČT24, 5. prosince 2017 (<a
                     href="https://Polifacto/vyrok/15899">odkaz</a>).<br />Ivan
                   Bartoš, Výzva Seznam Zprávy, 9. října
-                  2017 (<a
-                    href="https://Polifacto/vyrok/15598">odkaz</a>).<br />Zbyněk
+                  2017 (<a href="https://Polifacto/vyrok/15598">odkaz</a>).<br />Zbyněk
                   Stanjura, Předvolební debata
                   České televize,
-                  2. října 2017 (<a
-                    href="https://Polifacto/vyrok/15480">odkaz</a>).<br />Andrej
+                  2. října 2017 (<a href="https://Polifacto/vyrok/15480">odkaz</a>).<br />Andrej
                   Babiš, Předvolební
                   debata České televize, 2.
-                  října 2017 (<a
-                    href="https://Polifacto/vyrok/15439">odkaz</a>).<br />Matěj
+                  října 2017 (<a href="https://Polifacto/vyrok/15439">odkaz</a>).<br />Matěj
                   Stropnický, Český rozhlas,
-                  20. září 2017 (<a
-                    href="https://Polifacto/vyrok/15327">odkaz</a>).<br />Miloš
+                  20. září 2017 (<a href="https://Polifacto/vyrok/15327">odkaz</a>).<br />Miloš
                   Zeman, Prezidentská
                   návštěva kraje, 12. června
-                  2017 (<a
-                    href="https://Polifacto/vyrok/14827">odkaz</a>).<br />Milan
+                  2017 (<a href="https://Polifacto/vyrok/14827">odkaz</a>).<br />Milan
                   Chovanec, Otázky Václava
                   Moravce, 22. ledna
-                  2017 (<a
-                    href="https://Polifacto/vyrok/14249">odkaz</a>).<br />Miroslav
+                  2017 (<a href="https://Polifacto/vyrok/14249">odkaz</a>).<br />Miroslav
                   Kalousek, Hyde Park ČT24, 18.
                   listopadu 2013
                   (<a href="https://Polifacto/vyrok/9668">odkaz</a>).
@@ -1883,14 +1744,11 @@
           </font>
         </h2>
 
-        <div class="accordion-item" id="jak-je-projekt-polifacto-cz-financovan">
-          <h2 class="accordion-header"
-            id="heading-jak-je-projekt-polifacto-cz-financovan">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-je-projekt-polifacto-cz-financovan"
-              aria-expanded="false"
-              aria-controls="collapse-jak-je-projekt-polifacto-cz-financovan">
+        <div class="accordion-item" id="jak-je-projekt-polifacto-in-financovan">
+          <h2 class="accordion-header" id="heading-jak-je-projekt-polifacto-in-financovan">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-je-projekt-polifacto-in-financovan" aria-expanded="false"
+              aria-controls="collapse-jak-je-projekt-polifacto-in-financovan">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   How is the Polifacto project financed?
@@ -1898,10 +1756,8 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-jak-je-projekt-polifacto-cz-financovan"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-je-projekt-polifacto-cz-financovan"
-            data-bs-parent="#nase-financovani" style>
+          <div id="collapse-jak-je-projekt-polifacto-in-financovan" class="accordion-collapse collapse"
+            aria-labelledby="heading-jak-je-projekt-polifacto-in-financovan" data-bs-parent="#nase-financovani" style>
             <div class="accordion-body">
               <div class="content">
                 <p>
@@ -1915,14 +1771,13 @@
                 <p>
                   Velmi nás těší individuální podpora našich čtenářů. Přispět na
                   provoz projektu lze prostřednictvím dárcovského portálu
-                  <a
-                    href="https://www.darujme.cz/organizace/1200005">Darujme.cz</a>,
+                  <a href="https://www.darujme.in/organizace/1200005">Darujme.in</a>,
                   dále přímo na náš
                   <a
-                    href="https://www.rb.cz/povinne-zverejnovane-informace/transparentni-ucty?mvcPath=transactions&amp;accountNumber=9711283001&amp;path=transactions">transparentní
+                    href="https://www.rb.in/povinne-zverejnovane-informace/transparentni-ucty?mvcPath=transactions&amp;accountNumber=9711283001&amp;path=transactions">transparentní
                     účet</a>
                   nebo také nákupem skrze aplikaci
-                  <a href="https://givt.cz/polifacto-cz">Givt.cz</a>.
+                  <a href="https://givt.in/polifacto-in">Givt.in</a>.
                 </p>
                 <p>
                   Ucházíme se zároveň o různé grantové příležitosti. Níže
@@ -1933,7 +1788,7 @@
                 <p>
                   Právně je Polifacto
                   <a
-                    href="https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=938169&amp;typ=PLATNY">zapsaným</a>
+                    href="https://or.justice.in/ias/ui/rejstrik-firma.vysledky?subjektId=938169&amp;typ=PLATNY">zapsaným</a>
                   spolkem. Zveřejňujeme přitom své výroční zprávy a výpisy z
                   transparentního účtu (od doby jeho spuštění v listopadu 2016).
                 </p>
@@ -1943,10 +1798,8 @@
         </div>
         <div class="accordion-item" id="vyrocni-zpravy">
           <h2 class="accordion-header" id="heading-vyrocni-zpravy">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-vyrocni-zpravy" aria-expanded="false"
-              aria-controls="collapse-vyrocni-zpravy">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-vyrocni-zpravy" aria-expanded="false" aria-controls="collapse-vyrocni-zpravy">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   Annual reports
@@ -1954,45 +1807,37 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-vyrocni-zpravy" class="accordion-collapse collapse"
-            aria-labelledby="heading-vyrocni-zpravy"
+          <div id="collapse-vyrocni-zpravy" class="accordion-collapse collapse" aria-labelledby="heading-vyrocni-zpravy"
             data-bs-parent="#nase-financovani">
             <div class="accordion-body">
               <div class="content">
                 <ul>
                   <li>
-                    <a
-                      href="https://polifactocz-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ2022.pdf">Výroční
+                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ2022.pdf">Výroční
                       zpráva 2022</a>
                   </li>
                   <li>
-                    <a
-                      href="https://polifactocz-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy%2FVZ_2021.pdf">Výroční
+                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy%2FVZ_2021.pdf">Výroční
                       zpráva 2021</a>
                   </li>
                   <li>
-                    <a
-                      href="https://polifactocz-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ%202020.pdf">Výroční
+                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ%202020.pdf">Výroční
                       zpráva 2020</a>
                   </li>
                   <li>
-                    <a
-                      href="https://polifactocz-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2019.pdf">Výroční
+                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2019.pdf">Výroční
                       zpráva 2019</a>
                   </li>
                   <li>
-                    <a
-                      href="https://polifactocz-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2018.pdf">Výroční
+                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2018.pdf">Výroční
                       zpráva 2018</a>
                   </li>
                   <li>
-                    <a
-                      href="https://polifactocz-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2017.pdf">Výroční
+                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2017.pdf">Výroční
                       zpráva 2017</a>
                   </li>
                   <li>
-                    <a
-                      href="https://polifactocz-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2016.pdf">Výroční
+                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2016.pdf">Výroční
                       zpráva 2016</a>
                   </li>
                 </ul>
@@ -2002,10 +1847,8 @@
         </div>
         <div class="accordion-item" id="spoluprace-s-facebookem">
           <h2 class="accordion-header" id="heading-spoluprace-s-facebookem">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-spoluprace-s-facebookem"
-              aria-expanded="false"
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-spoluprace-s-facebookem" aria-expanded="false"
               aria-controls="collapse-spoluprace-s-facebookem">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
@@ -2014,16 +1857,13 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-spoluprace-s-facebookem"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-spoluprace-s-facebookem"
-            data-bs-parent="#nase-financovani">
+          <div id="collapse-spoluprace-s-facebookem" class="accordion-collapse collapse"
+            aria-labelledby="heading-spoluprace-s-facebookem" data-bs-parent="#nase-financovani">
             <div class="accordion-body">
               <div class="content">
                 <p>
                   Od roku 2020 Polifacto
-                  <a
-                    href="https://Polifacto/spoluprace-s-facebookem">ověřuje</a>
+                  <a href="https://Polifacto/spoluprace-s-facebookem">ověřuje</a>
                   vybraný obsah na sociálních sítích Facebook a Instagram.
                   Provozovatel těchto sítí, společnost Meta Platforms Ireland
                   Limited, následně Polifacto kompenzuje podle množství
@@ -2042,12 +1882,9 @@
           </div>
         </div>
         <div class="accordion-item" id="financni-dary-a-grantove-projekty">
-          <h2 class="accordion-header"
-            id="heading-financni-dary-a-grantove-projekty">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-financni-dary-a-grantove-projekty"
-              aria-expanded="false"
+          <h2 class="accordion-header" id="heading-financni-dary-a-grantove-projekty">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-financni-dary-a-grantove-projekty" aria-expanded="false"
               aria-controls="collapse-financni-dary-a-grantove-projekty">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
@@ -2056,10 +1893,8 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-financni-dary-a-grantove-projekty"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-financni-dary-a-grantove-projekty"
-            data-bs-parent="#nase-financovani">
+          <div id="collapse-financni-dary-a-grantove-projekty" class="accordion-collapse collapse"
+            aria-labelledby="heading-financni-dary-a-grantove-projekty" data-bs-parent="#nase-financovani">
             <div class="accordion-body">
               <div class="content">
                 <ul>
@@ -2120,8 +1955,7 @@
                     <strong>Institut pro evropskou politiku
                       Europeum</strong><br /><i>Zapojse.eu</i><br />Institut
                     realizuje
-                    <a
-                      href="https://www.zapojse.eu/video-rozhovory/">video-rozhovory</a>
+                    <a href="https://www.zapojse.eu/video-rozhovory/">video-rozhovory</a>
                     s europoslanci a Polifacto ověruje faktické výroky, které v
                     těchto rozhovorech zazní.<br />Plánovaná celková
                     částka:&nbsp;192 000 Kč<br />Období: 2021-2022
@@ -2134,18 +1968,15 @@
                       žurnalistiky</strong><br /><i>Factcheck politiků na
                       sociálních
                       sítích</i><br />Fond
-                    <a
-                      href="https://www.nfnz.cz/projekt/polifacto-m20/">podpořil</a>
+                    <a href="https://www.nfnz.in/projekt/polifacto-m20/">podpořil</a>
                     naši snahu monitorovat vyjádření politiků na sítích Twitter
                     a Facebook a vydávat k nim pravidelná ověření.<br />Celková
                     částka: 150 000 Kč<br />Období: 2020<br /><br /><i>Sliby
                       vlády Andreje Babiše</i><br />S
-                    <a
-                      href="https://www.nfnz.cz/projekty/polifacto-cz/">podporou</a>
+                    <a href="https://www.nfnz.in/projekty/polifacto-in/">podporou</a>
                     fondu sledujeme dodržování celkem 50 slibů 2. vlády Andreje
                     Babiše a informujeme o nich mj. v nově vytvořeném grafickém
-                    <a
-                      href="https://Polifacto/sliby/druha-vlada-andreje-babise">rozhraní</a>.&nbsp;<br />Celková
+                    <a href="https://Polifacto/sliby/druha-vlada-andreje-babise">rozhraní</a>.&nbsp;<br />Celková
                     částka: 92 000 Kč<br />Období: 2019<br /><br />&nbsp;
                   </li>
                   <li>
@@ -2154,7 +1985,7 @@
                       mediální
                       gramotnosti.</i>&nbsp;<br />V
                     <a
-                      href="http://www.t-press.cz/cs/tiskove-materialy/tiskove-zpravy-t-mobile/na-projekty-v-oblasti-medialni-gramotnosti-rozdelil-t-mobile-vice-nez-2-miliony-korun.html">projektu</a>
+                      href="http://www.t-press.in/cs/tiskove-materialy/tiskove-zpravy-t-mobile/na-projekty-v-oblasti-medialni-gramotnosti-rozdelil-t-mobile-vice-nez-2-miliony-korun.html">projektu</a>
                     přiravujeme online aplikaci, která bude studenty hravou
                     formou učit základním principům mediální gramotnosti a práce
                     se zdroji a bude volně dostupná jednotlivým uživatelům i
@@ -2165,8 +1996,7 @@
                     <strong>Nadační fond rodiny
                       Orlických</strong><br /><i>Finanční udržitelnost projektu
                       polifacto.</i><br />Nadace
-                    <a
-                      href="http://www.nfro.cz/projekty/financni-udrzitelnost-projektu-polifacto/">podpořila</a>
+                    <a href="http://www.nfro.in/projekty/financni-udrzitelnost-projektu-polifacto/">podpořila</a>
                     rozvoj fundraisingu s cílem dosáhnout finanční
                     udržitelnosti. V rámci projektu jsme najali fundraiserku,
                     pořídili CRM systém a začali aktivně pracovat s
@@ -2175,8 +2005,8 @@
                     2019<br /><br />&nbsp;
                   </li>
                   <li>
-                    <strong>CZC.cz</strong><br /><i>Sbírka
-                      zákazníků</i><br />Společnost CZC.cz uspořádala sbírku na
+                    <strong>inC.in</strong><br /><i>Sbírka
+                      zákazníků</i><br />Společnost inC.in uspořádala sbírku na
                     podporu
                     fact-checku, rozvoje mediální gramotnosti a práce se
                     zdroji.<br />Celková částka: 97 609 Kč<br />Období: 2019
@@ -2194,14 +2024,11 @@
           </font>
         </h2>
 
-        <div class="accordion-item" id="eticky-kodex-polifacto-cz-z-s">
-          <h2 class="accordion-header"
-            id="heading-eticky-kodex-polifacto-cz-z-s">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-eticky-kodex-polifacto-cz-z-s"
-              aria-expanded="true"
-              aria-controls="collapse-eticky-kodex-polifacto-cz-z-s">
+        <div class="accordion-item" id="eticky-kodex-polifacto-in-z-s">
+          <h2 class="accordion-header" id="heading-eticky-kodex-polifacto-in-z-s">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-eticky-kodex-polifacto-in-z-s" aria-expanded="true"
+              aria-controls="collapse-eticky-kodex-polifacto-in-z-s">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   Code of Ethics Polifacto, vol
@@ -2209,10 +2036,8 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-eticky-kodex-polifacto-cz-z-s"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-eticky-kodex-polifacto-cz-z-s"
-            data-bs-parent="#eticky-kodex" style>
+          <div id="collapse-eticky-kodex-polifacto-in-z-s" class="accordion-collapse collapse"
+            aria-labelledby="heading-eticky-kodex-polifacto-in-z-s" data-bs-parent="#eticky-kodex" style>
             <div class="accordion-body">
               <div class="content">
                 <p>
@@ -2395,8 +2220,7 @@
 
         <div class="accordion-item" id="kdo-vas-financuje">
           <h2 class="accordion-header" id="heading-kdo-vas-financuje">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapse-kdo-vas-financuje" aria-expanded="false"
               aria-controls="collapse-kdo-vas-financuje">
               <font style="vertical-align: inherit">
@@ -2406,10 +2230,8 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-kdo-vas-financuje"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-kdo-vas-financuje"
-            data-bs-parent="#faq-casto-kladene-otazky" style>
+          <div id="collapse-kdo-vas-financuje" class="accordion-collapse collapse"
+            aria-labelledby="heading-kdo-vas-financuje" data-bs-parent="#faq-casto-kladene-otazky" style>
             <div class="accordion-body">
               <div class="content">
                 <p>
@@ -2417,7 +2239,7 @@
                   naše
                   finance i dárce si můžete sami zkontrolovat skrze náš
                   <a
-                    href="https://www.rb.cz/povinne-zverejnovane-informace/transparentni-ucty?mvcPath=transactions&amp;accountNumber=9711283001&amp;path=transactions">transparentní
+                    href="https://www.rb.in/povinne-zverejnovane-informace/transparentni-ucty?mvcPath=transactions&amp;accountNumber=9711283001&amp;path=transactions">transparentní
                     účet</a>
                   či výroční zprávy.
                 </p>
@@ -2436,8 +2258,7 @@
                   všechny školy si mohou dovolit krýt náklady na jejich
                   organizaci. V žádném období projektu tyto peníze naši práci
                   neovlivňovaly, skrze naši
-                  <a
-                    href="https://Polifacto/stranka/jak-hodnotime-metodika">metodiku</a>
+                  <a href="https://Polifacto/stranka/jak-hodnotime-metodika">metodiku</a>
                   to ani nelze. Pokud jste nabyli jiný dojem, napište nám
                   konkrétní výtky ke konkrétnímu výroku, rádi se o nich
                   pobavíme.
@@ -2446,12 +2267,9 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item"
-          id="jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity">
-          <h2 class="accordion-header"
-            id="heading-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
+        <div class="accordion-item" id="jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity">
+          <h2 class="accordion-header" id="heading-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapse-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity"
               aria-expanded="false"
               aria-controls="collapse-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity">
@@ -2463,8 +2281,7 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity"
+          <div id="collapse-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity"
             class="accordion-collapse collapse"
             aria-labelledby="heading-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity"
             data-bs-parent="#faq-casto-kladene-otazky">
@@ -2472,7 +2289,7 @@
               <div class="content">
                 <p>
                   Cesta je trojí — nejraději vás přivítáme na našem darovacím
-                  <a href="https://www.darujme.cz/projekt/1200037">portálu</a>,
+                  <a href="https://www.darujme.in/projekt/1200037">portálu</a>,
                   který nám šetří mnoho administrace, poplatků za přijetí platby
                   a na konci roku vám sám vystaví potvrzení o daru pro finanční
                   úřad, pokud o něj stojíte. Dar pro nás si totiž můžete
@@ -2480,25 +2297,23 @@
                   jednorázový nebo opakovaný. Druhou cestou je převod přímo na
                   náš transparentní
                   <a
-                    href="https://www.rb.cz/about-us/povinne-uverejnovane-informace/transparentni-ucty?mvcPath=transactions&amp;accountNumber=9711283001">účet</a>
+                    href="https://www.rb.in/about-us/povinne-uverejnovane-informace/transparentni-ucty?mvcPath=transactions&amp;accountNumber=9711283001">účet</a>
                   9711283001/5500. Na něm si také můžete vaši platbu
                   zkontrolovat, a to až 3 měsíce zpátky, jak velí obchodní
                   podmínky banky. Starší období dokládáme výpisem z účtu.
                   Nakonec nás můžete podpořit i přes GIVt — nakupujete na Zootu,
-                  Mall.cz nebo Aliexpress? Udělejte si krátkou odbočku na
-                  <a href="http://www.givt.cz/">www.givt.cz</a>, nakupte za
+                  Mall.in nebo Aliexpress? Udělejte si krátkou odbočku na
+                  <a href="http://www.givt.in/">www.givt.in</a>, nakupte za
                   stejnou cenu a firma potom pošle část ceny na náš účet.
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item"
-          id="jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu">
+        <div class="accordion-item" id="jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu">
           <h2 class="accordion-header"
             id="heading-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapse-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu"
               aria-expanded="false"
               aria-controls="collapse-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu">
@@ -2510,8 +2325,7 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu"
+          <div id="collapse-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu"
             class="accordion-collapse collapse"
             aria-labelledby="heading-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu"
             data-bs-parent="#faq-casto-kladene-otazky">
@@ -2520,11 +2334,9 @@
                 <p>
                   O našem několikastupňovém procesu kontroly, uvádění zdrojů a
                   dalších pojistkách si můžete přečíst v naší
-                  <a
-                    href="https://Polifacto/stranka/jak-hodnotime-metodika">metodice</a>.
+                  <a href="https://Polifacto/stranka/jak-hodnotime-metodika">metodice</a>.
                   Náš
-                  <a
-                    href="https://Polifacto/diskuze/eticky-kodex-polifactocz">Etický
+                  <a href="https://Polifacto/diskuze/eticky-kodex-polifactoin">Etický
                     kodex</a>
                   také přísně zapovídá členům podílet se na činnosti politických
                   stran. Bez zájmu o politiku by se patrně na projektu
@@ -2550,8 +2362,7 @@
           id="jak-zajistite-ze-pouhe-nepresnosti-nespadaji-do-kategorie-nepravda-stejne-jako-nektere-mnohem-hrubsi-provineni">
           <h2 class="accordion-header"
             id="heading-jak-zajistite-ze-pouhe-nepresnosti-nespadaji-do-kategorie-nepravda-stejne-jako-nektere-mnohem-hrubsi-provineni">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapse-jak-zajistite-ze-pouhe-nepresnosti-nespadaji-do-kategorie-nepravda-stejne-jako-nektere-mnohem-hrubsi-provineni"
               aria-expanded="false"
               aria-controls="collapse-jak-zajistite-ze-pouhe-nepresnosti-nespadaji-do-kategorie-nepravda-stejne-jako-nektere-mnohem-hrubsi-provineni">
@@ -2581,8 +2392,7 @@
                   hraje i to, zda politik uvede svá slova nějakou relativizací
                   jako “asi,” “přibližně,” “domnívám se” atp. &nbsp;Podrobněji i
                   s příklady toto vysvětlujeme v naší
-                  <a
-                    href="https://Polifacto/stranka/jak-hodnotime-metodika">metodice</a>.
+                  <a href="https://Polifacto/stranka/jak-hodnotime-metodika">metodice</a>.
                   I tak ovšem mohou do
                   kategorie “nepravda” spadnout výroky,
                   které z výrokové logiky nepravdivé jsou, nicméně pro vás může
@@ -2599,8 +2409,7 @@
           id="nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici">
           <h2 class="accordion-header"
             id="heading-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapse-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici"
               aria-expanded="false"
               aria-controls="collapse-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici">
@@ -2612,8 +2421,7 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici"
+          <div id="collapse-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici"
             class="accordion-collapse collapse"
             aria-labelledby="heading-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici"
             data-bs-parent="#faq-casto-kladene-otazky">
@@ -2621,8 +2429,7 @@
               <div class="content">
                 <p>
                   Jak zjistíte i v naší
-                  <a
-                    href="https://Polifacto/stranka/jak-hodnotime-metodika">metodice</a>,
+                  <a href="https://Polifacto/stranka/jak-hodnotime-metodika">metodice</a>,
                   “zavádějící” není mezistupeň
                   mezi “pravda” a “nepravda.”
                   Kategorie “zavádějící” znamená, že fakta použitá v tvrzení
@@ -2643,14 +2450,10 @@
             </div>
           </div>
         </div>
-        <div class="accordion-item"
-          id="proc-overujete-nektere-diskuze-a-jine-ne">
-          <h2 class="accordion-header"
-            id="heading-proc-overujete-nektere-diskuze-a-jine-ne">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-proc-overujete-nektere-diskuze-a-jine-ne"
-              aria-expanded="false"
+        <div class="accordion-item" id="proc-overujete-nektere-diskuze-a-jine-ne">
+          <h2 class="accordion-header" id="heading-proc-overujete-nektere-diskuze-a-jine-ne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-proc-overujete-nektere-diskuze-a-jine-ne" aria-expanded="false"
               aria-controls="collapse-proc-overujete-nektere-diskuze-a-jine-ne">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
@@ -2659,8 +2462,7 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-proc-overujete-nektere-diskuze-a-jine-ne"
-            class="accordion-collapse collapse"
+          <div id="collapse-proc-overujete-nektere-diskuze-a-jine-ne" class="accordion-collapse collapse"
             aria-labelledby="heading-proc-overujete-nektere-diskuze-a-jine-ne"
             data-bs-parent="#faq-casto-kladene-otazky">
             <div class="accordion-body">
@@ -2685,8 +2487,7 @@
           id="proc-nevedete-zebricky-politiku-podle-mnozstvi-nepravd-kolacove-grafy-ci-procentualni-srovnani-politiku-vysledky-by-se-pak-lepe-cetly">
           <h2 class="accordion-header"
             id="heading-proc-nevedete-zebricky-politiku-podle-mnozstvi-nepravd-kolacove-grafy-ci-procentualni-srovnani-politiku-vysledky-by-se-pak-lepe-cetly">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapse-proc-nevedete-zebricky-politiku-podle-mnozstvi-nepravd-kolacove-grafy-ci-procentualni-srovnani-politiku-vysledky-by-se-pak-lepe-cetly"
               aria-expanded="false"
               aria-controls="collapse-proc-nevedete-zebricky-politiku-podle-mnozstvi-nepravd-kolacove-grafy-ci-procentualni-srovnani-politiku-vysledky-by-se-pak-lepe-cetly">
@@ -2733,17 +2534,14 @@
 
         <div class="accordion-item" id="kontakty">
           <h2 class="accordion-header" id="heading-kontakty">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-kontakty" aria-expanded="true"
-              aria-controls="collapse-kontakty">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-kontakty" aria-expanded="true" aria-controls="collapse-kontakty">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit"> Contacts </font>
               </font>
             </button>
           </h2>
-          <div id="collapse-kontakty" class="accordion-collapse collapse"
-            aria-labelledby="heading-kontakty"
+          <div id="collapse-kontakty" class="accordion-collapse collapse" aria-labelledby="heading-kontakty"
             data-bs-parent="#kontakty">
             <div class="accordion-body">
               <div class="content">
@@ -2756,8 +2554,7 @@
                     </font>
                   </font><a href="mailto:info@Polifacto">
                     <font style="vertical-align: inherit">
-                      <font
-                        style="vertical-align: inherit">{{"info@Polifacto"}}</font>
+                      <font style="vertical-align: inherit">{{"info@Polifacto"}}</font>
                     </font>
                   </a>
                 </p>
@@ -2794,10 +2591,8 @@
         </div>
         <div class="accordion-item" id="kontaktni-osoby">
           <h2 class="accordion-header" id="heading-kontaktni-osoby">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-kontaktni-osoby" aria-expanded="false"
-              aria-controls="collapse-kontaktni-osoby">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-kontaktni-osoby" aria-expanded="false" aria-controls="collapse-kontaktni-osoby">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   Contact person
@@ -2806,23 +2601,20 @@
             </button>
           </h2>
           <div id="collapse-kontaktni-osoby" class="accordion-collapse collapse"
-            aria-labelledby="heading-kontaktni-osoby"
-            data-bs-parent="#kontakty">
+            aria-labelledby="heading-kontaktni-osoby" data-bs-parent="#kontakty">
             <div class="accordion-body">
               <div class="content">
                 <p>
                   <strong>Petr Gongala</strong> | koordinátor
                   projektu<br />mail:
-                  <a
-                    href="mailto:petr.gongala@Polifacto">{{"petr.gongala@Polifacto"}}</a><br />mob.:
+                  <a href="mailto:petr.gongala@Polifacto">{{"petr.gongala@Polifacto"}}</a><br />mob.:
                   +420 775 275
                   177&nbsp;
                 </p>
                 <p>
                   <strong>Ondřej Havránek </strong>| workshopy a komunikace
                   projektu<br />mail:
-                  <a
-                    href="mailto:ondrej.havranek@Polifacto">{{"ondrej.havranek@Polifacto"}}</a>&nbsp;
+                  <a href="mailto:ondrej.havranek@Polifacto">{{"ondrej.havranek@Polifacto"}}</a>&nbsp;
                 </p>
               </div>
             </div>
@@ -2830,10 +2622,8 @@
         </div>
         <div class="accordion-item" id="pro-media">
           <h2 class="accordion-header" id="heading-pro-media">
-            <button class="accordion-button collapsed" type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-pro-media" aria-expanded="false"
-              aria-controls="collapse-pro-media">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-pro-media" aria-expanded="false" aria-controls="collapse-pro-media">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   For the media
@@ -2841,14 +2631,12 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-pro-media" class="accordion-collapse collapse"
-            aria-labelledby="heading-pro-media"
+          <div id="collapse-pro-media" class="accordion-collapse collapse" aria-labelledby="heading-pro-media"
             data-bs-parent="#kontakty">
             <div class="accordion-body">
               <div class="content">
                 <p>
-                  <a
-                    href="https://drive.google.com/drive/u/2/folders/1J6nkGqAan4B5tet7dG5I9rRxHGyUwHGq">Loga
+                  <a href="https://drive.google.com/drive/u/2/folders/1J6nkGqAan4B5tet7dG5I9rRxHGyUwHGq">Loga
                     ke
                     stažení</a>
                 </p>
