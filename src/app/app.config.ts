@@ -4,7 +4,7 @@ import {
   importProvidersFrom,
   isDevMode,
 } from "@angular/core";
-import { provideRouter } from "@angular/router";
+import { InMemoryScrollingFeature, InMemoryScrollingOptions, provideRouter, withInMemoryScrolling } from "@angular/router";
 
 import { routes } from "./app.routes";
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
@@ -21,10 +21,16 @@ const AppReducers = {
   politicianReducers,
   statementsReducers,
 };
+const scrollConfig: InMemoryScrollingOptions = {
+  scrollPositionRestoration: 'top',
+  anchorScrolling: 'enabled',
+};
+const inMemoryScrollingFeature: InMemoryScrollingFeature =
+  withInMemoryScrolling(scrollConfig);
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimations(),
-    provideRouter(routes),
+    provideRouter(routes, inMemoryScrollingFeature),
     provideHttpClient(withInterceptors([httpInterceptor])),
     provideToastr({
       progressBar: true,
