@@ -192,7 +192,7 @@
         [politicianWithStatements]="statement"
         [politicianDetails]="politicianWithStatementDetails"
       />
-      <div class="" *ngIf="!paginationConfig.totalItems" style="margin: inherit;">
+      <div class="w-100 flex justify-center" *ngIf="!paginationConfig.totalItems && !(loader.isLoading$ | async)" style="margin: inherit;">
         <h2><b>No statement found</b></h2>
       </div>
     </app-filter-form>

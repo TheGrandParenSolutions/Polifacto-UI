@@ -16,6 +16,7 @@ import { Observable } from "rxjs";
 import { NgxPaginationModule } from "ngx-pagination";
 import { getPaginationConfig } from "../../utils/constants/enums";
 import { RouterModule } from "@angular/router";
+import { LoaderService } from '../../shared/services/loader/loader.service';
 @Component({
   selector: "app-politicians",
   standalone: true,
@@ -39,7 +40,8 @@ export class PoliticiansComponent {
   constructor(
     private toast: ToastrService,
     private store: Store<AppRootState>,
-    private filterService: FilterService
+    private filterService: FilterService,
+    public loader: LoaderService
   ) {
     this.politicians$ = this.store.pipe(select(politicianSelector));
   }

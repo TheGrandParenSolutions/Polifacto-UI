@@ -14,6 +14,7 @@ import { statementsSelector } from "../../redux/selectors";
 import { FilterService } from "../../shared/services/loader/filter.service";
 import * as AppActions from "../../redux/actions/index";
 import { ToastrService } from "ngx-toastr";
+import { LoaderService } from "../../shared/services/loader/loader.service";
 
 @Component({
   selector: "app-statements",
@@ -37,7 +38,8 @@ export class StatementsComponent implements OnInit {
     private readonly statementService: StatementsService,
     private store: Store<AppRootState>,
     private filterService: FilterService,
-    private toast: ToastrService
+    private toast: ToastrService,
+    public loader: LoaderService
   ) {
     this.statements$ = this.store.pipe(select(statementsSelector));
   }

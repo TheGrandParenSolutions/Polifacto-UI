@@ -13,6 +13,7 @@ import {
 import { FilterService } from "../../shared/services/loader/filter.service";
 import { getPaginationConfig } from "../../utils/constants/enums";
 import { NgxPaginationModule } from "ngx-pagination";
+import { LoaderService } from "../../shared/services/loader/loader.service";
 
 @Component({
   selector: "app-politicians-profile",
@@ -35,7 +36,8 @@ export class PoliticiansProfileComponent {
   constructor(
     private politiciansService: PoliticiansService,
     private route: ActivatedRoute,
-    private filterService: FilterService
+    private filterService: FilterService,
+    public loader: LoaderService
   ) {}
   ngOnChanges(): void {}
 
