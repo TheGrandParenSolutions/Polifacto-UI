@@ -1,10 +1,10 @@
+// Import necessary Angular and external modules
 import { ModalService } from "./../../shared/services/loader/modal.service";
 import { CommonModule } from "@angular/common";
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import {
   FormControl,
   FormGroup,
-  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
@@ -14,22 +14,23 @@ import { ToastrService } from "ngx-toastr";
 import { IPolitician } from "../../interfaces/interfaces";
 import { VerifyPostService } from "../../api/services/verify-post/VerifyPost.service";
 import { SpinnerComponent } from "../spinner/spinner.component";
+import { TooltipDirective } from "../../shared/tooltip/tooltip.directive";
 
 @Component({
   selector: "app-ask-question-overlay",
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, SpinnerComponent],
+  imports: [CommonModule, ReactiveFormsModule, SpinnerComponent, TooltipDirective],
   templateUrl: "./ask-question-overlay.component.html",
-  styleUrl: "./ask-question-overlay.component.scss",
+  styleUrls: ["./ask-question-overlay.component.scss"],
   animations: [fadeInAndOut],
 })
 export class AskQuestionOverlayComponent implements OnInit {
   politicians: IPolitician[] = [];
-  openDropdown!: boolean;
+  openDropdown = false;
   askUsForm!: FormGroup;
   addPoliticianForm!: FormGroup;
   selectedPolitician!: IPolitician;
-  openAddPoliticianModal: boolean = false;
+  openAddPoliticianModal = false;
 
   constructor(
     public modal: ModalService,
@@ -37,43 +38,68 @@ export class AskQuestionOverlayComponent implements OnInit {
     private toast: ToastrService,
     private verifyPostService: VerifyPostService
   ) { }
+
   ngOnInit(): void {
     this.askUsForm = new FormGroup({
-      email: new FormControl<string>("", [Validators.required]),
-      source: new FormControl<string>("", [Validators.required]),
-      question: new FormControl<string>("", [Validators.required]),
+      email: new FormControl("", [Validators.required, Validators.email]),
+      source: new FormControl("", [Validators.required, this.urlValidator]),
+      question: new FormControl("", [Validators.required]),
+      politician: new FormControl(null, [Validators.required])
     });
+
     this.addPoliticianForm = new FormGroup({
-      name: new FormControl<string>("", [Validators.required]),
-      party: new FormControl<string>("", [Validators.required]),
-      designation: new FormControl<string>(""),
+      name: new FormControl("", [Validators.required]),
+      party: new FormControl("", [Validators.required]),
+      designation: new FormControl("", [Validators.required]),
     });
+
     this.fetchPoliticians();
   }
 
-  get name(){
-    return this.addPoliticianForm.get('name');
-  }
-  get party(){
-    return this.addPoliticianForm.get('party');
-  }
-  get designation(){
-    return this.addPoliticianForm.get('designation');
+  get email() {
+    return this.askUsForm.get("email");
   }
 
-  isFormValid(){
+  get source() {
+    return this.askUsForm.get("source");
+  }
+
+  get question() {
+    return this.askUsForm.get("question");
+  }
+
+  get name() {
+    return this.addPoliticianForm.get("name");
+  }
+
+  get party() {
+    return this.addPoliticianForm.get("party");
+  }
+
+  get designation() {
+    return this.addPoliticianForm.get("designation");
+  }
+
+  isFormValid(): boolean {
     return this.addPoliticianForm.valid;
   }
-  toggleDropdown() {
+
+  toggleDropdown(): void {
     this.openDropdown = !this.openDropdown;
   }
 
-  selectPolitician(politician: IPolitician) {
+  selectPolitician(politician: IPolitician): void {
     this.selectedPolitician = politician;
+    this.askUsForm.patchValue({ politician })
     this.openDropdown = false;
   }
 
-  postUserQuestionForVerification() {
+  postUserQuestionForVerification(): void {
+    if (this.askUsForm.invalid || !this.selectedPolitician) {
+      this.toast.error("Please fill out all fields and select a politician.");
+      return;
+    }
+
     const userProvidedQuestionInfo = this.askUsForm.value;
 
     this.verifyPostService
@@ -84,21 +110,25 @@ export class AskQuestionOverlayComponent implements OnInit {
         postUrl: userProvidedQuestionInfo.source,
       })
       .subscribe({
-        next: (data) => {
+        next: () => {
           this.toast.success(
-            "Thankyou for asking, we will verify this and reach out to you if it is a truth or not."
+            "Thank you for asking. We will verify this and reach out to you."
           );
           this.modal.hideModal();
-        }
+          this.askUsForm.reset();
+          this.selectedPolitician = undefined!;
+        },
       });
   }
 
-  addPolitician() {
-   
-    if(!this.isFormValid()){
+  addPolitician(): void {
+    if (!this.isFormValid()) {
+      this.toast.error("Please fill out all fields to add a politician.");
       return;
     }
+
     const newPoliticianDetails = this.addPoliticianForm.value;
+
     this.politiciansService
       .createPolitician({
         politicianName: newPoliticianDetails.name,
@@ -106,19 +136,37 @@ export class AskQuestionOverlayComponent implements OnInit {
         politicianParty: newPoliticianDetails.party,
       })
       .subscribe({
-        next: (data) => {
+        next: () => {
           this.toast.success("Politician successfully created.");
           this.fetchPoliticians();
           this.openAddPoliticianModal = false;
+          this.addPoliticianForm.reset();
         },
       });
   }
 
-  fetchPoliticians = () => {
+  fetchPoliticians(): void {
     this.politiciansService.getAllPoliticians().subscribe({
       next: (politicians) => {
         this.politicians = politicians;
       },
     });
-  };
+  }
+
+  showFieldError(fieldName: string): boolean {
+    const field = this.askUsForm.controls[fieldName];
+    return !!field && field.invalid && field.touched;
+  }
+
+  urlValidator(control: FormControl): { [key: string]: boolean } | null {
+    const urlPattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+    return control.value && !urlPattern.test(control.value)
+      ? { invalidUrl: true }
+      : null;
+  }
+
+  showFieldErrorForAddPoliticianForm(fieldName: string): boolean {
+    const field = this.addPoliticianForm.controls[fieldName];
+    return !!field && field.invalid && field.touched;
+  }
 }

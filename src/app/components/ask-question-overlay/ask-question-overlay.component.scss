@@ -1,8 +1,13 @@
 select:required:invalid {
-    color: #AFB4BE;
-  }
+  color: #afb4be;
+}
 
 .required:after {
-  content: ' *';
+  content: " *";
   color: red;
- }
+}
+
+.logo-css {
+  height: 80px !important;
+  position: absolute;
+}

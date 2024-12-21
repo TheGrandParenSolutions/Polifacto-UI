@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NewsletterComponent } from '../newsletter/newsletter.component';
 import { SocialComponent } from '../social/social.component';
 import { SocialMediaFooterIconsComponent } from '../social-media-footer-icons/social-media-footer-icons.component';
+import { ModalService } from '../../shared/services/loader/modal.service';
 
 @Component({
   selector: 'app-footer',
@@ -12,5 +13,15 @@ import { SocialMediaFooterIconsComponent } from '../social-media-footer-icons/so
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+
+  constructor(
+    public modal: ModalService,
+  ) {
+
+  }
+
+  openAskOverlay = () => {
+    this.modal.openModal()
+  }
 
 }

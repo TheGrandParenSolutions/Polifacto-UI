@@ -41,7 +41,8 @@ export class UserCarouselComponent implements OnInit {
   ngOnInit(): void {
     this.verifyPostsService.getUserAskedPosts().subscribe({
       next: (data: any) => {
-        this.userPosts = data;
+        if (!data) return;
+        this.userPosts = data.filter(post => post?.verificationStatus !== "unverified");
       },
     });
   }
