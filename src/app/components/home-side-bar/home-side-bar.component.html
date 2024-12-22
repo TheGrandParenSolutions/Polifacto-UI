@@ -1,49 +1,35 @@
-<div class="bg-dark-light text-white p-2 p-lg-8 rounded-l mb-10">
+<div class="bg-dark-light text-white p-5 md:p-2 p-lg-8 rounded-l mb-10">
   <div class="w-100 position-relative">
     <h2 class="display-5 fw-bold mb-4">What is Polifacto?</h2>
     <div class="fs-6 mb-10 dark-content">
-      <p>
-        <font style="vertical-align: inherit;">
-          <font style="vertical-align: inherit;">Polifacto checks the veracity of Indian politicians' claims and popular
-            content on social networks.</font>
-        </font>
+      <p class="text-lg font-semibold text-zinc-8">
+        Polifacto is a platform dedicated to fact-checking and verifying
+        statements made by Indian politicians and political parties.<br />
+        <br />
+        It focuses on uncovering the truth behind claims, promises, and
+        disinformation, providing citizens with accurate, transparent, and
+        unbiased information. <br />
+        <br />
+        <a class="!text-gray-50 font-bold text-lg !no-underline hover:!underline" href="/about-us"
+          >Learn more
+        </a>
       </p>
-      <ul>
-        <li>
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">We are looking for trusted sources that everyone can check.</font>
-          </font>
-        </li>
-        <li>
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">We have transparent </font>
-          </font><a href="/stranka/jak-hodnotime-metodika">
-            <font style="vertical-align: inherit;">
-              <font style="vertical-align: inherit;">procedures</font>
-            </font>
-          </a>
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;"></font>
-            <!-- take to about us -->
-          </font>
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">.</font>
-          </font>
-        </li>
-      </ul>
     </div>
     <!-- Add introduction video  -->
     <div class="w-100 position-relative">
-      <app-video-player [thumbnail]="'/assets/images/workshop.jpg'"
-        [videoSrc]="'/assets/media/video-main.mp4'"></app-video-player>
+      <app-video-player
+        [thumbnail]="'/assets/images/workshop.jpg'"
+        [videoSrc]="'/assets/media/video-main.mp4'"
+      ></app-video-player>
     </div>
     <div class="mt-5">
-      <span class="fs-5 mb-4">
-        Shootup your questions now!!
-      </span>
+      <span class="fs-5 mb-4"> Shootup your questions now!! </span>
     </div>
     <div class="mt-4">
-      <button class="btn !bg-[--bg-lime] w-100" (click)="openAskQuestionOverlay()">
+      <button
+        class="btn !bg-[--bg-lime] w-100"
+        (click)="openAskQuestionOverlay()"
+      >
         <span class="text-dark font-bold">Ask Us</span>
       </button>
     </div>
