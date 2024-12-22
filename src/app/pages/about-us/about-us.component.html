@@ -1,98 +1,72 @@
 <div id="container-id" class="container">
-  <div class="row g-5 g-lg-10" data-controller="components--sticky"
-    data-action="scroll@window->components--sticky#onScroll" data-components--sticky-breakpoint="992">
-
+  <div
+    class="row g-5 g-lg-10"
+    data-controller="components--sticky"
+    data-action="scroll@window->components--sticky#onScroll"
+    data-components--sticky-breakpoint="992"
+  >
     <div class="col col-12 col-lg-3 position-relative flex items-end">
-      <nav class="side-nav w-100" [ngClass]="{'fixed': !hasUserReachedTheBottomOfThePage}"
-        data-bs-target="components--sticky.sticky" style="width: 250px !important;" [ngStyle]="{'top': '145px' }">
+      <nav
+        class="side-nav w-100 side-nav-mobile"
+        [ngClass]="{ fixed: !hasUserReachedTheBottomOfThePage }"
+        data-bs-target="components--sticky.sticky"
+        style="width: 250px !important"
+        [ngStyle]="{ top: '145px' }"
+      >
         <h1 class="display-4 fw-bold mb-4 p-0">
-          <font style="vertical-align: inherit;">
-            <font style="vertical-align: inherit;">About us</font>
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">About us</font>
           </font>
         </h1>
         <ul class="list p-0">
           <li (click)="scrollIntoView(polifactoSection, 'about')">
-            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
-              [ngClass]="{'active': activeLink === 'about'}">
+            <a
+              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+              [ngClass]="{ active: activeLink === 'about' }"
+            >
               <span>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">1. About
-                    Polifacto</font>
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit"
+                    >1. About Polifacto</font
+                  >
                 </font>
               </span>
             </a>
           </li>
-          <li (click)="scrollIntoView(evaluationSection,'evaluate')">
-            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
-              [ngClass]="{'active': activeLink === 'evaluate'}">
+          <li (click)="scrollIntoView(evaluationSection, 'evaluate')">
+            <a
+              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+              [ngClass]="{ active: activeLink === 'evaluate' }"
+            >
               <span>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">2. How do we
-                    evaluate?</font>
-                </font>
-              </span>
-            </a>
-          </li>
-          <li (click)="scrollIntoView(assesmentSection, 'assesment')">
-            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
-              [ngClass]="{'active': activeLink === 'assesment'}">
-              <span>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">3. Objections to the
-                    assessment</font>
-                </font>
-              </span>
-            </a>
-          </li>
-          <li (click)="scrollIntoView(financeSection, 'finance')">
-            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
-              [ngClass]="{'active': activeLink === 'finance'}">
-              <span>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">4. Our Financing</font>
-                </font>
-              </span>
-            </a>
-          </li>
-          <li (click)="scrollIntoView(ethicsSection, 'ethics')">
-            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
-              [ngClass]="{'active': activeLink === 'ethics'}">
-              <span>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">5. Code of
-                    Ethics</font>
-                </font>
-              </span>
-            </a>
-          </li>
-          <li (click)="scrollIntoView(faqSection, 'faq')">
-            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
-              [ngClass]="{'active': activeLink === 'faq'}">
-              <span>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">6. FAQ — Frequently
-                    asked questions</font>
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit"
+                    >2. How do we evaluate?</font
+                  >
                 </font>
               </span>
             </a>
           </li>
           <li (click)="scrollIntoView(contactSection, 'contacts')">
-            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
-              [ngClass]="{'active': activeLink === 'contacts'}">
+            <a
+              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+              [ngClass]="{ active: activeLink === 'contacts' }"
+            >
               <span>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">7. Contacts</font>
+                <font style="vertical-align: inherit">
+                  <font style="vertical-align: inherit">3. Contacts</font>
                 </font>
               </span>
             </a>
           </li>
-
         </ul>
       </nav>
     </div>
 
-    <div class="col col-12 col-lg-9" data-bs-target="components--sticky.content">
-
+    <div
+      class="col col-12 col-lg-9"
+      data-bs-target="components--sticky.content"
+    >
       <div #polifactoSection class="accordion pb-10" id="co-je-to-polifacto-in">
         <h2 class="pb-4 mb-0">
           <font style="vertical-align: inherit">
@@ -102,9 +76,14 @@
 
         <div class="accordion-item" id="co-je-to-polifacto-in">
           <h2 class="accordion-header" id="heading-co-je-to-polifacto-in">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-co-je-to-polifacto-in" aria-expanded="false"
-              aria-controls="collapse-co-je-to-polifacto-in">
+            <button
+              class="accordion-button collapsed !transition-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse-co-je-to-polifacto-in"
+              aria-expanded="false"
+              aria-controls="collapse-co-je-to-polifacto-in"
+            >
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   What is Polifacto?
@@ -112,8 +91,13 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-co-je-to-polifacto-in" class="accordion-collapse collapse"
-            aria-labelledby="heading-co-je-to-polifacto-in" data-bs-parent="#co-je-to-polifacto-in" style>
+          <div
+            id="collapse-co-je-to-polifacto-in"
+            class="accordion-collapse collapse"
+            aria-labelledby="heading-co-je-to-polifacto-in"
+            data-bs-parent="#co-je-to-polifacto-in"
+            style
+          >
             <div class="accordion-body">
               <div class="content">
                 <p>
@@ -123,80 +107,35 @@
                     </font>
                   </strong>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">.</font>
-                  </font><strong>
+                    <font style="vertical-align: inherit">.</font> </font
+                  ><strong>
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit">in</font>
                     </font>
                   </strong>
                   <font style="vertical-align: inherit">
                     <font style="vertical-align: inherit">
-                      is a unique Indian project that
-                      focuses on verifying the statements of politicians,
-                      disinformation and other false content on social
-                      networks.</font>
+                      is a unique Indian project that focuses on verifying the statements of politicians, disinformation and other false content on social networks.
+                    </font>
                   </font>
                 </p>
                 <p>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">Our activity therefore
-                      consists primarily in pointing out
-                      false and manipulative expressions that distort the public
-                      space. As part of the analyses, the project evaluates only
-                      the factual statements/declarations of politicians, which
-                      it subjects to examination. This is done by tracing
-                      primary sources of information. During the period of
-                      operation, our procedures (see methodology) have already
-                      verified thousands of statements by top Indian politicians.
-                      Simply put - we try to point out if and when specifically
-                      Indian politicians are telling the truth, or on the
-                      contrary they are deceiving the public.</font>
+                    <font style="vertical-align: inherit">
+                      At Polifacto.in, we aim to highlight false and misleading expressions that distort public discourse. We focus on evaluating the factual statements and declarations of Indian politicians, subjecting them to rigorous scrutiny. Through our work, we aim to inform the public about when political leaders are being truthful and when they may be misleading the people they serve. By shedding light on inaccuracies and manipulations, we help foster transparency, accountability, and a more informed citizenry. Our project strives to protect the integrity of public discourse and ensure that facts remain at the forefront of democratic dialogue.  
+                    </font>
                   </font>
                 </p>
                 <p>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">Polifacto is a
-                      non-profit and volunteer association of
-                      people, it is not connected to any political entity and in
-                      its activities it proceeds according to a clearly publicly
-                      available methodology with an emphasis on the standards of
-                      journalistic work (see Code of Ethics).</font>
-                  </font>
-                </p>
-                <p>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">During the time that
-                      it has been operating (since March
-                      2012), the project has become known to the Indian public
-                      and the media, it has won several awards (e.g. Journalist
-                      Award 2012 - Google Award for innovative citizen online
-                      journalism or Křišťálová lupa - repeated placements in the
-                      TOP10 in the project of the year categories and community
-                      service). The inspiration for Polifacto comes primarily
-                      from functioning organizations such as
-                    </font>
-                  </font><a href="http://www.politifact.com/">
                     <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">PolitiFact</font>
+                     <b>Wondering Why Polifacto?</b>
+                      <br>
+                      <br>
+                      <b>Empowering Truth-Seekers:</b> Our mission is to fight misinformation and promote informed decision-making.
+                      <br>
+                      <b>Community-Driven:</b> We believe in the power of collective wisdom. Join our growing community to contribute your expertise and insights.
                     </font>
-                  </a>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit"> , </font>
-                  </font><a href="http://www.factcheck.org/">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">FactCheck.org</font>
-                    </font>
-                  </a>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit"> or </font>
-                  </font><a href="https://www.washingtonpost.com/news/fact-checker/">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">The Washington Post
-                        Fact Checker</font>
-                    </font>
-                  </a>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit"> .</font>
                   </font>
                 </p>
               </div>
@@ -204,10 +143,18 @@
           </div>
         </div>
         <div class="accordion-item" id="jak-projekt-polifacto-in-vznikl">
-          <h2 class="accordion-header" id="heading-jak-projekt-polifacto-in-vznikl">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-projekt-polifacto-in-vznikl" aria-expanded="false"
-              aria-controls="collapse-jak-projekt-polifacto-in-vznikl">
+          <h2
+            class="accordion-header"
+            id="heading-jak-projekt-polifacto-in-vznikl"
+          >
+            <button
+              class="accordion-button collapsed !transition-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-projekt-polifacto-in-vznikl"
+              aria-expanded="false"
+              aria-controls="collapse-jak-projekt-polifacto-in-vznikl"
+            >
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   How did the Polifacto project come about?
@@ -215,91 +162,44 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-jak-projekt-polifacto-in-vznikl" class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-projekt-polifacto-in-vznikl" data-bs-parent="#co-je-to-polifacto-in" style>
+          <div
+            id="collapse-jak-projekt-polifacto-in-vznikl"
+            class="accordion-collapse collapse"
+            aria-labelledby="heading-jak-projekt-polifacto-in-vznikl"
+            data-bs-parent="#co-je-to-polifacto-in"
+            style
+          >
             <div class="accordion-body">
               <div class="content">
                 <p>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">Polifacto was created
-                      in February 2012 and directly
-                      follows on from the Slovak version of the project -
-                      polifacto.sk. It was created as a voluntary and
-                      independent
-                      initiative of Matej Hruška and Ondrej Lunter, students of
-                      Masaryk University in Brno.</font>
+                    <font style="vertical-align: inherit"
+                      >The Polifacto project was born from the vision of two innovative minds who sought to make a meaningful impact on society. Driven by a shared passion for uncovering the truth behind claims made by the Indian government, they created Polifacto to empower citizens with accurate, verified information.</font
+                    >
                   </font>
                 </p>
                 <p>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">The project
-                      subsequently also excited their Indian
-                      classmates, and thanks to the establishment of cooperation
-                      with a student of the Faculty of Social Studies, Terezá
-                      Skládanková, a domestic branch was also created.</font>
+                    <font style="vertical-align: inherit"
+                      >This platform is designed to promote transparency and accountability, ensuring that the people of India have the tools they need to make informed decisions. By shedding light on the truth, Polifacto strives to help citizens choose a wiser and more transparent democracy, strengthening the foundation of India's democratic values</font
+                    >
                   </font>
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item" id="spolek-polifacto-in">
-          <h2 class="accordion-header" id="heading-spolek-polifacto-in">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-spolek-polifacto-in" aria-expanded="false"
-              aria-controls="collapse-spolek-polifacto-in">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit"> IFCN </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-spolek-polifacto-in" class="accordion-collapse collapse"
-            aria-labelledby="heading-spolek-polifacto-in" data-bs-parent="#co-je-to-polifacto-in">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">Polifacto is
-                    </font>
-                  </font><a href="https://ifcncodeofprinciples.poynter.org/profile/polifactoin">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">a signatory</font>
-                    </font>
-                  </a>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">
-                      of the code of the international fact-checking
-                      organization IFCN and undertakes to follow its
-                    </font>
-                  </font><a
-                    href="https://ifcncodeofprinciples.poynter.org/know-more/the-commitments-of-the-code-of-principles">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">principles</font>
-                    </font>
-                  </a>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">
-                      . If you believe that we are not meeting any of the
-                      principles, you can
-                    </font>
-                  </font><a href="https://ifcncodeofprinciples.poynter.org/complaints-policy">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">tell</font>
-                    </font>
-                  </a>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit"> IFCN.</font>
-                  </font>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <div class="accordion-item" id="kdo-pripravuje-polifacto-in">
           <h2 class="accordion-header" id="heading-kdo-pripravuje-polifacto-in">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-kdo-pripravuje-polifacto-in" aria-expanded="false"
-              aria-controls="collapse-kdo-pripravuje-polifacto-in">
+            <button
+              class="accordion-button collapsed !transition-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse-kdo-pripravuje-polifacto-in"
+              aria-expanded="false"
+              aria-controls="collapse-kdo-pripravuje-polifacto-in"
+            >
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   Who prepares Polifacto?
@@ -307,44 +207,50 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-kdo-pripravuje-polifacto-in" class="accordion-collapse collapse"
-            aria-labelledby="heading-kdo-pripravuje-polifacto-in" data-bs-parent="#co-je-to-polifacto-in">
+          <div
+            id="collapse-kdo-pripravuje-polifacto-in"
+            class="accordion-collapse collapse"
+            aria-labelledby="heading-kdo-pripravuje-polifacto-in"
+            data-bs-parent="#co-je-to-polifacto-in"
+          >
             <div class="accordion-body">
               <div class="row g-5">
                 <div class="col col-12">
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/7vcs18h2yxcqx01psgbnip7zb9x6"
-                          alt="Petr Gongala" class="w-100" />
+                      <span
+                        class="symbol symbol-square symbol-circle min-w-[48px] min-h-[48px]"
+                      >
+                        <img
+                          src="https://pmlrikjsxqgrgdkkqskv.supabase.co/storage/v1/object/public/images/Founders/jp-poli.png"
+                          alt="Jatin Pal"
+                          class="w-100"
+                          loading="lazy"
+                          width="144"
+                          height="144"
+                          decoding="async"
+                          data-nimg="1"
+                          style="color: transparent"
+                        />
                       </span>
                     </div>
                     <div class="col col-10">
                       <h4 class="fs-2">
                         <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Modi</font>
+                          <font style="vertical-align: inherit">Jatin Pal</font>
                         </font>
                       </h4>
-                      <p class="fs-6">
+                      <p class="fs-6 flex items-center">
                         <b>
                           <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Project
-                              coordinator, board member</font>
+                            <font style="vertical-align: inherit">Co Founder</font>
                           </font>
                         </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — He has been working in the project since its
-                            inception and has been leading it since 2020. In
-                            addition, he supervises the methodology of
-                            fact-check outputs and represents polifacto in the
-                            CEDMO consortium. In his free time, he organizes
-                            debate events and podcasts about antiquity. "I hope
-                            that Polifacto will be an inspiration and challenge
-                            for others who want to participate in the
-                            development of civil society in India."
-                          </font>
-                        </font>
+                        <a target="_blank" href="https://www.linkedin.com/in/jat121/" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48" fill="none">
+                          <circle cx="24" cy="24" r="20" fill="#0077B5"/>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z" fill="white"/>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z" fill="white"/>
+                          </svg></a>
                       </p>
                     </div>
                   </div>
@@ -353,33 +259,41 @@
                 <div class="col col-12">
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/awhpetigqtzp01d9y87pkx4w7szt"
-                          alt="Jan Fridrichovský" class="w-100" />
+                      <span
+                        class="symbol symbol-square symbol-circle min-w-[48px] min-h-[48px]"
+                      >
+                        <img
+                          src="https://pmlrikjsxqgrgdkkqskv.supabase.co/storage/v1/object/public/images/Founders/jm-poli.png"
+                          class="w-100"
+                          alt="Jaya Mehta"
+                          loading="lazy"
+                          width="144"
+                          height="144"
+                          decoding="async"
+                          data-nimg="1"
+                          style="color: transparent"
+                        />
                       </span>
                     </div>
                     <div class="col col-10">
                       <h4 class="fs-2">
                         <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Jan
-                            Fridrichovsky</font>
+                          <font style="vertical-align: inherit"
+                            >Jaya Mehta</font
+                          >
                         </font>
                       </h4>
-                      <p class="fs-6">
+                      <p class="fs-6 flex items-center">
                         <b>
                           <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Editor-in-chief,
-                              member of the board</font>
+                            <font style="vertical-align: inherit">Co Founder</font>
                           </font>
                         </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — Graduate of the Faculty of Law, Faculty of
-                            Economics and Administration and Faculty of Social
-                            Studies of Masaryk University. Former public sector
-                            analyst. He has been part of the Polifacto team
-                            since May 2018.</font>
-                        </font>
+                        <a target="_blank" href="https://www.linkedin.com/in/jayamehta29/" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48" fill="none">
+                          <circle cx="24" cy="24" r="20" fill="#0077B5"/>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z" fill="white"/>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z" fill="white"/>
+                          </svg></a>
                       </p>
                     </div>
                   </div>
@@ -387,772 +301,40 @@
 
                 <div class="col col-12">
                   <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/480l52megdo3on9lt4zlyths291k"
-                          alt="Kamila Žihlová" class="w-100" />
-                      </span>
-                    </div>
                     <div class="col col-10">
                       <h4 class="fs-2">
                         <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Kamila
-                            Žihlová</font>
+                          <font style="vertical-align: inherit"
+                            >Want to Join Us??</font
+                          >
                         </font>
                       </h4>
-                      <p class="fs-6">
-                        <b>
+                      <p class="fs-6 flex items-center">
                           <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Editor, member
-                              of the board</font>
+                            <font style="vertical-align: inherit">We are looking for <strong>dedicated individuals</strong> who share our passion for truth and transparency to join 
+                              us in this journey. If you're willing to volunteer your time and skills to help research and verify claims, we’d 
+                              love to have you on board. Together, we can build a platform that prioritizes accountability and factual information.</font>
                           </font>
-                        </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — She has been a part of the Polifacto team since
-                            2019. She was first among the proofreaders, later
-                            she also joined the analysts. Since October 2020, he
-                            has been working as an editor in the project.
-                            Outside of Polifacto, he is dedicated to
-                            proofreading texts.</font>
-                        </font>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/h8932x8rtrym8smwyn6tlygvt9w5"
-                          alt="Jakub Cajkář" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Jakub
-                            Cajkař</font>
-                        </font>
-                      </h4>
-                      <p class="fs-6">
-                        <b>
-                          <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Editor</font>
-                          </font>
-                        </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — Graduate of North American Studies and
-                            International Territorial Studies at FSV UK. He has
-                            been part of the Polifacto project since September
-                            2020, when he started in an analytical position. He
-                            has been working as an editor in the team since
-                            March 2021.</font>
-                        </font>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/o3nmvuddx2oussmowppttjmzo6g9"
-                          alt="Natálie Kopecká" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Natalia
-                            Kopecká</font>
-                        </font>
-                      </h4>
-                      <p class="fs-6">
-                        <b>
-                          <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Editor</font>
-                          </font>
-                        </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — Student of public and social policy at FSV UK. As
-                            part of her studies, she mainly specializes in
-                            education policy and is also interested in
-                            environmental policy. She likes to travel in her
-                            spare time. He has been part of the Polifacto team
-                            since March 2021.</font>
-                        </font>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/pq6bof0ze334w9m5zegy8puirj8c"
-                          alt="Markéta Haderková" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Markéta
-                            Haderková</font>
-                        </font>
-                      </h4>
-                      <p class="fs-6">
-                        <b>
-                          <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Editor</font>
-                          </font>
-                        </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — She received her philological education at FF OU.
-                            They try to find their way in today's
-                            information-laden world and perceive it in all its
-                            complexity and ambiguity. He especially has a warm
-                            relationship with his mother tongue, foreign
-                            languages, literature, gastronomy and music. He has
-                            been part of the Polifacto team since November
-                            2022.</font>
-                        </font>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/r6tiaupfybzrcqfnya9zm6iqux1c"
-                          alt="Ondřej Kutman" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Ondrej
-                            Kutman</font>
-                        </font>
-                      </h4>
-                      <p class="fs-6">
-                        <b>
-                          <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Editor</font>
-                          </font>
-                        </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — Student of Security Studies at FSV UK and graduate
-                            of Political Science and International Relations at
-                            the same faculty. In addition to Indian politics, he
-                            is interested in political events in the USA. In his
-                            free time, he plays the guitar and the piano, he
-                            also likes to read and play sports. He became a
-                            senior analyst in November 2023.</font>
-                        </font>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/65bpxqnnks0fqmz36p7z2xt5fha1"
-                          alt="Ronja Drahanská" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Ronja
-                            Drahanská</font>
-                        </font>
-                      </h4>
-                      <p class="fs-6">
-                        <b>
-                          <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Editor</font>
-                          </font>
-                        </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — She studies political science and European studies
-                            at Masaryk University. She enjoys watching the
-                            political scene, she loves singing and theater and
-                            in her spare time she either reads or watches old
-                            Indian films. She has been working as a senior
-                            analyst in the project since November 2023.</font>
-                        </font>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/5t5kjfl6pclxn6jsn0ud3c5zjdb3"
-                          alt="Ondřej Havránek" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Ondřej
-                            Havránek</font>
-                        </font>
-                      </h4>
-                      <p class="fs-6">
-                        <b>
-                          <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Project
-                              communication</font>
-                          </font>
-                        </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — Ondřej graduated in media studies and is currently
-                            continuing his follow-up master's studies. He has
-                            been in the Polifacto project since March 2021. He
-                            first tried fact-checking and analytics, now he is
-                            in charge of project communication.</font>
-                        </font>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/7vhgguxkm2r8tiyrtb0huperkqzy"
-                          alt="Jan Vlček" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Jan Vlček</font>
-                        </font>
-                      </h4>
-                      <p class="fs-6">
-                        <b>
-                          <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Web
-                              administrator</font>
-                          </font>
-                        </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — Dedicated to the Internet, both in practical
-                            design and programming of websites, and
-                            theoretically through the New Media Studies at the
-                            Faculty of Arts UK. On the Polifacto project, in
-                            addition to website maintenance, he likes to
-                            experiment with output formats.</font>
-                        </font>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/7dlt8coiwxc87imry0k3a9sq7jxf"
-                          alt="Václav Boháč" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Vaclav
-                            Bohač</font>
-                        </font>
-                      </h4>
-                      <p class="fs-6">
-                        <b>
-                          <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">Webmaster</font>
-                          </font>
-                        </b>
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">
-                            — Programmer by body and soul.</font>
-                        </font>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/d8m4snu0q94azgz8i04hy9eij9ij"
-                          alt="Jan Tvrdoň" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">
-                        <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit">Jan
-                            Tvrdon</font>
-                        </font>
-                      </h4>
-                      <p class="fs-6">
-                        <b>Člen rady</b> — Bývalý dlouholetý vedoucí Polifacto,
-                        dnes redaktor Deníku N. Věčně pobavený kritik české
-                        politiky, fanoušek politického bizáru a špatné hudby.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/hcidt3vyd2nhptoellish6tbiwfo"
-                          alt="Alice Minářová" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Alice Minářová</h4>
-                      <p class="fs-6">
-                        <b>Sociální sítě</b> — Studovala mezinárodní vztahy
-                        a&nbsp;politologii na FSS&nbsp;Masarykovy univerzity.
-                        Svoji pozornost upíná na zahraniční i&nbsp;domácí
-                        politiku. Kromě studií se věnuje také
-                        sportu&nbsp;–⁠&nbsp;jako trenér, ale i&nbsp;soutěžní
-                        sportovec. Součástí týmu Polifacto je od března 2021.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/c8m8ohf8579zcv63j2ospx89efnj"
-                          alt="Barbora Marešová" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Barbora Marešová</h4>
-                      <p class="fs-6">
-                        <b>Analytička, sociální sítě</b> — Vystudovala VŠE,
-                        hlavní obor Hospodářská politika. Poté se vrhla do vod
-                        korporátního finančního managementu, od kterého si
-                        momentálně dává pauzu na mateřské „dovolené“. V osobním
-                        životě ráda cestuje, čte, cvičí jógu a miluje fotbal.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/wdd6bmg2cuiuzq3dyn524b4pkfvr"
-                          alt="Kristina Dědečková" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Kristina Dědečková</h4>
-                      <p class="fs-6">
-                        <b>Lektorka workshopů</b> — V Polifacto působí od
-                        prosince 2022. Kromě polifactou ji najdete ještě v
-                        nadaci
-                        Via na programu „Nebojme se komunální politiky“ a v
-                        nadaci OSF, kde dělá koordinátorku projektu Advokační
-                        fórum. Ke společenským tématům se dostala skrze spolek
-                        Mladí občané, kde v průběhu let působila na různých
-                        pozicích od vedení projektů, správce kasy až po
-                        předsedkyni.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/2wot0sx0uohgx9ydn8o5x4j5mynd"
-                          alt="Anna Ledahudcová" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Anna Ledahudcová</h4>
-                      <p class="fs-6">
-                        <b>Seniorní analytička</b> — Absolventka bezpečnostních
-                        studií a žurnalistiky na FSS MUNI. Do týmu Polifacto
-                        vstoupila v dubnu 2022. Po bakalářské promoci se
-                        zaměřila se na práci v oblasti bezpečnostní politiky.
-                        Své působení v Polifacto v roce 2023 pozastavila, aby
-                        absolvovala stáž v jedné z poradních institucí EU v
-                        Bruselu. Nyní se v Itálii věnuje mezinárodním
-                        bezpečnostním studiím a do Polifacto se vrátila na svou
-                        pozici seniorní analytičky.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/5uslai31u0qgd45a5z95grjg1o7b"
-                          alt="Adéla Samková" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Adéla Samková</h4>
-                      <p class="fs-6">
-                        <b>Seniorní analytička</b> — Studuje magisterský program
-                        Politická analýza a&nbsp;strategie a&nbsp;Evropská unie
-                        na KPES&nbsp;UPOL v&nbsp;Olomouci, v&nbsp;minulosti také
-                        na univerzitě v&nbsp;Helsinkách. Z&nbsp;oboru se nejvíce
-                        zajímá o&nbsp;fake news, práci s&nbsp;daty nebo
-                        historické koncepty postsovětských a&nbsp;severských
-                        zemí. Ve volném čase se soustředí na sport, fantasy
-                        literaturu či gaming. Dlouhodobě také pracuje jako
-                        trenérka plavání pro děti i&nbsp;dospělé.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/achah6t35vq2bett63c4s86o5inj"
-                          alt="Jakub Mařík" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Jakub Mařík</h4>
-                      <p class="fs-6">
-                        <b>Seniorní analytik</b> — Jsem Kuba, momentálně studuji
-                        na Vysoké škole ekonomické v Praze na Fakultě
-                        managementu v Jindřichově Hradci. Když zrovna nejsem v
-                        práci nebo ve škole, tak jezdím rád a dobře na kole.
-                        Občas se také začtu do nějaké knihy.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/p7hjhwc2lgd64be1it82747dyxvd"
-                          alt="Alžběta Kabrdová" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Alžběta Kabrdová</h4>
-                      <p class="fs-6">
-                        <b>Seniorní analytička</b> — Studentka Bezpečnostních
-                        studií na FSV UK se zaměřením na Studium míru a
-                        konfliktů. Je absolventkou Žurnalistiky a Mezinárodních
-                        vztahů na University of Derby ve Velké Británii. Zajímá
-                        se o zahraniční politiku a problematiku lidských práv.
-                        Kromě toho ve volném ráda čte, vaří a cvičí jógu.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/va9j4xx1t6gl6g8htby5ss10w821"
-                          alt="Anna Chocová" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Anna Chocová</h4>
-                      <p class="fs-6">
-                        <b>Analytička</b> — Studuje na Právnické fakultě
-                        Univerzity Karlovy v Praze. Ráda by se v budoucnu
-                        zabývala ochranou lidských práv v rámci evropského nebo
-                        mezinárodního práva. Zajímá se o politiku, ochranu
-                        životního prostředí a historii. Miluje knihy (nejraději
-                        čte sci-fi a fantasy), hudbu, lyže a procházky se psem.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/rwvcnxlgezwvntuj7u10rwoj2udt"
-                          alt="Oliver Eredia" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Oliver Eredia</h4>
-                      <p class="fs-6">
-                        <b>Analytik</b> — Dokončuje studium žurnalistiky a
-                        politologie na Masarykově univerzitě. První pořádnou
-                        zkušenost měl na iROZHLAS.in a jeden semestr strávil
-                        studiem politologie v Německu. Mezi zájmy v oboru patří
-                        stranické a politické systémy v Česku, západní Evropě a
-                        vývoj demokracie v postkoloniálních zemích.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/v5115eef0vck7neyut9kn4qw5emj"
-                          alt="Tomáš Pelc" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Tomáš Pelc</h4>
-                      <p class="fs-6">
-                        <b>Analytik</b> — Dokončuje studium pedagogiky na FF MU.
-                        Zaměřuje se převážně na mediální a informační
-                        gramotnost, a kritické myšlení. Ve volném čase rád čte
-                        faktickou literaturu.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/pm4r25i33dhsd3nclqytxq4qe64r"
-                          alt="Barbora Rezková" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Barbora Rezková</h4>
-                      <p class="fs-6">
-                        <b>Analytička</b> — Studentka sociologie a hospodářské
-                        politiky na Masarykově univerzitě. Nejvíce se aktuálně
-                        ve svém studiu zaměřuje na migraci a problematiku
-                        menšin. Ve svém volném čase ráda cestuje, čte a maluje.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/ob6slxiqas2swdg904ojj2n3xwni"
-                          alt="Martin Petrov" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Martin Petrov</h4>
-                      <p class="fs-6">
-                        <b>Analytik</b> — Student Bezpečnostních studií na FSV
-                        UK. Bakalářské studium absolvoval na téže fakultě, obor
-                        Mezinárodní teritoriální studia. Zajímá se o zahraniční
-                        politiku, zejména pak o Blízký východ a Východní Asii.
-                        Ve volném čase nejraději sportuje nebo cestuje.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/twfn3w4azaepz9eh0vay48aex2ub"
-                          alt="Jakub Šindelář" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Jakub Šindelář</h4>
-                      <p class="fs-6">
-                        <b>Analytik</b> — Student pražského gymnázia. Jednou by
-                        chtěl studovat politologii nebo mezinárodní vztahy. Ve
-                        volnem čase se zajímá o domácí politickou scénu a
-                        architekturu, běhá, poslouchá psychedelickou hudbu a
-                        vymýšlí program kinu.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/8nqs71bgimvp17cfphz7gclrszcq"
-                          alt="Adam Černička" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Adam Černička</h4>
-                      <p class="fs-6">
-                        <b>Analytk</b> — Studuje historii a politologii na
-                        Univerzitě v Edinburghu. Ve volném čase se věnuje
-                        především soutěžní debatě a cestování. Součástí projektu
-                        Polifacto je od května 2024.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/h8sqo6nthwoomsz828nxl49pptsy"
-                          alt="Martin Šmejkal" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Martin Šmejkal</h4>
-                      <p class="fs-6">
-                        <b>Analytik</b> — Dokončuje obor Bezpečnostně právní
-                        studia. Má rád hokej, vesmír, dobré kafe, červené víno a
-                        pravdu. Součástí týmu Polifacto je od května 2024.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/v8cnz3rd2kqenkii61dwigvmhn34"
-                          alt="Anna Spirmanová" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Anna Spirmanová</h4>
-                      <p class="fs-6">
-                        <b>Korektorka</b> — Vystudovala bakalářské obory Český
-                        jazyk a&nbsp;literatura a&nbsp;Angličtina pro
-                        mezikulturní komunikaci na FF&nbsp;UK, pokračuje studiem
-                        magisterských oborů překladatelství a&nbsp;tlumočnictví
-                        angličtiny. Miluje zvířata, baví jí knížky, true crime
-                        podcasty nebo počítačové hry, ráda si dá dobrou kávu.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/ft4apzq8ec09d7rfuepo9ougn3i5"
-                          alt="Nikola Tettauer Kristenová" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Nikola Tettauer Kristenová</h4>
-                      <p class="fs-6">
-                        <b>Korektorka</b> — Ačkoliv už má svá studia nějakou
-                        chvíli za sebou, snaží se nepřestat se učit. Přečte, co
-                        jí pod ruku přijde, prokládá to občasnou tvořící mánií,
-                        taháním krosny po horách a snahou nezahubit zeleň v
-                        bytě.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/fzdy0tra3wjep2zj3t5j35877cit"
-                          alt="Adéla Otavová" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Adéla Otavová</h4>
-                      <p class="fs-6">
-                        <b>Korektorka</b> — Nadšenkyně do komunikace ve všech
-                        formách a jazycích. Od malička ji baví gramatika a práce
-                        s textem, což ji přivedlo až sem. Ve svém volném čase se
-                        věnuje marketingu, hudbě a sportu. Nedílnou součástí
-                        jejího života je i focení, jehož prostřednictvím si
-                        uchovává nezapomenutelné okamžiky i každodenní
-                        všednosti.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/w8s2sgqcd6gv2f1ss94nw00hkg1c"
-                          alt="Mariana Červinková" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Mariana Červinková</h4>
-                      <p class="fs-6">
-                        <b>Korektorka</b> — Vystudovala magisterský obor
-                        Učitelství českého jazyka a&nbsp;dějepisu na FP&nbsp;TUL
-                        a&nbsp;tyto předměty učí na základní škole. Ve volném
-                        čase čte, zajde na procházku, poslouchá podcasty,
-                        sleduje vědomostní soutěže, politické debaty
-                        a&nbsp;sport.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col col-12">
-                  <div class="row g-5 g-lg-10">
-                    <div class="col col-2">
-                      <span class="symbol symbol-square symbol-circle">
-                        <img src="https://dem-prod-s3.ams3.digitaloceanspaces.com/synxc8piuviuactcnln7kf4ugigi"
-                          alt="Iva Kovačičová" class="w-100" />
-                      </span>
-                    </div>
-                    <div class="col col-10">
-                      <h4 class="fs-2">Iva Kovačičová</h4>
-                      <p class="fs-6">
-                        <b>Korektorka</b> — Vystudovala bakalářskou žurnalistiku
-                        a při práci v jiném oboru má teď psaní a jazyk hlavně
-                        jako koníček. Kromě češtiny se ráda učí i cizí jazyky,
-                        užívá si turistiku, čtení a dobré jídlo.
-                      </p>
+                        <p style="color: #171717; line-height: 1.6;">
+                          Interested in joining us? 
+                          <a 
+                            class="font-bold" 
+                            href="mailto:your-email@example.com" 
+                            style="color: #007BFF; text-decoration: none;"
+                          >
+                            Contact us
+                          </a> 
+                          or reach out to us using this 
+                          <a 
+                            class="font-bold" 
+                            href="https://forms.gle/okBTH2HhDtFHDyxp8" 
+                            target="_blank" 
+                            style="color: #007BFF; text-decoration: none;"
+                          >
+                            Form
+                          </a> 
+                          and let’s work together to unveil the truth.
+                        </p>
                     </div>
                   </div>
                 </div>
@@ -1170,36 +352,50 @@
 
         <div class="accordion-item" id="co-je-to-factcheck">
           <h2 class="accordion-header" id="heading-co-je-to-factcheck">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-co-je-to-factcheck" aria-expanded="false"
-              aria-controls="collapse-co-je-to-factcheck">
+            <button
+              class="accordion-button collapsed !transition-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse-co-je-to-factcheck"
+              aria-expanded="false"
+              aria-controls="collapse-co-je-to-factcheck"
+            >
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
-                  What is a "factcheck"?
+                  What is a "fact-check"?
                 </font>
               </font>
             </button>
           </h2>
-          <div id="collapse-co-je-to-factcheck" class="accordion-collapse collapse"
-            aria-labelledby="heading-co-je-to-factcheck" data-bs-parent="#jak-hodnotime" style>
+          <div
+            id="collapse-co-je-to-factcheck"
+            class="accordion-collapse collapse"
+            aria-labelledby="heading-co-je-to-factcheck"
+            data-bs-parent="#jak-hodnotime"
+            style
+          >
             <div class="accordion-body">
               <div class="content">
                 <p>
-                  Factcheck znamená ověřování pravdivosti faktických vyjádření
-                  politiků. Sledujeme pouze ověřitelná tvrzení politiků, tedy ta
-                  postavená na faktech v různých podobách, ať už to jsou číselné
-                  informace, činy dané osoby (hlasování o zákonech, vyjádření
-                  atd.) nebo historické události.
+                  Fact-checking is the process of verifying the accuracy and truthfulness of factual statements, particularly those made by public figures such as politicians. It involves examining claims that can be substantiated with evidence, including numerical data, documented actions (such as voting records or public statements), and historical events. The goal of fact-checking is to ensure transparency and accountability by distinguishing between truthful information and misleading or false assertions.
                 </p>
               </div>
             </div>
           </div>
         </div>
         <div class="accordion-item" id="jak-vybirame-obsah-k-overeni">
-          <h2 class="accordion-header" id="heading-jak-vybirame-obsah-k-overeni">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-vybirame-obsah-k-overeni" aria-expanded="false"
-              aria-controls="collapse-jak-vybirame-obsah-k-overeni">
+          <h2
+            class="accordion-header"
+            id="heading-jak-vybirame-obsah-k-overeni"
+          >
+            <button
+              class="accordion-button collapsed !transition-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-vybirame-obsah-k-overeni"
+              aria-expanded="false"
+              aria-controls="collapse-jak-vybirame-obsah-k-overeni"
+            >
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   How do we select content to verify?
@@ -1207,119 +403,57 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-jak-vybirame-obsah-k-overeni" class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-vybirame-obsah-k-overeni" data-bs-parent="#jak-hodnotime">
+          <div
+            id="collapse-jak-vybirame-obsah-k-overeni"
+            class="accordion-collapse collapse"
+            aria-labelledby="heading-jak-vybirame-obsah-k-overeni"
+            data-bs-parent="#jak-hodnotime"
+          >
             <div class="accordion-body">
               <div class="content">
-                <p>Ověřujeme vesměs dva typy obsahu:</p>
+                <p>At Polifacto, we carefully select content to verify based on relevance, balance, and verifiability. Our goal is to ensure impartiality and objectivity while addressing the most significant political statements and claims. Here's how we do it:</p>
                 <p>
-                  a) Diskuse, projevy či interview a jejich části, které
-                  zahrnují řadu faktických výroků;
+                  <strong>Sources of Content</strong>
                 </p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-800">
+                  <li>
+                    <strong>User Submissions:</strong> We verify content submitted by users who ask questions or request fact-checks.
+                  </li>
+                  <li>
+                    <strong>Political Statements:</strong> We analyze statements made by politicians in speeches, interviews, and debates.
+                  </li>
+                  <li>
+                    <strong>Promises and Manifestos:</strong> We examine promises and policy agendas presented by political parties.
+                  </li>
+                  <li>
+                    <strong>Social Media:</strong> We focus on individual statements found on platforms like Twitter, Facebook, and Instagram.
+                  </li>
+                </ul>
                 <p>
-                  b) Jednotlivé výroky zpravidla nalezené na sociálních sítích
-                  Twitter, Facebook či Instagram.
-                </p>
-                <p>
-                  Když ověřujeme delší celek, např. segment politické debaty,
-                  vybíráme z něj všechny zaznělé faktické výroky politiků kromě
-                  nesporných banalit a samozřejmostí. Nevybíráme tedy jen
-                  výroky, které považujeme za důležité a mezi ověřenými výroky
-                  se objeví i takové, které někteří čtenáři budou považovat za
-                  banální. Nevyřazujeme je přesto z ověřování, abychom si
-                  zajistili nestrannost a objektivitu i při výběru výroků.
-                </p>
-                <p>
-                  V publikaci pak zahrnujeme i kategorii neověřitelných tvrzení,
-                  která jsou sice považována za faktická (postavená na faktech),
-                  ke kterým ovšem nebylo možné dohledat žádný veřejný zdroj,
-                  který by dané tvrzení potvrzoval či vyvracel (podrobněji vizte
-                  „Jakým způsobem hodnotíme“).
-                </p>
-                <p>
-                  Když si vybíráme k ověření jednotlivé výroky ze sociálních
-                  sítí a ostatně i když volíme, které diskusi, projevu či
-                  interview, případně které jejich části se budeme věnovat,
-                  postupujeme podle následujících priorit:
-                </p>
-                <p>
-                  1) <strong>Vyrovnanost obsahu</strong>: snažíme se věnovat
-                  přibližně rovnoměrně všem parlamentním stranám a hnutím, resp.
-                  před volbami všem kandidujícím subjektům s významnou podporou.
-                  Výjimku činíme pro vládní strany a ministry, které díky jejich
-                  vyšší míře zodpovědnosti ověřujeme častěji;
-                </p>
-                <p>
-                  2) <strong>Relevance obsahu</strong>: Věnujeme se pokud možno
-                  vedoucím představitelům stran, kteří diskutují aktuální
-                  politické otázky na národním fóru. Nesledujeme tedy tak často
-                  řadové poslance, natož pak místní zastupitele, nevybíráme si
-                  diskuse o tématech, která nemají politický přesah, případně
-                  nejsou zásadní v době ověřování a při výběru se zaměřujeme na
-                  národní média;
-                </p>
-                <p>
-                  3) <strong>Ověřitelnost obsahu</strong>: Když najdeme
-                  zajímavou diskusi se zástupci stran, kterým jsme se dlouho
-                  nevěnovali, pořád se může stát, že v ní nezazněl ověřitelný
-                  obsah, založený na faktech. Mnoho debat se odehrává primárně v
-                  názorové rovině, a k ověření se tak nehodí.
-                </p>
-                <p>
-                  Náš výběr výroků k ověření v posledku závisí na dostupnosti a
-                  kvalitě obsahu, a nebude tak nikdy dokonalý. Vítáme proto
-                  <a href="https://Polifacto/stranka/mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obra">doporučení
-                    i výtky</a>
-                  k hodnocení i výběru.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="co-projekt-polifacto-in-nehodnoti">
-          <h2 class="accordion-header" id="heading-co-projekt-polifacto-in-nehodnoti">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-co-projekt-polifacto-in-nehodnoti" aria-expanded="false"
-              aria-controls="collapse-co-projekt-polifacto-in-nehodnoti">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  What does the Polifacto project not evaluate?
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-co-projekt-polifacto-in-nehodnoti" class="accordion-collapse collapse"
-            aria-labelledby="heading-co-projekt-polifacto-in-nehodnoti" data-bs-parent="#jak-hodnotime">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  1) Názorová politická prohlášení a hodnotící soudy, které
-                  nejsou postaveny na jasných a doložitelných faktech. Je na
-                  diváku, posluchači či čtenáři, aby si vybral, se kterým
-                  názorem souhlasí.
-                </p>
-                <p>
-                  2) Předpovědi budoucnosti. Např.: Opatření vlády XY je dobré,
-                  neboť způsobí růst zaměstnanosti. Věštit neumíme a jakkoli
-                  (ne)pravděpodobné jsou některé predikce, jejich pravdivost
-                  nelze hodnotit dříve, než (ne)nastane předvídaná událost.
-                </p>
-                <p>
-                  3) Banality (<i>"Včera jsem měla k obědu guláš"</i>), obecně
-                  známá fakta (<i>"ČR je členem EU"</i>) a glosy (<i>"Každý ve
-                    státní správě ví, kdo je ministr
-                    životního
-                    prostředí."</i>).
+                  Our selection of statements for verification ultimately depends on the availability and quality of content, and will never be perfect. We therefore welcome 
+                  <a
+                    href="https://forms.gle/okBTH2HhDtFHDyxp8"
+                    >suggestions and criticisms</a
+                  >
+                   for evaluation and selection.
                 </p>
               </div>
             </div>
           </div>
         </div>
         <div class="accordion-item" id="jakym-zpusobem-vyroky-hodnotime">
-          <h2 class="accordion-header" id="heading-jakym-zpusobem-vyroky-hodnotime">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-jakym-zpusobem-vyroky-hodnotime" aria-expanded="false"
-              aria-controls="collapse-jakym-zpusobem-vyroky-hodnotime">
+          <h2
+            class="accordion-header"
+            id="heading-jakym-zpusobem-vyroky-hodnotime"
+          >
+            <button
+              class="accordion-button collapsed !transition-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse-jakym-zpusobem-vyroky-hodnotime"
+              aria-expanded="false"
+              aria-controls="collapse-jakym-zpusobem-vyroky-hodnotime"
+            >
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   How do we evaluate statements?
@@ -1327,1199 +461,126 @@
               </font>
             </button>
           </h2>
-          <div id="collapse-jakym-zpusobem-vyroky-hodnotime" class="accordion-collapse collapse"
-            aria-labelledby="heading-jakym-zpusobem-vyroky-hodnotime" data-bs-parent="#jak-hodnotime">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  1) Faktická tvrzení, která zazní v&nbsp;debatě, interview nebo
-                  na sociálních sítích, jsou identifikována editorem a přidělena
-                  analytikovi, který má právě službu.
-                </p>
-                <p>
-                  2) Analytik najde potřebná data a na jejich základě sepíše
-                  první verzi analýzy tvrzení, které říkáme odůvodnění. Analytik
-                  navrhne i závěrečné hodnocení.
-                </p>
-                <p>
-                  3) Odůvodnění vč.&nbsp;použitých dat a odkazů kontroluje
-                  editor a, má-li připomínky, vrátí jej analytikovi
-                  k&nbsp;přepracování.
-                </p>
-                <p>
-                  4) Odůvodnění kontroluje druhý editor. Pokud najde
-                  v&nbsp;odůvodnění nedostatky, vede diskusi s&nbsp;dalšími
-                  editory, do které se může zapojit celý redakční tým. Na
-                  odůvodnění následně pracují editoři.
-                </p>
-                <p>
-                  5) Každé odůvodnění nakonec kontroluje metodolog projektu,
-                  který je garantem dodržování metodiky hodnocení.
-                  V&nbsp;případě nedostatků vrací text editorům&nbsp;k
-                  přepracování.
-                </p>
-                <p>
-                  6) Odůvodnění a hodnocení jsou publikovány na webu a na
-                  sociálních sítích. V případě, že se po publikaci objeví další
-                  informace, které mění naše hodnocení, provedeme opravu a
-                  zveřejníme ji stejným způsobem, jakým byl zveřejněn původní
-                  text.
-                </p>
-                <p>
-                  Pro závěrečné hodnocení výroku využíváme 4 základní kategorie:
-                </p>
-                <ul>
-                  <li>
-                    <strong>Nepravda</strong><br /><br />Tato tvrzení nejsou v
-                    souladu s veřejně dostupnými čísly nebo informacemi o
-                    nějakém konání, respektive nekonání. Může jít také o
-                    situaci, kdy se liší způsoby výpočtu daného ukazatele, ale
-                    dotyčné číslo či tvrzení nepotvrzuje žádný z těchto
-                    zdrojů.<br />&nbsp;
-                  </li>
-                  <li>
-                    <strong>Pravda</strong><br /><br />Použití správné informace
-                    ve správném kontextu. V odůvodnění také můžete narazit na
-                    "pravdu s výhradou," pokud výrok není čistě pravdivý, ale
-                    jde pouze o malou či nevýznamnou odchylku. U číselných údajů
-                    se orientačně držíme hranice 10 % a tolerujeme
-                    zaokrouhlování, ledaže sám politik dbá na to, že je
-                    přesný.<br /><br />Předpokládejme, že v Česku je 4000
-                    učitelů občanské výchovy.<br /><br />“<i>V Česku je 3800
-                      učitelů občanské
-                      výchovy.</i>”<br /><br />Výrok bychom označili jako pravdu
-                    s výhradou,
-                    že jde o 5% odchylku.<br /><br />“<i>Pletete se, pane
-                      poslanče. V Česku není 3800, nýbrž 4200
-                      učitelů občanské výchovy.</i>”<br /><br />V takovém
-                    případě by již byl výrok hodnocen
-                    jako nepravdivý, ač se do 10% tolerance vejde, jelikož
-                    řečník zde opravuje jiného a výrok tak nelze interpretovat
-                    jen jako přibližné vyjádření.<br /><br />Při hodnocení
-                    zohledňujeme to, zda řečník své vyjádření relativizoval
-                    slovy jako "myslím," "slyšel jsem" atp., která naznačují, že
-                    si není jist. Neověřujeme nicméně, zda si to řečník opravdu
-                    myslí, případně zda údaj slyšel: Jelikož nevidíme lidem do
-                    hlavy, podobnými řečnickými obraty by se pak šlo "zprostit"
-                    odpovědnosti za jakýkoli faktický výrok. K podobným obratům
-                    tedy přistupujeme, jako by šlo o přibližná, jinak ale
-                    standardní tvrzení faktu.<br />&nbsp;
-                  </li>
-                  <li>
-                    <strong>Zavádějící</strong><br /><br />Jedná se o podmnožinu
-                    pravdivých tvrzení, která tedy používají správná fakta,
-                    ovšem uvádějí je v kontextu, ve kterém rozumného posluchače
-                    zavedou k nepravdivému závěru. Nejde tedy o mezistupeň mezi
-                    pravdou a nepravdou. Typicky jde o tvrzení vytržená z
-                    původního kontextu či jinak překroucené výroky, např.
-                    nepřiměřená porovnávání.<br /><br />Příklad zavádějícího
-                    tvrzení: „První porevoluční kancléři včetně Schwarzenberga
-                    neměli bezpečnostní prověrku.“<br /><br />Striktně formálně
-                    je to sice pravda, ovšem informace je podána vytržená z
-                    kontextu. Zakotvení bezpečnostní prověrky totiž zavedl až
-                    zákon o ochraně utajovaných informací z roku 1998. První
-                    kancléři tak „bezpečnostní prověrku“ ani získat nemohli,
-                    přesto zde existovalo prověření osob nakládajících s
-                    utajovanými informacemi.<br />&nbsp;
-                  </li>
-                  <li>
-                    <strong>Neověřitelné</strong><br /><br />Hodnocení využíváme
-                    v případě, že není možné najít zdroj tvrzení, respektive
-                    není možné jej na základě dostupných informací potvrdit či
-                    vyvrátit.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni">
-          <h2 class="accordion-header" id="heading-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni" aria-expanded="false"
-              aria-controls="collapse-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  How is the independence and quality of the assessment ensured?
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni" class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-je-zajistovana-nezavislost-a-kvalita-hodnoceni"
-            data-bs-parent="#jak-hodnotime">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  Faktické informace používané v našich hodnoceních jsou vždy
-                  doplněny řádnými odkazy na veřejné internetové zdroje, v
-                  některých případech odkazy na publikace s uvedením autora a
-                  strany. Při ověřování se vždy snažíme odkazovat na vícero
-                  zdrojů, které podporují nebo vyvracejí dané faktické tvrzení a
-                  využíváme přitom jednoznačné primární zdroje dat. Pokud
-                  primární zdroj nedohledáme, používáme sekundární zdroje
-                  (zprávy z médií atp.). V případě politických výroků se žádostí
-                  o odkazy na zdroje kontaktujeme i samotného řečníka, byť tak
-                  vzhledem k velkému počtu ověřovaných výroků nečiníme vždy.
-                  Sporná témata pak konzultujeme s odborníky na danou otázku.
-                  Pakliže jsou v odůvodnění citováni odborníci, upozorňujeme v
-                  textu na jejich případné spojení s politickou stranou či jiný
-                  možný střet zájmů. Všechna odůvodnění kromě autora (analytika)
-                  autonomně kontrolují tři další osoby (dva editoři a
-                  metodolog), aby byla zajištěna faktická a metodologická
-                  přesnost a správnost a také celková logika výroku.
-                </p>
-                <p>
-                  Polifacto není svázán s žádnou politickou stranou či
-                  uskupením a tyto subjekty jsou striktně vylučovány z podílu na
-                  financování projektu. Působení v politických stranách zapovídá
-                  stážistům etický kodex. Je pochopitelné, že lidé, kteří se v
-                  projektu angažují, se patrně o politiku zajímají a jako každý
-                  i oni mají své preference, při jejich práci však přísná
-                  metodika zabraňuje, aby se do hodnocení promítly.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
-          <h2 class="accordion-header" id="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni" aria-expanded="false"
-              aria-controls="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  How to deal with statement and rating statistics?
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni" class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni" data-bs-parent="#jak-hodnotime">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  Na našem webu naleznete přehledy o tom, kolik výroků jsme u
-                  jednotlivých politiků ověřili a s jakými hodnoceními. U těchto
-                  statistik je třeba brát v potaz následující omezení:
-                </p>
-                <ul>
-                  <li>
-                    Různé výroky mají pro posluchače různý význam a není v
-                    možnostech této statistiky zachytit váhu jednotlivých
-                    nepravd a závažnost jejich případného dopadu na veřejné
-                    mínění.
-                  </li>
-                  <li>
-                    Jelikož nehodnotíme, zda jsou nepravdivá a zavádějící
-                    tvrzení úmyslná, naše statistiky by samy o sobě neměly být
-                    základem normativního hodnocení řečníků a jejich charakteru.
-                  </li>
-                  <li>
-                    Cílem těchto statistik není posuzovat, kdo z politiků dopadá
-                    hůře či lépe, nýbrž upozorňovat na množství faktických chyb,
-                    které zaznívají v politických diskusích. Výsledek je
-                    ovlivněn naším výběrem, stejně jako volbou otázek ze strany
-                    moderátorů apod.
-                  </li>
-                </ul>
-                <p>
-                  Každý, kdo bude námi uveřejněné statistiky zveřejňovat, by měl
-                  tato omezení vzít do úvahy a přizpůsobit jim jakýkoli
-                  doprovodný text.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div #assesmentSection class="accordion pb-10" id="vytky-k-hodnoceni">
-        <h2 class="pb-4 mb-0">
-          <font style="vertical-align: inherit">
-            <font style="vertical-align: inherit">3. Objections to the
-              assessment</font>
-          </font>
-        </h2>
-
-        <div class="accordion-item" id="mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit">
-          <h2 class="accordion-header" id="heading-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit"
-              aria-expanded="false"
-              aria-controls="collapse-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  I have an evaluation reservation or verification proposal,
-                  where can I contact?
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit"
+          <div
+            id="collapse-jakym-zpusobem-vyroky-hodnotime"
             class="accordion-collapse collapse"
-            aria-labelledby="heading-mam-vyhradu-k-hodnoceni-nebo-navrh-na-overeni-kam-se-mohu-obratit"
-            data-bs-parent="#vytky-k-hodnoceni" style>
+            aria-labelledby="heading-jakym-zpusobem-vyroky-hodnotime"
+            data-bs-parent="#jak-hodnotime"
+          >
             <div class="accordion-body">
               <div class="content">
                 <p>
-                  Nenárokujeme si absolutní pravdu či správnost, naše práce je
-                  kdykoliv otevřena vašim podnětům a připomínkám. Pokud víte o
-                  nějakém zdroji či informaci, která není v souladu s našimi
-                  hodnoceními, napište nám na
-                  <a href="mailto:info@Polifacto">{{"info@Polifacto"}}</a>.
+                  At Polifacto, we evaluate statements using a structured approach to ensure clarity and transparency. Each statement is categorized into one of the following four categories:
                 </p>
-                <p>Vaše podněty jsou zpracovány následujícím způsobem:</p>
-                <ol>
-                  <li>Vámi zaslané připomínky jsou předány našim editorům.</li>
+                <ol class="list-decimal pl-5 space-y-4">
                   <li>
-                    Všechny nově poskytnuté informace a zdroje jsou důkladně
-                    prověřeny.
+                    <strong>False</strong>
+                    <ul class="list-disc pl-5">
+                      <li>Claims that contradict publicly available figures or information about actions or inactions.</li>
+                      <li>Statements where the methods of calculation differ significantly, and the claim is not supported by any reliable source.</li>
+                    </ul>
                   </li>
                   <li>
-                    Na základě této nové analýzy je pak následně upraveno nebo
-                    ponecháno stávající hodnocení výroku.
+                    <strong>Truth</strong>
+                    <ul class="list-disc pl-5">
+                      <li>Statements that use accurate information in the correct context.</li>
+                      <li>We may use "qualified truth" for cases where the statement has minor inaccuracies or small deviations (e.g., numerical data within a 10% margin of error).</li>
+                      <li>Rounding is tolerated unless the politician specifically emphasizes precise accuracy.</li>
+                    </ul>
                   </li>
                   <li>
-                    Pokud jsou nově poskytnuté informace/zdroje uznány za
-                    relevantní a hodnocení výroku na jejich základě upraveno, je
-                    tato skutečnost explicitně uvedena u daného výroku a
-                    publikována stejným způsobem jako původní hodnocení vč.
-                    sdílení na sociálních sítích. V odůvodnění je uvedeno
-                    “oprava” s poznámkou o tom, v čem se liší nové hodnocení od
-                    původního.
+                    <strong>Misleading</strong>
+                    <ul class="list-disc pl-5">
+                      <li>Statements that use correct facts but are presented in a way that misleads the audience.</li>
+                      <li>Typically, these involve:
+                        <ul class="list-disc pl-5">
+                          <li>Statements taken out of context.</li>
+                          <li>Distorted comparisons or other manipulations that could lead to a false conclusion.</li>
+                        </ul>
+                      </li>
+                      <li>It is not a middle ground between truth and falsehood but rather an intentional misuse of factual data.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Unverifiable</strong>
+                    <ul class="list-disc pl-5">
+                      <li>Claims that cannot be confirmed or refuted due to the lack of available or reliable sources.</li>
+                      <li>This category is used when the source of a claim is missing or insufficient for verification.</li>
+                    </ul>
                   </li>
                 </ol>
-                <p>
-                  Stejně tak jsme otevřeni vašim podnětům týkajícím se možností
-                  samotného ověřování. Narazíte-li na vyjádření vrcholného
-                  politika nebo politickou diskuzi, které se z vašeho pohledu
-                  vymyká standardu české veřejné debaty, popř. která vás zaujme,
-                  dejte nám vědět rovněž na
-                  <a href="mailto:info@Polifacto">{{"info@Polifacto"}}</a>. V
-                  rámci
-                  naší činnosti pro nás mohou tyto podněty být důležitým
-                  impulsem, zda právě danou věc ověřit. Každým podnětem se
-                  zabývají naši editoři a posuzují jej z hlediska naší
-                  <a href="https://Polifacto/stranka/jak-hodnotime-metodika">metodiky</a>.
-                  Pokud je vámi navržený výrok
-                  ověřitelný a odpovídá našim
-                  časovým možnostem a požadavkům vyrovnanosti obsahu, rádi jej
-                  ověříme.
-                </p>
-                <p>Za všechny podněty předem děkujeme!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="provedena-doplneni-a-opravy-hodnoceni">
-          <h2 class="accordion-header" id="heading-provedena-doplneni-a-opravy-hodnoceni">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-provedena-doplneni-a-opravy-hodnoceni" aria-expanded="false"
-              aria-controls="collapse-provedena-doplneni-a-opravy-hodnoceni">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  Made additions and corrections to the assessment
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-provedena-doplneni-a-opravy-hodnoceni" class="accordion-collapse collapse"
-            aria-labelledby="heading-provedena-doplneni-a-opravy-hodnoceni" data-bs-parent="#vytky-k-hodnoceni">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  Kateřina Konečná, České zájmy v Evropě: Superdebata lídrů, 10.
-                  dubna 2024 (<a href="https://Polifacto/vyrok/23255">odkaz</a>)<br />Alena
-                  Schillerová, Facebook, 29.
-                  března 2024 (<a href="https://Polifacto/vyrok/23245">odkaz</a>)<br />Alena
-                  Schillerová, Facebook, 29.
-                  března 2024 (<a href="https://Polifacto/vyrok/23239">odkaz</a>)<br />Alena
-                  Schillerová, Facebook, 29.
-                  března 2024 (<a href="https://Polifacto/vyrok/23240">odkaz</a>)<br />Alena
-                  Schillerová, Facebook, 29.
-                  března 2024 (<a href="https://Polifacto/vyrok/23243">odkaz</a>)<br />Vít
-                  Rakušan, Partie Terezie
-                  Tománkové, 20. srpna 2023
-                  (<a href="https://Polifacto/vyrok/22925">odkaz</a>)<br />Eva
-                  Decroix, Události, komentáře, 19. června 2023 (<a
-                    href="https://Polifacto/vyrok/22849">odkaz</a>).<br />Danuše
-                  Nerudová, Blesk.in, 3. ledna 2023 (<a href="https://Polifacto/vyrok/22358">odkaz</a>).<br />Danuše
-                  Nerudová, Blesk.in, 3. ledna 2023 (<a href="https://Polifacto/vyrok/22373">odkaz</a>).<br />Josef
-                  Středula, Interview ČT24, 25. listopadu
-                  2022
-                  (<a href="https://Polifacto/vyrok/22271">odkaz</a>).<br />Jiří
-                  Dolejš, Předvolební debata Českého
-                  rozhlasu, 21.
-                  září 2021 (<a href="https://Polifacto/vyrok/21111">odkaz</a>).<br />Ivan
-                  Bartoš, iDNES.in, 2. dubna
-                  2021 (<a href="https://Polifacto/vyrok/20576">odkaz</a>).<br />Ivo
-                  Vondrák, Události, komentáře, 8.
-                  března 2021 (<a href="https://Polifacto/vyrok/20418">odkaz</a>).<br />Olga
-                  Richterová, Partie Terezie
-                  Tománkové, 24. ledna
-                  2021 (<a href="https://Polifacto/vyrok/20298">odkaz</a>).<br />Vít
-                  Rakušan, Interview Plus, 13. ledna
-                  2021 (<a href="https://Polifacto/vyrok/20231">odkaz</a>).<br />Miloš
-                  Zeman, S prezidentem v Lánech,
-                  10. ledna 2021
-                  (<a href="https://Polifacto/vyrok/20194">odkaz</a>).<br />Ivan
-                  Bartoš, CNN Prima News, 8. ledna 2021
-                  (<a href="https://Polifacto/vyrok/20181">odkaz</a>,
-                  <a href="https://Polifacto/vyrok/20182">odkaz</a>).<br />Tomáš
-                  Zdechovský, Seznam Zprávy, 30.
-                  listopadu 2020
-                  (<a href="https://Polifacto/vyrok/20107">odkaz</a>).<br />Jan
-                  Hamáček, Partie, 18. října 2020 (<a href="https://Polifacto/vyrok/19912">odkaz</a>).<br />Petra
-                  Pecková, Předvolební debata: Středočeský kraj,
-                  ČT24, 25. září 2020 (<a href="https://Polifacto/vyrok/19811">odkaz</a>).<br />Ivana
-                  Stráská, Debata
-                  ČT ke krajským volbám, 21. září
-                  2020 (<a href="https://Polifacto/vyrok/19740">odkaz</a>).<br />Roman
-                  Línek, ČT24, 15. září 2020 (<a href="https://Polifacto/vyrok/19698">odkaz</a>,
-                  <a href="https://Polifacto/vyrok/19699">odkaz</a>).<br />Tomáš
-                  Martínek, Twitter, 10. srpna 2020 (<a href="https://Polifacto/vyrok/19583">odkaz</a>).<br />Olga
-                  Richterová, CNN Prima News, 12. května
-                  2020 (<a href="https://Polifacto/vyrok/19302">odkaz</a>).<br />Vojtěch
-                  Filip, Otázky Václava Moravce,
-                  3. května 2020
-                  (<a href="https://Polifacto/vyrok/19265">odkaz</a>).<br />Jan
-                  Farský, Twitter, 7. dubna 2020 (<a href="https://Polifacto/vyrok/19210">odkaz</a>).<br />Stanislav
-                  Polčák, Interview ČT24, 6. června 2019 (<a href="https://Polifacto/vyrok/18018">odkaz</a>).<br />Lukáš
-                  Wagenknecht, Pro a proti, 8. října 2018
-                  (<a href="https://Polifacto/vyrok/17464">odkaz</a>).<br />Marta
-                  Semelová, Předvolební debata České
-                  televize,
-                  28. září 2018 (<a href="https://Polifacto/vyrok/17451">odkaz</a>).<br />Ondřej
-                  Mirovský, Předvolební
-                  debata České televize,
-                  28. září 2018 (<a href="https://Polifacto/vyrok/17402">odkaz</a>,
-                  <a href="https://Polifacto/vyrok/17428">odkaz</a>).<br />Jiří
-                  Pospíšil, Předvolební debata České televize, 28. září 2018 (<a
-                    href="https://Polifacto/vyrok/17372">odkaz</a>).<br />Petr
-                  Hladík, Předvolební debata České
-                  televize, 20.
-                  září 2018 (<a href="https://Polifacto/vyrok/17255">odkaz</a>).<br />Ivan
-                  Bartoš, Otázky Václava
-                  Moravce, 27. května 2018
-                  (<a href="https://Polifacto/vyrok/16778">odkaz</a>).<br />Jiří
-                  Drahoš, Prezidentský duel - finále,
-                  25. ledna
-                  2018 (<a href="https://Polifacto/vyrok/16352">odkaz</a>).<br />Miloš
-                  Zeman, Týden s prezidentem, 19.
-                  ledna 2018 (<a href="https://Polifacto/vyrok/16201">odkaz</a>).<br />Petr
-                  Hannig, Český rozhlas, 11.
-                  ledna 2018 (<a href="https://Polifacto/vyrok/16156">odkaz</a>,
-                  <a href="https://Polifacto/vyrok/16166">odkaz</a>).<br />Jiří
-                  Drahoš, Interview ČT24, 5. prosince 2017 (<a
-                    href="https://Polifacto/vyrok/15899">odkaz</a>).<br />Ivan
-                  Bartoš, Výzva Seznam Zprávy, 9. října
-                  2017 (<a href="https://Polifacto/vyrok/15598">odkaz</a>).<br />Zbyněk
-                  Stanjura, Předvolební debata
-                  České televize,
-                  2. října 2017 (<a href="https://Polifacto/vyrok/15480">odkaz</a>).<br />Andrej
-                  Babiš, Předvolební
-                  debata České televize, 2.
-                  října 2017 (<a href="https://Polifacto/vyrok/15439">odkaz</a>).<br />Matěj
-                  Stropnický, Český rozhlas,
-                  20. září 2017 (<a href="https://Polifacto/vyrok/15327">odkaz</a>).<br />Miloš
-                  Zeman, Prezidentská
-                  návštěva kraje, 12. června
-                  2017 (<a href="https://Polifacto/vyrok/14827">odkaz</a>).<br />Milan
-                  Chovanec, Otázky Václava
-                  Moravce, 22. ledna
-                  2017 (<a href="https://Polifacto/vyrok/14249">odkaz</a>).<br />Miroslav
-                  Kalousek, Hyde Park ČT24, 18.
-                  listopadu 2013
-                  (<a href="https://Polifacto/vyrok/9668">odkaz</a>).
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div #financeSection class="accordion pb-10" id="nase-financovani">
-        <h2 class="pb-4 mb-0">
-          <font style="vertical-align: inherit">
-            <font style="vertical-align: inherit">4. Our Financing</font>
-          </font>
-        </h2>
 
-        <div class="accordion-item" id="jak-je-projekt-polifacto-in-financovan">
-          <h2 class="accordion-header" id="heading-jak-je-projekt-polifacto-in-financovan">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-je-projekt-polifacto-in-financovan" aria-expanded="false"
-              aria-controls="collapse-jak-je-projekt-polifacto-in-financovan">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  How is the Polifacto project financed?
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-jak-je-projekt-polifacto-in-financovan" class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-je-projekt-polifacto-in-financovan" data-bs-parent="#nase-financovani" style>
-            <div class="accordion-body">
-              <div class="content">
                 <p>
-                  Polifacto není finančně ani jinak navázán na žádnou
-                  politickou stranu či politickou zájmovou skupinu. Pro
-                  zajištění nezávislosti a udržitelnosti je financován z více
-                  zdrojů. Polifacto v rámci zachování nezávislosti nepřijímá
-                  dary od aktivních politiků a političek, politických stran ani
-                  hnutí.&nbsp;
-                </p>
-                <p>
-                  Velmi nás těší individuální podpora našich čtenářů. Přispět na
-                  provoz projektu lze prostřednictvím dárcovského portálu
-                  <a href="https://www.darujme.in/organizace/1200005">Darujme.in</a>,
-                  dále přímo na náš
-                  <a
-                    href="https://www.rb.in/povinne-zverejnovane-informace/transparentni-ucty?mvcPath=transactions&amp;accountNumber=9711283001&amp;path=transactions">transparentní
-                    účet</a>
-                  nebo také nákupem skrze aplikaci
-                  <a href="https://givt.in/polifacto-in">Givt.in</a>.
-                </p>
-                <p>
-                  Ucházíme se zároveň o různé grantové příležitosti. Níže
-                  najdete seznam větších finančních darů a grantových projektů,
-                  loga aktuálních dárců a podporovatelů pak naleznete dole na
-                  našich stránkách.
-                </p>
-                <p>
-                  Právně je Polifacto
-                  <a
-                    href="https://or.justice.in/ias/ui/rejstrik-firma.vysledky?subjektId=938169&amp;typ=PLATNY">zapsaným</a>
-                  spolkem. Zveřejňujeme přitom své výroční zprávy a výpisy z
-                  transparentního účtu (od doby jeho spuštění v listopadu 2016).
+                  Our goal is to provide unbiased and transparent evaluations, empowering users with accurate information to better understand political claims and their context.
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item" id="vyrocni-zpravy">
-          <h2 class="accordion-header" id="heading-vyrocni-zpravy">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-vyrocni-zpravy" aria-expanded="false" aria-controls="collapse-vyrocni-zpravy">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  Annual reports
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-vyrocni-zpravy" class="accordion-collapse collapse" aria-labelledby="heading-vyrocni-zpravy"
-            data-bs-parent="#nase-financovani">
-            <div class="accordion-body">
-              <div class="content">
-                <ul>
-                  <li>
-                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ2022.pdf">Výroční
-                      zpráva 2022</a>
-                  </li>
-                  <li>
-                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy%2FVZ_2021.pdf">Výroční
-                      zpráva 2021</a>
-                  </li>
-                  <li>
-                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ%202020.pdf">Výroční
-                      zpráva 2020</a>
-                  </li>
-                  <li>
-                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2019.pdf">Výroční
-                      zpráva 2019</a>
-                  </li>
-                  <li>
-                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2018.pdf">Výroční
-                      zpráva 2018</a>
-                  </li>
-                  <li>
-                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2017.pdf">Výroční
-                      zpráva 2017</a>
-                  </li>
-                  <li>
-                    <a href="https://polifactoin-uloziste.fra1.digitaloceanspaces.com/vyrocni-zpravy/VZ_2016.pdf">Výroční
-                      zpráva 2016</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="spoluprace-s-facebookem">
-          <h2 class="accordion-header" id="heading-spoluprace-s-facebookem">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-spoluprace-s-facebookem" aria-expanded="false"
-              aria-controls="collapse-spoluprace-s-facebookem">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  Cooperation with Facebook
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-spoluprace-s-facebookem" class="accordion-collapse collapse"
-            aria-labelledby="heading-spoluprace-s-facebookem" data-bs-parent="#nase-financovani">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  Od roku 2020 Polifacto
-                  <a href="https://Polifacto/spoluprace-s-facebookem">ověřuje</a>
-                  vybraný obsah na sociálních sítích Facebook a Instagram.
-                  Provozovatel těchto sítí, společnost Meta Platforms Ireland
-                  Limited, následně Polifacto kompenzuje podle množství
-                  ověřeného obsahu. Od roku 2023 ověřujeme ve spolupráci s
-                  <a href="https://polifacto.sk/">polifacto.sk</a> také obsah ve
-                  slovenském jazyce. Níže uvádíme celkové příjmy Polifacto za
-                  jednotlivé roky spolupráce:
-                </p>
-                <ul>
-                  <li>2022: 45 600 USD</li>
-                  <li>2021: 41 600 USD</li>
-                  <li>2020: 11 200 USD</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="financni-dary-a-grantove-projekty">
-          <h2 class="accordion-header" id="heading-financni-dary-a-grantove-projekty">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-financni-dary-a-grantove-projekty" aria-expanded="false"
-              aria-controls="collapse-financni-dary-a-grantove-projekty">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  Financial donations and grant projects
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-financni-dary-a-grantove-projekty" class="accordion-collapse collapse"
-            aria-labelledby="heading-financni-dary-a-grantove-projekty" data-bs-parent="#nase-financovani">
-            <div class="accordion-body">
-              <div class="content">
-                <ul>
-                  <li>
-                    <strong>Google.org</strong><br /><i>Regionální fact-checková
-                      spolupráce</i><br />Polifacto,
-                    polifacto.sk a polifacto.org.pl budou
-                    koordinovat fact-checkovou práci, sdílet zkušenosti a
-                    spolupracovat v oblasti komunikační strategie a mediálního
-                    vzdělávání. Grant Google.org podpoří tuto spolupráci i
-                    aktivity partnerů v oblasti PR a komunikace. Podpora je
-                    cílená i na zavádění technologických řešení, která usnadní
-                    fact-checkový proces a detekci nepravdivého
-                    obsahu.<br />Celková
-                    částka: 500 000 USD<br />Období 2022-2025
-                  </li>
-                </ul>
-                <p>&nbsp;</p>
-                <ul>
-                  <li>
-                    <strong>Central European Digital Media Observatory
-                      (CEDMO)</strong><br /><i>Tvorba fact-checkových článků pro
-                      cedmohub.eu a další
-                      činnosti</i><br />Polifacto se stal partnerem v
-                    mezinárodním konsorciu
-                    CEDMO vedeném Univerzitou Karlovou a zaměřeném na
-                    fact-checking a výzkum v oblasti informačních poruch. Naší
-                    prací je zejm. připravovat fact-checkové články, přičemž
-                    některé jsou následně publikovány na
-                    <a href="https://cedmohub.eu/cs/">webu konsorcia</a>. Vedle
-                    vlastní činnosti zajišťujeme tvorbu článků ve slovenštině,
-                    které pro nás připravuje polifacto.sk.<br />Celkové
-                    způsobilé
-                    náklady projektu:&nbsp;<br />74 044 Eur na činnosti
-                    Polifacto a 40 000 Eur pro subdodávku
-                    polifacto.sk<br />Období:
-                    2021-2024.<br />Pro období 2022-2025 obdrží Polifacto další
-                    podporu v rámci CEDMO až do výše 1&nbsp;824&nbsp;342&nbsp;Kč
-                    z prostředků Národního plánu obnovy.
-                  </li>
-                </ul>
-                <p>&nbsp;</p>
-                <ul>
-                  <li>
-                    <strong>Prague Security Studies
-                      Institute</strong><br /><i>Indian Elections in the Era of
-                      Disinformation</i><br />V rámci projektu financovaného z
-                    výzvy European Media
-                    and Information Fund jsme zpracovali sadu fact-checkových
-                    výstupů souvisejících s prezidentskými volbami v roce 2023 a
-                    zapojili se do dalších aktivit projektu.<br />Celková
-                    částka: 4040 Eur<br />Období: 2022-2023
-                  </li>
-                </ul>
-                <p>&nbsp;</p>
-                <ul>
-                  <li>
-                    <strong>Institut pro evropskou politiku
-                      Europeum</strong><br /><i>Zapojse.eu</i><br />Institut
-                    realizuje
-                    <a href="https://www.zapojse.eu/video-rozhovory/">video-rozhovory</a>
-                    s europoslanci a Polifacto ověruje faktické výroky, které v
-                    těchto rozhovorech zazní.<br />Plánovaná celková
-                    částka:&nbsp;192 000 Kč<br />Období: 2021-2022
-                  </li>
-                </ul>
-                <p>&nbsp;</p>
-                <ul>
-                  <li>
-                    <strong>Nadační fond nezávislé
-                      žurnalistiky</strong><br /><i>Factcheck politiků na
-                      sociálních
-                      sítích</i><br />Fond
-                    <a href="https://www.nfnz.in/projekt/polifacto-m20/">podpořil</a>
-                    naši snahu monitorovat vyjádření politiků na sítích Twitter
-                    a Facebook a vydávat k nim pravidelná ověření.<br />Celková
-                    částka: 150 000 Kč<br />Období: 2020<br /><br /><i>Sliby
-                      vlády Andreje Babiše</i><br />S
-                    <a href="https://www.nfnz.in/projekty/polifacto-in/">podporou</a>
-                    fondu sledujeme dodržování celkem 50 slibů 2. vlády Andreje
-                    Babiše a informujeme o nich mj. v nově vytvořeném grafickém
-                    <a href="https://Polifacto/sliby/druha-vlada-andreje-babise">rozhraní</a>.&nbsp;<br />Celková
-                    částka: 92 000 Kč<br />Období: 2019<br /><br />&nbsp;
-                  </li>
-                  <li>
-                    <strong>T-Mobile Pomáháme / Nadace
-                      Via</strong><br /><i>Aplikace pro online výuku v oblasti
-                      mediální
-                      gramotnosti.</i>&nbsp;<br />V
-                    <a
-                      href="http://www.t-press.in/cs/tiskove-materialy/tiskove-zpravy-t-mobile/na-projekty-v-oblasti-medialni-gramotnosti-rozdelil-t-mobile-vice-nez-2-miliony-korun.html">projektu</a>
-                    přiravujeme online aplikaci, která bude studenty hravou
-                    formou učit základním principům mediální gramotnosti a práce
-                    se zdroji a bude volně dostupná jednotlivým uživatelům i
-                    školám.<br />Celková částka: 198 000 Kč<br />Období:
-                    2019-2020<br /><br />&nbsp;
-                  </li>
-                  <li>
-                    <strong>Nadační fond rodiny
-                      Orlických</strong><br /><i>Finanční udržitelnost projektu
-                      polifacto.</i><br />Nadace
-                    <a href="http://www.nfro.in/projekty/financni-udrzitelnost-projektu-polifacto/">podpořila</a>
-                    rozvoj fundraisingu s cílem dosáhnout finanční
-                    udržitelnosti. V rámci projektu jsme najali fundraiserku,
-                    pořídili CRM systém a začali aktivně pracovat s
-                    individuálními dárci.<br />Celková částka: 120 000
-                    Kč<br />Období:
-                    2019<br /><br />&nbsp;
-                  </li>
-                  <li>
-                    <strong>inC.in</strong><br /><i>Sbírka
-                      zákazníků</i><br />Společnost inC.in uspořádala sbírku na
-                    podporu
-                    fact-checku, rozvoje mediální gramotnosti a práce se
-                    zdroji.<br />Celková částka: 97 609 Kč<br />Období: 2019
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div #ethicsSection class="accordion pb-10" id="eticky-kodex">
-        <h2 class="pb-4 mb-0">
-          <font style="vertical-align: inherit">
-            <font style="vertical-align: inherit">5. Code of Ethics</font>
-          </font>
-        </h2>
-
-        <div class="accordion-item" id="eticky-kodex-polifacto-in-z-s">
-          <h2 class="accordion-header" id="heading-eticky-kodex-polifacto-in-z-s">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-eticky-kodex-polifacto-in-z-s" aria-expanded="true"
-              aria-controls="collapse-eticky-kodex-polifacto-in-z-s">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  Code of Ethics Polifacto, vol
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-eticky-kodex-polifacto-in-z-s" class="accordion-collapse collapse"
-            aria-labelledby="heading-eticky-kodex-polifacto-in-z-s" data-bs-parent="#eticky-kodex" style>
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">This short document
-                      regulates the general principles on
-                      which the Polifacto project is based, as well as some
-                      basic principles that guide its individual members when
-                      working in it.</font>
-                  </font>
-                </p>
-                <p>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">The purpose of the
-                      operation of the Polifacto project is
-                      to increase the transparency of governance and strengthen
-                      civic engagement in the India. Its members try to
-                      achieve this primarily by analyzing political expressions
-                      in the public space through the method of fact-checking
-                      and also by public action in the field of education in the
-                      field of media literacy, critical thinking and civic
-                      engagement.</font>
-                  </font>
-                </p>
-                <p>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">The basic content is
-                      the long-term control of the factual
-                      expressions of the Indian political elite in the public
-                      space. During this activity, Polifacto adheres to several
-                      basic and inviolable principles:</font>
-                  </font>
-                </p>
-                <ol>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">Polifacto is an
-                        independent, non-profit and supremely
-                        apolitical project. His analyses, which in principle aim
-                        at the political sphere, are based on the position of an
-                        independent arbiter of factual statements, lack an
-                        opinion component and do not favor any political
-                        position.</font>
-                    </font>
-                  </li>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">Each output must be
-                        based on ascertained and verified
-                        data. When obtaining and processing information,
-                        Polifacto is fully subordinated to the imperative to
-                        find out and convey to readers a true picture of reality
-                        and, in cases where it is not completely feasible due to
-                        the impossibility of obtaining all the information, to
-                        proceed with the goal of getting as close as possible to
-                        the truth.</font>
-                    </font>
-                  </li>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">Polifacto may not
-                        publish information whose origin is
-                        unknown. He is also obliged to acquaint the reader with
-                        each source of published information.</font>
-                    </font>
-                  </li>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">Polifacto can only
-                        obtain information using honest and
-                        legally permitted procedures.</font>
-                    </font>
-                  </li>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">Polifacto, if
-                        possible and expedient, accompanies the
-                        presentation of the report by identifying the editors
-                        who are responsible for its preparation. They have the
-                        obligation to exclude external influences that could
-                        affect the inclusion or content of information in the
-                        analytical output.</font>
-                    </font>
-                  </li>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">Polifacto will not
-                        allow anyone outside its valid
-                        organizational structure to decide whether or not to
-                        include certain information or material in its
-                        publishing activities.</font>
-                    </font>
-                  </li>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">In order to maintain
-                        impartiality and neutrality,
-                        Polifacto as an association refrains from publishing
-                        its own opinions on public matters (e.g. petitions,
-                        political calls, etc.), except for matters affecting the
-                        essence of the democratic establishment of India. In the same way, Polifacto will refrain from
-                        any cooperation with political parties or expressions of
-                        support for political parties or candidates for public
-                        office.</font>
-                    </font>
-                  </li>
-                </ol>
-                <p>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">In addition to these
-                      general principles, Polifacto is
-                      also governed by specific principles that each team member
-                      is obliged to follow. Compliance with them is a necessary
-                      condition for working in the Polifacto project.</font>
-                  </font>
-                </p>
-                <ol>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">Working in a team is
-                        incompatible with membership in a
-                        political party, movement or youth organization of such
-                        entities. If, in the course of his activity at
-                        Polifacto, he becomes a member of a political party,
-                        movement or youth organization of a political subject,
-                        he is obliged to inform the project management about
-                        this and to terminate his activity within the team. Work
-                        at Polifacto is also incompatible with work for
-                        political parties (for example, an internship with a
-                        political party/movement), for a company under the
-                        direct control of a political party, in a state
-                        institution or a state-controlled company.</font>
-                    </font>
-                  </li>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">A member of the
-                        Polifacto team will honor and uphold
-                        the association's values. He is obliged to act with
-                        respect for the basic goals and vision of Polifacto and
-                        to present the publication activity of the project with
-                        basic respect for the subjects of individual
-                        analyses.</font>
-                    </font>
-                  </li>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">A member of the
-                        Polifacto team is obliged to comply
-                        with the rules set by the conditions of the internship,
-                        and to respect the fact-checking methods as well as the
-                        standards of journalistic work. Members of the
-                        Polifacto team may not accept or demand any kind of
-                        gifts in connection with the performance of their
-                        work.</font>
-                    </font>
-                  </li>
-                  <li>
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">If a situation
-                        arises where the stated rules are
-                        violated by members of the Polifacto team, the project
-                        management will meet and the possible offense will be
-                        resolved accordingly.</font>
-                    </font>
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div #faqSection class="accordion pb-10" id="faq-casto-kladene-otazky">
-        <h2 class="pb-4 mb-0">
-          <font style="vertical-align: inherit">
-            <font style="vertical-align: inherit">6. FAQ — Frequently asked
-              questions</font>
-          </font>
-        </h2>
-
-        <div class="accordion-item" id="kdo-vas-financuje">
-          <h2 class="accordion-header" id="heading-kdo-vas-financuje">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-kdo-vas-financuje" aria-expanded="false"
-              aria-controls="collapse-kdo-vas-financuje">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  Who is funding you?
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-kdo-vas-financuje" class="accordion-collapse collapse"
-            aria-labelledby="heading-kdo-vas-financuje" data-bs-parent="#faq-casto-kladene-otazky" style>
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  Výdaje polifactou financujeme z dobrovolných darů. Všechny
-                  naše
-                  finance i dárce si můžete sami zkontrolovat skrze náš
-                  <a
-                    href="https://www.rb.in/povinne-zverejnovane-informace/transparentni-ucty?mvcPath=transactions&amp;accountNumber=9711283001&amp;path=transactions">transparentní
-                    účet</a>
-                  či výroční zprávy.
-                </p>
-                <p>
-                  Za dary jednotlivců jsme velmi vděční, nicméně zatím nestačí k
-                  pokrytí nákladů projektu, byť jsou minimální. Opravdu jsme
-                  obdrželi 2 granty od Open Society Fund - v roce 2014, a to
-                  celkem 81 760,- Kč na evropské a komunální volby. V roce 2016
-                  jsme k tomu OSF vyúčtovali zakázku, ověřování výroků o inkluzi
-                  (mimo naše statistiky) za 7.500,- Kč. &nbsp;Žel bohu, hosting
-                  a software platit musíme. Co jistě nemusíme dělat jsou
-                  workshopy kritického myšlení na středních školách. Za cenu
-                  toho, že část čtenářů odradí logo americké ambasády na našich
-                  stránkách, jsme se ale rozhodli o takovýto grant zažádat,
-                  protože vzdělávací workshopy považujeme za důležité a ne
-                  všechny školy si mohou dovolit krýt náklady na jejich
-                  organizaci. V žádném období projektu tyto peníze naši práci
-                  neovlivňovaly, skrze naši
-                  <a href="https://Polifacto/stranka/jak-hodnotime-metodika">metodiku</a>
-                  to ani nelze. Pokud jste nabyli jiný dojem, napište nám
-                  konkrétní výtky ke konkrétnímu výroku, rádi se o nich
-                  pobavíme.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity">
-          <h2 class="accordion-header" id="heading-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity"
+        <div
+          class="accordion-item"
+          id="jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
+        >
+          <h2
+            class="accordion-header"
+            id="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
+          >
+            <button
+              class="accordion-button collapsed !transition-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
               aria-expanded="false"
-              aria-controls="collapse-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity">
+              aria-controls="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
+            >
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
-                  How can I contribute to the project and how do I know what the
-                  contributions will be used for?
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-muzu-na-projekt-prispet-a-jak-vim-na-co-budou-prispevky-vyuzity"
-            data-bs-parent="#faq-casto-kladene-otazky">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  Cesta je trojí — nejraději vás přivítáme na našem darovacím
-                  <a href="https://www.darujme.in/projekt/1200037">portálu</a>,
-                  který nám šetří mnoho administrace, poplatků za přijetí platby
-                  a na konci roku vám sám vystaví potvrzení o daru pro finanční
-                  úřad, pokud o něj stojíte. Dar pro nás si totiž můžete
-                  odpočíst z daňového základu, ať už ho navolíte jako
-                  jednorázový nebo opakovaný. Druhou cestou je převod přímo na
-                  náš transparentní
-                  <a
-                    href="https://www.rb.in/about-us/povinne-uverejnovane-informace/transparentni-ucty?mvcPath=transactions&amp;accountNumber=9711283001">účet</a>
-                  9711283001/5500. Na něm si také můžete vaši platbu
-                  zkontrolovat, a to až 3 měsíce zpátky, jak velí obchodní
-                  podmínky banky. Starší období dokládáme výpisem z účtu.
-                  Nakonec nás můžete podpořit i přes GIVt — nakupujete na Zootu,
-                  Mall.in nebo Aliexpress? Udělejte si krátkou odbočku na
-                  <a href="http://www.givt.in/">www.givt.in</a>, nakupte za
-                  stejnou cenu a firma potom pošle část ceny na náš účet.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu">
-          <h2 class="accordion-header"
-            id="heading-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu"
-              aria-expanded="false"
-              aria-controls="collapse-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  How can I trust that you are impartial? Do you think you have
-                  a patent on the truth?
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-muzu-verit-ze-jste-nestranni-myslite-si-ze-mate-patent-na-pravdu"
-            data-bs-parent="#faq-casto-kladene-otazky">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  O našem několikastupňovém procesu kontroly, uvádění zdrojů a
-                  dalších pojistkách si můžete přečíst v naší
-                  <a href="https://Polifacto/stranka/jak-hodnotime-metodika">metodice</a>.
-                  Náš
-                  <a href="https://Polifacto/diskuze/eticky-kodex-polifactoin">Etický
-                    kodex</a>
-                  také přísně zapovídá členům podílet se na činnosti politických
-                  stran. Bez zájmu o politiku by se patrně na projektu
-                  nepodíleli, přesto skrze metodiku a kontrolu není možné, aby
-                  se jejich preference promítly do hodnocení.
-                </p>
-                <p>
-                  Často opakujeme, že patent na pravdu nemáme. Nicméně je třeba
-                  odlišit faktické a jiné výroky. U faktických výroků typu
-                  “Státní deficit loni rekordně vzrostl” pravdu ověřit lze a
-                  také ji ověřujeme. Pokud zde narazíte na pochybení z naší
-                  strany, neváhejte nám napsat. Naopak u nefaktických výroků
-                  typu “Zabezpečení starých a nemocných je hodnota, o kterou by
-                  měl každý stát usilovat” nelze určit pravdivostní hodnotu.
-                  Proto dojmy, subjektivní hodnocení, predikce a podobné
-                  neověřujeme.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item"
-          id="jak-zajistite-ze-pouhe-nepresnosti-nespadaji-do-kategorie-nepravda-stejne-jako-nektere-mnohem-hrubsi-provineni">
-          <h2 class="accordion-header"
-            id="heading-jak-zajistite-ze-pouhe-nepresnosti-nespadaji-do-kategorie-nepravda-stejne-jako-nektere-mnohem-hrubsi-provineni">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-zajistite-ze-pouhe-nepresnosti-nespadaji-do-kategorie-nepravda-stejne-jako-nektere-mnohem-hrubsi-provineni"
-              aria-expanded="false"
-              aria-controls="collapse-jak-zajistite-ze-pouhe-nepresnosti-nespadaji-do-kategorie-nepravda-stejne-jako-nektere-mnohem-hrubsi-provineni">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  How do you ensure that mere inaccuracies do not fall into the
-                  category of "falsehood" in the same way as some much more
-                  egregious offenses?
+                  How do we evaluate promises?
                 </font>
               </font>
             </button>
           </h2>
           <div
-            id="collapse-jak-zajistite-ze-pouhe-nepresnosti-nespadaji-do-kategorie-nepravda-stejne-jako-nektere-mnohem-hrubsi-provineni"
+            id="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
             class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-zajistite-ze-pouhe-nepresnosti-nespadaji-do-kategorie-nepravda-stejne-jako-nektere-mnohem-hrubsi-provineni"
-            data-bs-parent="#faq-casto-kladene-otazky">
+            aria-labelledby="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
+            data-bs-parent="#jak-hodnotime"
+          >
             <div class="accordion-body">
               <div class="content">
                 <p>
-                  Snažíme se vyhnout subjektivnímu hodnocení, nicméně hodnotit
-                  každou nepřesnost jako “nepravdu” pro to, že výroková logika
-                  tak velí, by našemu hodnocení neprospělo. Proto se v našem
-                  odůvodnění setkáte s pojmem “pravda s výhradou” — výrok je
-                  označen jako pravda, ale v odůvodnění je napsáno, v čem je
-                  výrok nepřesný. Pracujeme také s určitou tolerancí a roli
-                  hraje i to, zda politik uvede svá slova nějakou relativizací
-                  jako “asi,” “přibližně,” “domnívám se” atp. &nbsp;Podrobněji i
-                  s příklady toto vysvětlujeme v naší
-                  <a href="https://Polifacto/stranka/jak-hodnotime-metodika">metodice</a>.
-                  I tak ovšem mohou do
-                  kategorie “nepravda” spadnout výroky,
-                  které z výrokové logiky nepravdivé jsou, nicméně pro vás může
-                  jít o banalitu. Každý z nás má jinou toleranci pro nepřesnosti
-                  v různých oblastech, vždy zdůrazňujeme, že je klíčové číst
-                  odůvodnění a sám si udělat názor o tom, jak výrok vyhodnotit -
-                  zda jde pro vás o nepřesnost nebo naopak zásadní věc.
+                  At Polifacto, we believe that political accountability starts with evaluating promises made by parties and leaders. To ensure clarity and transparency, we use a structured approach to analyze promises based on their outcomes and progress. This helps citizens stay informed about the commitments made during elections and the extent to which they have been honored.
                 </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item"
-          id="nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici">
-          <h2 class="accordion-header"
-            id="heading-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici"
-              aria-expanded="false"
-              aria-controls="collapse-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  A "false" statement is actually just an unsubstantial
-                  falsehood, why isn't it at least misleading?
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-nepravdivy-vyrok-je-vlastne-jen-nepodstatna-nepravda-proc-neni-alespon-zavadejici"
-            data-bs-parent="#faq-casto-kladene-otazky">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  Jak zjistíte i v naší
-                  <a href="https://Polifacto/stranka/jak-hodnotime-metodika">metodice</a>,
-                  “zavádějící” není mezistupeň
-                  mezi “pravda” a “nepravda.”
-                  Kategorie “zavádějící” znamená, že fakta použitá v tvrzení
-                  jsou sice v sama o sobě správná, ale autor výroku neuvádí
-                  potřebný kontext, z původního kontextu je vytrhává či jinak
-                  překrucuje.
-                </p>
-                <p>
-                  Příklad: “Je to snaha o ovlivnění voleb, aby mohli říkat, že
-                  premiér nemůže být trestně stíhaný člověk. Jacques Chirac byl
-                  taky stíhaný a nikomu to nevadilo.”
-                </p>
-                <p>
-                  Ano, Jacques Chirac byl skutečně stíhaný, avšak až v době, kdy
-                  nezastával funkci francouzského prezidenta.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="proc-overujete-nektere-diskuze-a-jine-ne">
-          <h2 class="accordion-header" id="heading-proc-overujete-nektere-diskuze-a-jine-ne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-proc-overujete-nektere-diskuze-a-jine-ne" aria-expanded="false"
-              aria-controls="collapse-proc-overujete-nektere-diskuze-a-jine-ne">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  Why do you verify some discussions and not others?
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-proc-overujete-nektere-diskuze-a-jine-ne" class="accordion-collapse collapse"
-            aria-labelledby="heading-proc-overujete-nektere-diskuze-a-jine-ne"
-            data-bs-parent="#faq-casto-kladene-otazky">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  Hlavním důvodem je omezená personální kapacita. Našich cca 20
-                  analytiků může v různých dnech investovat do projektu několik
-                  hodin, ale v tomto počtu není možné ověřit vše. Proto musíme
-                  pečlivě vybírat, které diskuze ověříme a které ne. Zajímají
-                  nás zejména výstupy vrcholných politiků a ač nejsme
-                  veřejnoprávní médium, snažíme se o co možná největší
-                  vyváženost napříč stranami. Je však pochopitelné, že
-                  premiérové a ministři jsou námi ověřováni častěji — častěji
-                  vystupují, produkují výroky a je jim věnována největší
-                  mediální pozornost.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item"
-          id="proc-nevedete-zebricky-politiku-podle-mnozstvi-nepravd-kolacove-grafy-ci-procentualni-srovnani-politiku-vysledky-by-se-pak-lepe-cetly">
-          <h2 class="accordion-header"
-            id="heading-proc-nevedete-zebricky-politiku-podle-mnozstvi-nepravd-kolacove-grafy-ci-procentualni-srovnani-politiku-vysledky-by-se-pak-lepe-cetly">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-proc-nevedete-zebricky-politiku-podle-mnozstvi-nepravd-kolacove-grafy-ci-procentualni-srovnani-politiku-vysledky-by-se-pak-lepe-cetly"
-              aria-expanded="false"
-              aria-controls="collapse-proc-nevedete-zebricky-politiku-podle-mnozstvi-nepravd-kolacove-grafy-ci-procentualni-srovnani-politiku-vysledky-by-se-pak-lepe-cetly">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  Why don't you keep lists of politicians according to the
-                  number of lies, "pie" charts or percentage comparisons of
-                  politicians? The results would then be easier to read.
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div
-            id="collapse-proc-nevedete-zebricky-politiku-podle-mnozstvi-nepravd-kolacove-grafy-ci-procentualni-srovnani-politiku-vysledky-by-se-pak-lepe-cetly"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-proc-nevedete-zebricky-politiku-podle-mnozstvi-nepravd-kolacove-grafy-ci-procentualni-srovnani-politiku-vysledky-by-se-pak-lepe-cetly"
-            data-bs-parent="#faq-casto-kladene-otazky">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  Sami uznáváme, že všechny nepravdy obvykle nemají stejnou
-                  váhu. Některé z nepravdivých výroků jsou použity záměrně k
-                  dezinformaci posluchače, u některých jde zjevně “jen” o staré
-                  statistiky, záměnu kolonek v tabulkách atp. Také pro některé
-                  čtenáře mají zásadnější význam otázky státního rozpočtu, pro
-                  některé jiné zase sociální témata. Vytvořením žebříčku, grafů
-                  či procent bychom přímo naváděli čtenáře k zjednodušenému
-                  srovnávání nesrovnatelného. Kromě toho, existují obrovské
-                  rozdíly v počtu výroků u jednotlivých politiků — porovnávat
-                  stovky výroků A. Babiše a dvě diskuze K. Šlechtové není tedy
-                  úplně vypovídající.
-                </p>
+                <h3 class="mt-4 text-lg font-semibold">Our Approach</h3>
+  <p>
+    We begin by reviewing the manifestos of political parties competing in the election. These manifestos outline the promises and commitments made to the public. Each promise is then evaluated thoroughly and categorized into one of the following five categories:
+  </p>
+  <ol class="list-decimal pl-5 space-y-4">
+    <li>
+      <strong>Fulfilled:</strong> A promise is considered fulfilled when it has been fully implemented as stated in the manifesto. This includes measurable outcomes that align with the initial commitment and meet the expectations set by the political party.
+    </li>
+    <li>
+      <strong>Violated:</strong> A promise is labeled as violated if the party takes actions directly opposing their commitment or if the stated promise is deliberately disregarded despite being feasible.
+    </li>
+    <li>
+      <strong>In Progress:</strong> Promises marked as in progress are those actively being implemented but have not yet reached completion. This includes initiatives where visible steps are being taken to honor the commitment, though the final result is pending.
+    </li>
+    <li>
+      <strong>Not Implemented:</strong> Promises are categorized as not implemented when no steps or actions have been taken toward fulfilling the commitment. This includes cases where no visible effort or intent to act on the promise is evident.
+    </li>
+    <li>
+      <strong>Partly Implemented:</strong> A promise is deemed partly implemented if some aspects of it have been fulfilled, but significant portions remain unaddressed. This could involve partial efforts that fall short of fully achieving the intended goal.
+    </li>
+  </ol>
+
+  <h3 class="mt-4 text-lg font-semibold">Why This Matters</h3>
+  <p>
+    By categorizing promises, we provide a clear picture of how political parties perform against their own commitments. Our evaluations empower citizens to make informed decisions, hold leaders accountable, and promote transparency in democratic processes.
+  </p>
+
+  <p>
+    At Polifacto, our mission is to bridge the gap between promises and delivery, fostering a culture of trust and accountability in Indian politics. Explore our promise evaluations and join us in building a more informed and engaged electorate.
+  </p>
               </div>
             </div>
           </div>
@@ -2534,111 +595,81 @@
 
         <div class="accordion-item" id="kontakty">
           <h2 class="accordion-header" id="heading-kontakty">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-kontakty" aria-expanded="true" aria-controls="collapse-kontakty">
+            <button
+              class="accordion-button collapsed !transition-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse-kontakty"
+              aria-expanded="true"
+              aria-controls="collapse-kontakty"
+            >
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit"> Contacts </font>
               </font>
             </button>
           </h2>
-          <div id="collapse-kontakty" class="accordion-collapse collapse" aria-labelledby="heading-kontakty"
-            data-bs-parent="#kontakty">
+          <div
+            id="collapse-kontakty"
+            class="accordion-collapse collapse"
+            aria-labelledby="heading-kontakty"
+            data-bs-parent="#kontakty"
+          >
             <div class="accordion-body">
               <div class="content">
                 <p>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">Content proposals for
-                      verification, criticisms of our
-                      evaluation and other suggestions, please write to us by
-                      email:
+                    <font style="vertical-align: inherit"
+                      >We value your feedback, questions, and suggestions.
+                      Whether you’re looking to share your thoughts, ask a
+                      question, or explore a potential collaboration, we’re here
+                      to listen and assist.
+                      <br />
+                      <br />
+                      <b>Get in Touch</b>
+                      <br />
+                      Feel free to reach out
+                      <br />
+                      <br />
+                      <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>
+                          <span class="font-semibold">General Queries:</span>
+                          Need assistance or have a question about our platform?
+                          Let us know.
+                        </li>
+                        <li>
+                          <span class="font-semibold">Suggestions:</span> Your
+                          ideas help us grow! Share your valuable feedback.
+                        </li>
+                        <li>
+                          <span class="font-semibold">Collaborations:</span>
+                          Join Hands with Us!! Volunteer, Collaborate, or Help
+                          Us Verify the Facts!
+                        </li>
+                      </ul>
                     </font>
-                  </font><a href="mailto:info@Polifacto">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">{{"info@Polifacto"}}</font>
-                    </font>
-                  </a>
-                </p>
-                <p>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">If you believe that we
-                      do not meet some standards of the
-                      European fact-checking standards network EFCSN (European
-                      Fact-checking Standards Network), you can contact this
-                      organization directly. </font>
-                    <font style="vertical-align: inherit">Any individual or
-                      company can file
-                    </font>
-                  </font><a href="https://efcsn.com/complaints/">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">a complaint using
-                        this
-                      </font>
-                    </font>
-                  </a>
-                  <font style="vertical-align: inherit"></font><a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSeYX55Vn4L7tSYtPRMnrp6oHjBaYu6EQM1cPDMMiG-sajqj-A/viewform">
-                    <font style="vertical-align: inherit">
-                      <font style="vertical-align: inherit">form</font>
-                    </font>
-                  </a>
-                  <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit"> .</font>
                   </font>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="kontaktni-osoby">
-          <h2 class="accordion-header" id="heading-kontaktni-osoby">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-kontaktni-osoby" aria-expanded="false" aria-controls="collapse-kontaktni-osoby">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  Contact person
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-kontaktni-osoby" class="accordion-collapse collapse"
-            aria-labelledby="heading-kontaktni-osoby" data-bs-parent="#kontakty">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  <strong>Petr Gongala</strong> | koordinátor
-                  projektu<br />mail:
-                  <a href="mailto:petr.gongala@Polifacto">{{"petr.gongala@Polifacto"}}</a><br />mob.:
-                  +420 775 275
-                  177&nbsp;
-                </p>
-                <p>
-                  <strong>Ondřej Havránek </strong>| workshopy a komunikace
-                  projektu<br />mail:
-                  <a href="mailto:ondrej.havranek@Polifacto">{{"ondrej.havranek@Polifacto"}}</a>&nbsp;
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="pro-media">
-          <h2 class="accordion-header" id="heading-pro-media">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapse-pro-media" aria-expanded="false" aria-controls="collapse-pro-media">
-              <font style="vertical-align: inherit">
-                <font style="vertical-align: inherit">
-                  For the media
-                </font>
-              </font>
-            </button>
-          </h2>
-          <div id="collapse-pro-media" class="accordion-collapse collapse" aria-labelledby="heading-pro-media"
-            data-bs-parent="#kontakty">
-            <div class="accordion-body">
-              <div class="content">
-                <p>
-                  <a href="https://drive.google.com/drive/u/2/folders/1J6nkGqAan4B5tet7dG5I9rRxHGyUwHGq">Loga
-                    ke
-                    stažení</a>
+                  <br />
+                  <b>Fill Out Our Form</b>
+                  <br />
+                  <a href="https://forms.gle/Q8o24fkojqDKgUYi7">
+                    <font style="vertical-align: inherit">
+                      <font style="vertical-align: inherit">{{
+                        "Feedback form"
+                      }}</font>
+                    </font>
+                  </a>
+                  <br />
+                  <br />
+                  <b>Contact Us At</b>
+                  <br />
+                  Email:
+                  <a href="mailto:polifacto@gmail.com">
+                    <font style="vertical-align: inherit">
+                      <font style="vertical-align: inherit">{{
+                        "info@Polifacto"
+                      }}</font>
+                    </font>
+                  </a>
                 </p>
               </div>
             </div>
@@ -2647,5 +678,4 @@
       </div>
     </div>
   </div>
-
 </div>
