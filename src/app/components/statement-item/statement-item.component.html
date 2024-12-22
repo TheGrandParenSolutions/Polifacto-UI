@@ -87,9 +87,45 @@
         <div class="content fs-6">
           {{politicianWithStatements?.statementInfo}}
         </div>
-        <div class="accordion-content mh-400px" [ngStyle]="{'height': openExplanation ? '150px': '0px'}">
-          <div class="scroll-vertical mh-400px my-5 h-full content fs-6">
-            {{politicianWithStatements?.statementInfo}}
+        <div class="accordion-content mh-400px overflow-auto mt-4" [ngStyle]="{'height': openExplanation ? '400px': '0px'}">
+          <div *ngIf="politicianWithStatements?.statementCompleteInfo" class="scroll-vertical mh-400px my-5 h-full content fs-6">
+            {{politicianWithStatements?.statementCompleteInfo}}
+          </div>
+          <div class="text-base"
+            *ngIf="!statementDetails?.statementCompleteInfo">
+           
+            <!-- Paragraph 1 -->
+            <p style="color: #171717; line-height: 1.6;">
+              This statement is currently marked as <strong>Unverified</strong> because we have not yet been able to
+              confirm its
+              accuracy. As a small team of two with limited resources, conducting detailed fact-checking can be
+              challenging.
+              However, we are determined to uncover the truth behind such statements.
+            </p>
+
+            <!-- Paragraph 2 -->
+            <p style="color: #171717; line-height: 1.6;">
+              We are looking for <strong>dedicated individuals</strong> who share our passion for truth and transparency
+              to join
+              us in this journey. If you're willing to volunteer your time and skills to help research and verify
+              claims, we’d
+              love to have you on board. Together, we can build a platform that prioritizes accountability and factual
+              information.
+            </p>
+
+            <!-- Paragraph 3 -->
+            <p style="color: #171717; line-height: 1.6;">
+              Interested in joining us?
+              <a class="font-bold" href="mailto:your-email@example.com" style="color: #007BFF; text-decoration: none;">
+                Contact us
+              </a>
+              or reach out to us using this
+              <a class="font-bold" href="https://forms.gle/okBTH2HhDtFHDyxp8" target="_blank"
+                style="color: #007BFF; text-decoration: none;">
+                Form
+              </a>
+              and let’s work together to unveil the truth.
+            </p>
           </div>
         </div>
         <div class="d-flex justify-content-between align-items-center w-100">
