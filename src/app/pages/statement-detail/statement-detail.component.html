@@ -1,11 +1,10 @@
 <div class="container">
   <div class="row g-10">
     <div class="col col-4 col-md-2">
-      <a [routerLink]="['politicians/', politicianDetails.politicianId]" routerLinkActive="router-link-active"
-        class="d-block position-relative">
+      <a routerLinkActive="router-link-active"
+        class="d-block position-relative pointer-events-none">
         <span class="symbol symbol-square symbol-circle">
           <img [src]="politicianDetails?.politicianProfilePic" [alt]="politicianDetails?.politicianName" />
-
         </span>
       </a>
       <div class="mt-2 text-center w-100">
