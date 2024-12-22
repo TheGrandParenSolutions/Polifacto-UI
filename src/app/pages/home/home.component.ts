@@ -13,6 +13,7 @@ import { IPolitician } from "../../interfaces/interfaces";
 import { getPaginationConfig } from "../../utils/constants/enums";
 import { NgxPaginationModule } from "ngx-pagination";
 import { LoaderService } from "../../shared/services/loader/loader.service";
+import { BannerComponent } from "../../shared/banner/banner.component";
 
 @Component({
   selector: "app-home",
@@ -26,6 +27,7 @@ import { LoaderService } from "../../shared/services/loader/loader.service";
     PaginationComponent,
     UserCarouselComponent,
     NgxPaginationModule,
+    BannerComponent
   ],
   templateUrl: "./home.component.html",
   styleUrl: "./home.component.scss",

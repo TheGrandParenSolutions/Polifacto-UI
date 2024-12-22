@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row g-10">
     <div class="col col-4 col-md-2">
-      <a [routerLink]="['politicians/', politicianDetails.politicianId]" routerLinkActive="router-link-active"  class="d-block position-relative">
+      <a [routerLink]="['politicians/', politicianDetails.politicianId]" routerLinkActive="router-link-active"
+        class="d-block position-relative">
         <span class="symbol symbol-square symbol-circle">
           <img [src]="politicianDetails?.politicianProfilePic" [alt]="politicianDetails?.politicianName" />
 
@@ -9,44 +10,40 @@
       </a>
       <div class="mt-2 text-center w-100">
         <h3 class="fs-6 fs-bold font-bold">
-          <font style="vertical-align: inherit"
-            ><font style="vertical-align: inherit">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">
               {{ politicianDetails.politicianName }}
-            </font></font
-          >
+            </font>
+          </font>
         </h3>
       </div>
     </div>
     <div class="col col-12 col-md-8">
-      <blockquote
-        class="p-3 fs-6 !bg-[--bg-lime] text-black rounded-m mb-2 position-relative min-h-50px"
-        data-target="statement--detail.blockquote"
-      >
+      <blockquote class="p-3 fs-6 !bg-[--bg-lime] text-black rounded-m mb-2 position-relative min-h-50px"
+        data-target="statement--detail.blockquote">
         <span class="popover-arrow arrow-east d-none d-md-block"></span>
         <span class="popover-arrow arrow-north d-block d-md-none"></span>
-        <span class="fs-6 position-relative"
-          ><font style="vertical-align: inherit"
-            ><font style="vertical-align: inherit">{{
+        <span class="fs-6 position-relative">
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">{{
               statementDetails?.statementByPolitician
-            }}</font></font
-          ></span
-        >
+              }}</font>
+          </font>
+        </span>
       </blockquote>
       <div class="mb-10">
-        <cite
-          ><font style="vertical-align: inherit"
-            ><font style="vertical-align: inherit">
-              {{ politicianDetails.politicianDesignation }}</font
-            ></font
-          ><span class="date"
-            ><font style="vertical-align: inherit"
-              ><font style="vertical-align: inherit">
-                {{ statementDetails?.createdAt | date}}</font
-              ></font
-            ></span
-          ></cite
-        >
-        <div class="d-flex align-items-center">
+        <cite>
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">
+              {{ politicianDetails.politicianDesignation }}</font>
+          </font><span class="date">
+            <font style="vertical-align: inherit">
+              <font style="vertical-align: inherit">
+                {{ statementDetails?.createdAt | date}}</font>
+            </font>
+          </span>
+        </cite>
+        <!-- <div class="d-flex align-items-center">
           <svg
             class="me-2"
             width="19"
@@ -68,67 +65,98 @@
               ><font style="vertical-align: inherit">Prague Castle,</font></font
             >
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="d-flex flex-wrap align-items-end mb-10">
         <h1 class="display-5 fw-bold me-3">
-          <font style="vertical-align: inherit"
-            ><font style="vertical-align: inherit"
-              >This statement has been verified as</font
-            ></font
-          >
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">This statement has been verified as</font>
+          </font>
         </h1>
-        <app-statement-assesment
-          size="30"
-          [judgement]="statementDetails?.statementJudgement ?? ''"
-        ></app-statement-assesment>
+        <app-statement-assesment size="30"
+          [judgement]="statementDetails?.statementJudgement ?? ''"></app-statement-assesment>
       </div>
       <div class="separator bg-gray mb-10"></div>
       <div class="mb-10">
         <h3 class="display-5 fw-bold mb-5">
-          <font style="vertical-align: inherit"
-            ><font style="vertical-align: inherit"
-              >Abbreviated justification</font
-            ></font
-          >
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">Abbreviated justification</font>
+          </font>
         </h3>
         <p class="fs-5">
-          <font style="vertical-align: inherit"
-            ><font style="vertical-align: inherit">{{
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">{{
               statementDetails?.statementInfo
-            }}</font></font
-          >
+              }}.</font>
+          </font>
         </p>
       </div>
       <div class="separator bg-gray mb-10"></div>
       <div class="mb-10">
         <h3 class="display-5 fw-bold mb-5">
-          <font style="vertical-align: inherit"
-            ><font style="vertical-align: inherit"
-              >Full justification</font
-            ></font
-          >
+          <font style="vertical-align: inherit">
+            <font style="vertical-align: inherit">Full justification</font>
+          </font>
         </h3>
-        <div class="content fs-5">
-          <p>
-            <font style="vertical-align: inherit"
-              ><font style="vertical-align: inherit">{{
+        <div class="content text-lg">
+          <div class="p-6 rounded-xl bg-gray-50 border-2 border-solid border-black shadow-sm"
+            *ngIf="!statementDetails?.statementCompleteInfo">
+            <h2 class="text-center text-xl font-bold text-gray-800 mb-4">
+              Important Note
+            </h2>
+            <!-- Paragraph 1 -->
+            <p style="color: #171717; line-height: 1.6;">
+              This statement is currently marked as <strong>Unverified</strong> because we have not yet been able to
+              confirm its
+              accuracy. As a small team of two with limited resources, conducting detailed fact-checking can be
+              challenging.
+              However, we are determined to uncover the truth behind such statements.
+            </p>
+
+            <!-- Paragraph 2 -->
+            <p style="color: #171717; line-height: 1.6;">
+              We are looking for <strong>dedicated individuals</strong> who share our passion for truth and transparency
+              to join
+              us in this journey. If you're willing to volunteer your time and skills to help research and verify
+              claims, we’d
+              love to have you on board. Together, we can build a platform that prioritizes accountability and factual
+              information.
+            </p>
+
+            <!-- Paragraph 3 -->
+            <p style="color: #171717; line-height: 1.6;">
+              Interested in joining us?
+              <a class="font-bold" href="mailto:your-email@example.com" style="color: #007BFF; text-decoration: none;">
+                Contact us
+              </a>
+              or reach out to us using this
+              <a class="font-bold" href="https://forms.gle/okBTH2HhDtFHDyxp8" target="_blank"
+                style="color: #007BFF; text-decoration: none;">
+                Form
+              </a>
+              and let’s work together to unveil the truth.
+            </p>
+          </div>
+
+          <p *ngIf="statementDetails?.statementCompleteInfo">
+            <font style="vertical-align: inherit">
+              <font style="vertical-align: inherit">{{
                 statementDetails?.statementCompleteInfo
-              }}</font></font
-            >
+                }}</font>
+            </font>
           </p>
         </div>
       </div>
       <div class="separator bg-gray mb-10"></div>
       <div class="">
-      <div>
-        <a class="btn outline mb-2 h-44px me-2 fs-6 px-6" [routerLink]="this.previousUrl">
+        <div>
+          <a class="btn outline mb-2 h-44px me-2 fs-6 px-6" [routerLink]="this.previousUrl">
             <span class="me-2">←</span>
             <span>Back</span>
-        </a>
-      </div>
-      <!-- <div class="separator bg-gray mb-10"></div> -->
-      <!-- <div class="">
+          </a>
+        </div>
+        <!-- <div class="separator bg-gray mb-10"></div> -->
+        <!-- <div class="">
         <h3 class="display-5 fw-bold mb-5">
           <font style="vertical-align: inherit"
             ><font style="vertical-align: inherit"
@@ -139,6 +167,6 @@
         <app-home-page-card />
       </div>
       </div> -->
+      </div>
     </div>
   </div>
-</div>
