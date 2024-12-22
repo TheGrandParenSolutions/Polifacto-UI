@@ -32,11 +32,12 @@ export class PromisesComponent {
   promiseJudgementType: any;
   judgementWidth: number | undefined;
   public Object = Object;
+  noJudgmentsAvailable = false;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly promiseService: PromiseService
-  ) {}
+  ) { }
 
   get promiseRatingKeyGetter() {
     return PromiseRatingKey;
@@ -78,6 +79,16 @@ export class PromisesComponent {
       notImplemented: this.partyPromise?.notImplementedPromisesCount,
       partlyImplemented: this.partyPromise?.partlyImplementedPromisesCount,
     };
+
+    const noJudgmentsAvailable = Object.values(this.promiseJudgementType).every(
+      (value) => value === 0 || value === null
+    );
+    this.noJudgmentsAvailable = noJudgmentsAvailable;
+
+    this.promiseJudgementType = {
+      ...this.promiseJudgementType,
+      totalPromisesCount: this.partyPromise?.totalPromisesCount
+    }
   }
 
   calculateJudgementResult(judgementCount: string) {
@@ -109,7 +120,7 @@ export class PromisesComponent {
         break;
       }
     }
-    return width?`${width}%`: 0;
+    return width ? `${width}%` : 0;
   }
 
   setBgColor(judgementName: string, judgementValue: string) {
@@ -133,6 +144,10 @@ export class PromisesComponent {
       }
       case "partlyImplemented": {
         color = PromiseRatings.PartlyImplemented.backgroundColor;
+        break;
+      }
+      default: {
+        color = "bg-purple-900";
         break;
       }
     }
@@ -168,8 +183,6 @@ export class PromisesComponent {
 
   calculateWidth(value: number) {
     const total = +this.partyPromise?.totalPromisesCount;
-    return (value / (total ?? 1)) * 100;                                      
+    return (value / (total ?? 1)) * 100;
   }
 }
-
-//////////////update interfaces and fix promise dropdown not redirecting while on prommises page//////////////////////////

@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { PromiseRatings } from '../../utils/Promises/PromiseRatingConf';
 
 @Component({
   selector: 'app-about-us',
@@ -23,6 +24,33 @@ export class AboutUsComponent implements AfterViewInit {
   scrollIntoView = (section: HTMLElement, linkElement: string) => {
     this.activeLink = linkElement;
     section.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
+  }
+
+  setTextColor(judgementName: string, judgementValue: string) {
+    let color = "";
+    switch (judgementName) {
+      case "fullfilled": {
+        color = PromiseRatings.Fulfilled.textColor;
+        break;
+      }
+      case "violated": {
+        color = PromiseRatings.Violated.textColor;
+        break;
+      }
+      case "inProgress": {
+        color = PromiseRatings.InProgress.textColor;
+        break;
+      }
+      case "notImplemented": {
+        color = PromiseRatings.NotImplemented.textColor;
+        break;
+      }
+      case "partlyImplemented": {
+        color = PromiseRatings.PartlyImplemented.textColor;
+        break;
+      }
+    }
+    return color;
   }
 
   @HostListener('window:scroll', ['$event']) // for window scroll events

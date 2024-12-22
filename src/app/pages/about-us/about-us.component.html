@@ -1,18 +1,9 @@
 <div id="container-id" class="container">
-  <div
-    class="row g-5 g-lg-10"
-    data-controller="components--sticky"
-    data-action="scroll@window->components--sticky#onScroll"
-    data-components--sticky-breakpoint="992"
-  >
+  <div class="row g-5 g-lg-10" data-controller="components--sticky"
+    data-action="scroll@window->components--sticky#onScroll" data-components--sticky-breakpoint="992">
     <div class="col col-12 col-lg-3 position-relative flex items-end">
-      <nav
-        class="side-nav w-100 side-nav-mobile"
-        [ngClass]="{ fixed: !hasUserReachedTheBottomOfThePage }"
-        data-bs-target="components--sticky.sticky"
-        style="width: 250px !important"
-        [ngStyle]="{ top: '145px' }"
-      >
+      <nav class="side-nav w-100 side-nav-mobile" [ngClass]="{ fixed: !hasUserReachedTheBottomOfThePage }"
+        data-bs-target="components--sticky.sticky" style="width: 250px !important" [ngStyle]="{ top: '145px' }">
         <h1 class="display-4 fw-bold mb-4 p-0">
           <font style="vertical-align: inherit">
             <font style="vertical-align: inherit">About us</font>
@@ -20,38 +11,28 @@
         </h1>
         <ul class="list p-0">
           <li (click)="scrollIntoView(polifactoSection, 'about')">
-            <a
-              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
-              [ngClass]="{ active: activeLink === 'about' }"
-            >
+            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+              [ngClass]="{ active: activeLink === 'about' }">
               <span>
                 <font style="vertical-align: inherit">
-                  <font style="vertical-align: inherit"
-                    >1. About Polifacto</font
-                  >
+                  <font style="vertical-align: inherit">1. About Polifacto</font>
                 </font>
               </span>
             </a>
           </li>
           <li (click)="scrollIntoView(evaluationSection, 'evaluate')">
-            <a
-              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
-              [ngClass]="{ active: activeLink === 'evaluate' }"
-            >
+            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+              [ngClass]="{ active: activeLink === 'evaluate' }">
               <span>
                 <font style="vertical-align: inherit">
-                  <font style="vertical-align: inherit"
-                    >2. How do we evaluate?</font
-                  >
+                  <font style="vertical-align: inherit">2. How do we evaluate?</font>
                 </font>
               </span>
             </a>
           </li>
           <li (click)="scrollIntoView(contactSection, 'contacts')">
-            <a
-              class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
-              [ngClass]="{ active: activeLink === 'contacts' }"
-            >
+            <a class="min-h-30px d-inline-flex fs-5 fw-bold text-dark align-items-center text-none state-line mb-2"
+              [ngClass]="{ active: activeLink === 'contacts' }">
               <span>
                 <font style="vertical-align: inherit">
                   <font style="vertical-align: inherit">3. Contacts</font>
@@ -63,10 +44,7 @@
       </nav>
     </div>
 
-    <div
-      class="col col-12 col-lg-9"
-      data-bs-target="components--sticky.content"
-    >
+    <div class="col col-12 col-lg-9" data-bs-target="components--sticky.content">
       <div #polifactoSection class="accordion pb-10" id="co-je-to-polifacto-in">
         <h2 class="pb-4 mb-0">
           <font style="vertical-align: inherit">
@@ -76,14 +54,9 @@
 
         <div class="accordion-item" id="co-je-to-polifacto-in">
           <h2 class="accordion-header" id="heading-co-je-to-polifacto-in">
-            <button
-              class="accordion-button collapsed !transition-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-co-je-to-polifacto-in"
-              aria-expanded="false"
-              aria-controls="collapse-co-je-to-polifacto-in"
-            >
+            <button class="accordion-button collapsed !transition-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-co-je-to-polifacto-in" aria-expanded="false"
+              aria-controls="collapse-co-je-to-polifacto-in">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   What is Polifacto?
@@ -91,13 +64,8 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-co-je-to-polifacto-in"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-co-je-to-polifacto-in"
-            data-bs-parent="#co-je-to-polifacto-in"
-            style
-          >
+          <div id="collapse-co-je-to-polifacto-in" class="accordion-collapse collapse"
+            aria-labelledby="heading-co-je-to-polifacto-in" data-bs-parent="#co-je-to-polifacto-in" style>
             <div class="accordion-body">
               <div class="content">
                 <p>
@@ -107,34 +75,43 @@
                     </font>
                   </strong>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit">.</font> </font
-                  ><strong>
+                    <font style="vertical-align: inherit">.</font>
+                  </font><strong>
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit">in</font>
                     </font>
                   </strong>
                   <font style="vertical-align: inherit">
                     <font style="vertical-align: inherit">
-                      is a unique Indian project that focuses on verifying the statements of politicians, disinformation and other false content on social networks.
+                      is a unique Indian project that focuses on verifying the statements of politicians, disinformation
+                      and other false content on social networks.
                     </font>
                   </font>
                 </p>
                 <p>
                   <font style="vertical-align: inherit">
                     <font style="vertical-align: inherit">
-                      At Polifacto.in, we aim to highlight false and misleading expressions that distort public discourse. We focus on evaluating the factual statements and declarations of Indian politicians, subjecting them to rigorous scrutiny. Through our work, we aim to inform the public about when political leaders are being truthful and when they may be misleading the people they serve. By shedding light on inaccuracies and manipulations, we help foster transparency, accountability, and a more informed citizenry. Our project strives to protect the integrity of public discourse and ensure that facts remain at the forefront of democratic dialogue.  
+                      At Polifacto.in, we aim to highlight false and misleading expressions that distort public
+                      discourse. We focus on evaluating the factual statements and declarations of Indian politicians,
+                      subjecting them to rigorous scrutiny. Through our work, we aim to inform the public about when
+                      political leaders are being truthful and when they may be misleading the people they serve. By
+                      shedding light on inaccuracies and manipulations, we help foster transparency, accountability, and
+                      a more informed citizenry. Our project strives to protect the integrity of public discourse and
+                      ensure that facts remain at the forefront of democratic dialogue.
                     </font>
                   </font>
                 </p>
                 <p>
                   <font style="vertical-align: inherit">
                     <font style="vertical-align: inherit">
-                     <b>Wondering Why Polifacto?</b>
+                      <b>Wondering Why Polifacto?</b>
                       <br>
                       <br>
-                      <b>Empowering Truth-Seekers:</b> Our mission is to fight misinformation and promote informed decision-making.
+                      <b>Empowering Truth-Seekers:</b> Our mission is to fight misinformation and promote informed
+                      decision-making.
                       <br>
-                      <b>Community-Driven:</b> We believe in the power of collective wisdom. Join our growing community to contribute your expertise and insights.
+                      <b>Community-Driven:</b> We believe in the power of collective wisdom. Join our growing community
+                      to contribute your expertise and insights.
                     </font>
                   </font>
                 </p>
@@ -143,18 +120,10 @@
           </div>
         </div>
         <div class="accordion-item" id="jak-projekt-polifacto-in-vznikl">
-          <h2
-            class="accordion-header"
-            id="heading-jak-projekt-polifacto-in-vznikl"
-          >
-            <button
-              class="accordion-button collapsed !transition-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-projekt-polifacto-in-vznikl"
-              aria-expanded="false"
-              aria-controls="collapse-jak-projekt-polifacto-in-vznikl"
-            >
+          <h2 class="accordion-header" id="heading-jak-projekt-polifacto-in-vznikl">
+            <button class="accordion-button collapsed !transition-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-projekt-polifacto-in-vznikl" aria-expanded="false"
+              aria-controls="collapse-jak-projekt-polifacto-in-vznikl">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   How did the Polifacto project come about?
@@ -162,27 +131,24 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-jak-projekt-polifacto-in-vznikl"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-projekt-polifacto-in-vznikl"
-            data-bs-parent="#co-je-to-polifacto-in"
-            style
-          >
+          <div id="collapse-jak-projekt-polifacto-in-vznikl" class="accordion-collapse collapse"
+            aria-labelledby="heading-jak-projekt-polifacto-in-vznikl" data-bs-parent="#co-je-to-polifacto-in" style>
             <div class="accordion-body">
               <div class="content">
                 <p>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit"
-                      >The Polifacto project was born from the vision of two innovative minds who sought to make a meaningful impact on society. Driven by a shared passion for uncovering the truth behind claims made by the Indian government, they created Polifacto to empower citizens with accurate, verified information.</font
-                    >
+                    <font style="vertical-align: inherit">The Polifacto project was born from the vision of two
+                      innovative minds who sought to make a meaningful impact on society. Driven by a shared passion for
+                      uncovering the truth behind claims made by the Indian government, they created Polifacto to
+                      empower citizens with accurate, verified information.</font>
                   </font>
                 </p>
                 <p>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit"
-                      >This platform is designed to promote transparency and accountability, ensuring that the people of India have the tools they need to make informed decisions. By shedding light on the truth, Polifacto strives to help citizens choose a wiser and more transparent democracy, strengthening the foundation of India's democratic values</font
-                    >
+                    <font style="vertical-align: inherit">This platform is designed to promote transparency and
+                      accountability, ensuring that the people of India have the tools they need to make informed
+                      decisions. By shedding light on the truth, Polifacto strives to help citizens choose a wiser and
+                      more transparent democracy, strengthening the foundation of India's democratic values</font>
                   </font>
                 </p>
               </div>
@@ -192,14 +158,9 @@
 
         <div class="accordion-item" id="kdo-pripravuje-polifacto-in">
           <h2 class="accordion-header" id="heading-kdo-pripravuje-polifacto-in">
-            <button
-              class="accordion-button collapsed !transition-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-kdo-pripravuje-polifacto-in"
-              aria-expanded="false"
-              aria-controls="collapse-kdo-pripravuje-polifacto-in"
-            >
+            <button class="accordion-button collapsed !transition-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-kdo-pripravuje-polifacto-in" aria-expanded="false"
+              aria-controls="collapse-kdo-pripravuje-polifacto-in">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   Who prepares Polifacto?
@@ -207,31 +168,18 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-kdo-pripravuje-polifacto-in"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-kdo-pripravuje-polifacto-in"
-            data-bs-parent="#co-je-to-polifacto-in"
-          >
+          <div id="collapse-kdo-pripravuje-polifacto-in" class="accordion-collapse collapse"
+            aria-labelledby="heading-kdo-pripravuje-polifacto-in" data-bs-parent="#co-je-to-polifacto-in">
             <div class="accordion-body">
               <div class="row g-5">
                 <div class="col col-12">
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
-                      <span
-                        class="symbol symbol-square symbol-circle min-w-[48px] min-h-[48px]"
-                      >
+                      <span class="symbol symbol-square symbol-circle min-w-[48px] min-h-[48px]">
                         <img
                           src="https://pmlrikjsxqgrgdkkqskv.supabase.co/storage/v1/object/public/images/Founders/jp-poli.png"
-                          alt="Jatin Pal"
-                          class="w-100"
-                          loading="lazy"
-                          width="144"
-                          height="144"
-                          decoding="async"
-                          data-nimg="1"
-                          style="color: transparent"
-                        />
+                          alt="Jatin Pal" class="w-100" loading="lazy" width="144" height="144" decoding="async"
+                          data-nimg="1" style="color: transparent" />
                       </span>
                     </div>
                     <div class="col col-10">
@@ -246,10 +194,15 @@
                             <font style="vertical-align: inherit">Co Founder</font>
                           </font>
                         </b>
-                        <a target="_blank" href="https://www.linkedin.com/in/jat121/" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48" fill="none">
-                          <circle cx="24" cy="24" r="20" fill="#0077B5"/>
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z" fill="white"/>
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z" fill="white"/>
+                        <a target="_blank" href="https://www.linkedin.com/in/jat121/" rel="noreferrer"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" fill="#0077B5" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z"
+                              fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z"
+                              fill="white" />
                           </svg></a>
                       </p>
                     </div>
@@ -259,28 +212,17 @@
                 <div class="col col-12">
                   <div class="row g-5 g-lg-10">
                     <div class="col col-2">
-                      <span
-                        class="symbol symbol-square symbol-circle min-w-[48px] min-h-[48px]"
-                      >
+                      <span class="symbol symbol-square symbol-circle min-w-[48px] min-h-[48px]">
                         <img
                           src="https://pmlrikjsxqgrgdkkqskv.supabase.co/storage/v1/object/public/images/Founders/jm-poli.png"
-                          class="w-100"
-                          alt="Jaya Mehta"
-                          loading="lazy"
-                          width="144"
-                          height="144"
-                          decoding="async"
-                          data-nimg="1"
-                          style="color: transparent"
-                        />
+                          class="w-100" alt="Jaya Mehta" loading="lazy" width="144" height="144" decoding="async"
+                          data-nimg="1" style="color: transparent" />
                       </span>
                     </div>
                     <div class="col col-10">
                       <h4 class="fs-2">
                         <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit"
-                            >Jaya Mehta</font
-                          >
+                          <font style="vertical-align: inherit">Jaya Mehta</font>
                         </font>
                       </h4>
                       <p class="fs-6 flex items-center">
@@ -289,10 +231,15 @@
                             <font style="vertical-align: inherit">Co Founder</font>
                           </font>
                         </b>
-                        <a target="_blank" href="https://www.linkedin.com/in/jayamehta29/" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48" fill="none">
-                          <circle cx="24" cy="24" r="20" fill="#0077B5"/>
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z" fill="white"/>
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z" fill="white"/>
+                        <a target="_blank" href="https://www.linkedin.com/in/jayamehta29/" rel="noreferrer"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" fill="#0077B5" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z"
+                              fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z"
+                              fill="white" />
                           </svg></a>
                       </p>
                     </div>
@@ -304,37 +251,31 @@
                     <div class="col col-10">
                       <h4 class="fs-2">
                         <font style="vertical-align: inherit">
-                          <font style="vertical-align: inherit"
-                            >Want to Join Us??</font
-                          >
+                          <font style="vertical-align: inherit">Want to Join Us??</font>
                         </font>
                       </h4>
                       <p class="fs-6 flex items-center">
-                          <font style="vertical-align: inherit">
-                            <font style="vertical-align: inherit">We are looking for <strong>dedicated individuals</strong> who share our passion for truth and transparency to join 
-                              us in this journey. If you're willing to volunteer your time and skills to help research and verify claims, we’d 
-                              love to have you on board. Together, we can build a platform that prioritizes accountability and factual information.</font>
-                          </font>
-                        <p style="color: #171717; line-height: 1.6;">
-                          Interested in joining us? 
-                          <a 
-                            class="font-bold" 
-                            href="mailto:your-email@example.com" 
-                            style="color: #007BFF; text-decoration: none;"
-                          >
-                            Contact us
-                          </a> 
-                          or reach out to us using this 
-                          <a 
-                            class="font-bold" 
-                            href="https://forms.gle/meqxhjfvqZgNh91AA" 
-                            target="_blank" 
-                            style="color: #007BFF; text-decoration: none;"
-                          >
-                            Form
-                          </a> 
-                          and let’s work together to unveil the truth.
-                        </p>
+                        <font style="vertical-align: inherit">
+                          <font style="vertical-align: inherit">We are looking for <strong>dedicated
+                              individuals</strong> who share our passion for truth and transparency to join
+                            us in this journey. If you're willing to volunteer your time and skills to help research and
+                            verify claims, we’d
+                            love to have you on board. Together, we can build a platform that prioritizes accountability
+                            and factual information.</font>
+                        </font>
+                      <p style="color: #171717; line-height: 1.6;">
+                        Interested in joining us?
+                        <a class="font-bold" href="mailto:your-email@example.com"
+                          style="color: #007BFF; text-decoration: none;">
+                          Contact us
+                        </a>
+                        or reach out to us using this
+                        <a class="font-bold" href="https://forms.gle/okBTH2HhDtFHDyxp8" target="_blank"
+                          style="color: #007BFF; text-decoration: none;">
+                          Form
+                        </a>
+                        and let’s work together to unveil the truth.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -352,14 +293,9 @@
 
         <div class="accordion-item" id="co-je-to-factcheck">
           <h2 class="accordion-header" id="heading-co-je-to-factcheck">
-            <button
-              class="accordion-button collapsed !transition-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-co-je-to-factcheck"
-              aria-expanded="false"
-              aria-controls="collapse-co-je-to-factcheck"
-            >
+            <button class="accordion-button collapsed !transition-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-co-je-to-factcheck" aria-expanded="false"
+              aria-controls="collapse-co-je-to-factcheck">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   What is a "fact-check"?
@@ -367,35 +303,26 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-co-je-to-factcheck"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-co-je-to-factcheck"
-            data-bs-parent="#jak-hodnotime"
-            style
-          >
+          <div id="collapse-co-je-to-factcheck" class="accordion-collapse collapse"
+            aria-labelledby="heading-co-je-to-factcheck" data-bs-parent="#jak-hodnotime" style>
             <div class="accordion-body">
               <div class="content">
                 <p>
-                  Fact-checking is the process of verifying the accuracy and truthfulness of factual statements, particularly those made by public figures such as politicians. It involves examining claims that can be substantiated with evidence, including numerical data, documented actions (such as voting records or public statements), and historical events. The goal of fact-checking is to ensure transparency and accountability by distinguishing between truthful information and misleading or false assertions.
+                  Fact-checking is the process of verifying the accuracy and truthfulness of factual statements,
+                  particularly those made by public figures such as politicians. It involves examining claims that can
+                  be substantiated with evidence, including numerical data, documented actions (such as voting records
+                  or public statements), and historical events. The goal of fact-checking is to ensure transparency and
+                  accountability by distinguishing between truthful information and misleading or false assertions.
                 </p>
               </div>
             </div>
           </div>
         </div>
         <div class="accordion-item" id="jak-vybirame-obsah-k-overeni">
-          <h2
-            class="accordion-header"
-            id="heading-jak-vybirame-obsah-k-overeni"
-          >
-            <button
-              class="accordion-button collapsed !transition-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-vybirame-obsah-k-overeni"
-              aria-expanded="false"
-              aria-controls="collapse-jak-vybirame-obsah-k-overeni"
-            >
+          <h2 class="accordion-header" id="heading-jak-vybirame-obsah-k-overeni">
+            <button class="accordion-button collapsed !transition-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-vybirame-obsah-k-overeni" aria-expanded="false"
+              aria-controls="collapse-jak-vybirame-obsah-k-overeni">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   How do we select content to verify?
@@ -403,57 +330,49 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-jak-vybirame-obsah-k-overeni"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-vybirame-obsah-k-overeni"
-            data-bs-parent="#jak-hodnotime"
-          >
+          <div id="collapse-jak-vybirame-obsah-k-overeni" class="accordion-collapse collapse"
+            aria-labelledby="heading-jak-vybirame-obsah-k-overeni" data-bs-parent="#jak-hodnotime">
             <div class="accordion-body">
               <div class="content">
-                <p>At Polifacto, we carefully select content to verify based on relevance, balance, and verifiability. Our goal is to ensure impartiality and objectivity while addressing the most significant political statements and claims. Here's how we do it:</p>
+                <p>At Polifacto, we carefully select content to verify based on relevance, balance, and verifiability.
+                  Our goal is to ensure impartiality and objectivity while addressing the most significant political
+                  statements and claims. Here's how we do it:</p>
                 <p>
                   <strong>Sources of Content</strong>
                 </p>
                 <ul class="list-disc pl-5 space-y-2 text-gray-800">
                   <li>
-                    <strong>User Submissions:</strong> We verify content submitted by users who ask questions or request fact-checks.
+                    <strong>User Submissions:</strong> We verify content submitted by users who ask questions or request
+                    fact-checks.
                   </li>
                   <li>
-                    <strong>Political Statements:</strong> We analyze statements made by politicians in speeches, interviews, and debates.
+                    <strong>Political Statements:</strong> We analyze statements made by politicians in speeches,
+                    interviews, and debates.
                   </li>
                   <li>
-                    <strong>Promises and Manifestos:</strong> We examine promises and policy agendas presented by political parties.
+                    <strong>Promises and Manifestos:</strong> We examine promises and policy agendas presented by
+                    political parties.
                   </li>
                   <li>
-                    <strong>Social Media:</strong> We focus on individual statements found on platforms like Twitter, Facebook, and Instagram.
+                    <strong>Social Media:</strong> We focus on individual statements found on platforms like Twitter,
+                    Facebook, and Instagram.
                   </li>
                 </ul>
                 <p>
-                  Our selection of statements for verification ultimately depends on the availability and quality of content, and will never be perfect. We therefore welcome 
-                  <a
-                    href="https://forms.gle/meqxhjfvqZgNh91AA"
-                    >suggestions and criticisms</a
-                  >
-                   for evaluation and selection.
+                  Our selection of statements for verification ultimately depends on the availability and quality of
+                  content, and will never be perfect. We therefore welcome
+                  <a href="https://forms.gle/okBTH2HhDtFHDyxp8">suggestions and criticisms</a>
+                  for evaluation and selection.
                 </p>
               </div>
             </div>
           </div>
         </div>
         <div class="accordion-item" id="jakym-zpusobem-vyroky-hodnotime">
-          <h2
-            class="accordion-header"
-            id="heading-jakym-zpusobem-vyroky-hodnotime"
-          >
-            <button
-              class="accordion-button collapsed !transition-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-jakym-zpusobem-vyroky-hodnotime"
-              aria-expanded="false"
-              aria-controls="collapse-jakym-zpusobem-vyroky-hodnotime"
-            >
+          <h2 class="accordion-header" id="heading-jakym-zpusobem-vyroky-hodnotime">
+            <button class="accordion-button collapsed !transition-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-jakym-zpusobem-vyroky-hodnotime" aria-expanded="false"
+              aria-controls="collapse-jakym-zpusobem-vyroky-hodnotime">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   How do we evaluate statements?
@@ -461,30 +380,30 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-jakym-zpusobem-vyroky-hodnotime"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jakym-zpusobem-vyroky-hodnotime"
-            data-bs-parent="#jak-hodnotime"
-          >
+          <div id="collapse-jakym-zpusobem-vyroky-hodnotime" class="accordion-collapse collapse"
+            aria-labelledby="heading-jakym-zpusobem-vyroky-hodnotime" data-bs-parent="#jak-hodnotime">
             <div class="accordion-body">
               <div class="content">
                 <p>
-                  At Polifacto, we evaluate statements using a structured approach to ensure clarity and transparency. Each statement is categorized into one of the following four categories:
+                  At Polifacto, we evaluate statements using a structured approach to ensure clarity and transparency.
+                  Each statement is categorized into one of the following four categories:
                 </p>
                 <ol class="list-decimal pl-5 space-y-4">
                   <li>
                     <strong>False</strong>
                     <ul class="list-disc pl-5">
-                      <li>Claims that contradict publicly available figures or information about actions or inactions.</li>
-                      <li>Statements where the methods of calculation differ significantly, and the claim is not supported by any reliable source.</li>
+                      <li>Claims that contradict publicly available figures or information about actions or inactions.
+                      </li>
+                      <li>Statements where the methods of calculation differ significantly, and the claim is not
+                        supported by any reliable source.</li>
                     </ul>
                   </li>
                   <li>
                     <strong>Truth</strong>
                     <ul class="list-disc pl-5">
                       <li>Statements that use accurate information in the correct context.</li>
-                      <li>We may use "qualified truth" for cases where the statement has minor inaccuracies or small deviations (e.g., numerical data within a 10% margin of error).</li>
+                      <li>We may use "qualified truth" for cases where the statement has minor inaccuracies or small
+                        deviations (e.g., numerical data within a 10% margin of error).</li>
                       <li>Rounding is tolerated unless the politician specifically emphasizes precise accuracy.</li>
                     </ul>
                   </li>
@@ -498,41 +417,34 @@
                           <li>Distorted comparisons or other manipulations that could lead to a false conclusion.</li>
                         </ul>
                       </li>
-                      <li>It is not a middle ground between truth and falsehood but rather an intentional misuse of factual data.</li>
+                      <li>It is not a middle ground between truth and falsehood but rather an intentional misuse of
+                        factual data.</li>
                     </ul>
                   </li>
                   <li>
                     <strong>Unverifiable</strong>
                     <ul class="list-disc pl-5">
-                      <li>Claims that cannot be confirmed or refuted due to the lack of available or reliable sources.</li>
-                      <li>This category is used when the source of a claim is missing or insufficient for verification.</li>
+                      <li>Claims that cannot be confirmed or refuted due to the lack of available or reliable sources.
+                      </li>
+                      <li>This category is used when the source of a claim is missing or insufficient for verification.
+                      </li>
                     </ul>
                   </li>
                 </ol>
 
                 <p>
-                  Our goal is to provide unbiased and transparent evaluations, empowering users with accurate information to better understand political claims and their context.
+                  Our goal is to provide unbiased and transparent evaluations, empowering users with accurate
+                  information to better understand political claims and their context.
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="accordion-item"
-          id="jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
-        >
-          <h2
-            class="accordion-header"
-            id="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
-          >
-            <button
-              class="accordion-button collapsed !transition-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
-              aria-expanded="false"
-              aria-controls="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
-            >
+        <div class="accordion-item" id="jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
+          <h2 class="accordion-header" id="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
+            <button class="accordion-button collapsed !transition-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni" aria-expanded="false"
+              aria-controls="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit">
                   How do we evaluate promises?
@@ -540,47 +452,66 @@
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni"
-            data-bs-parent="#jak-hodnotime"
-          >
+          <div id="collapse-jak-nakladat-se-statistikami-vyroku-a-hodnoceni" class="accordion-collapse collapse"
+            aria-labelledby="heading-jak-nakladat-se-statistikami-vyroku-a-hodnoceni" data-bs-parent="#jak-hodnotime">
             <div class="accordion-body">
               <div class="content">
                 <p>
-                  At Polifacto, we believe that political accountability starts with evaluating promises made by parties and leaders. To ensure clarity and transparency, we use a structured approach to analyze promises based on their outcomes and progress. This helps citizens stay informed about the commitments made during elections and the extent to which they have been honored.
+                  At Polifacto, we believe that political accountability starts with evaluating promises made by parties
+                  and leaders. To ensure clarity and transparency, we use a structured approach to analyze promises
+                  based on their outcomes and progress. This helps citizens stay informed about the commitments made
+                  during elections and the extent to which they have been honored.
                 </p>
                 <h3 class="mt-4 text-lg font-semibold">Our Approach</h3>
-  <p>
-    We begin by reviewing the manifestos of political parties competing in the election. These manifestos outline the promises and commitments made to the public. Each promise is then evaluated thoroughly and categorized into one of the following five categories:
-  </p>
-  <ol class="list-decimal pl-5 space-y-4">
-    <li>
-      <strong>Fulfilled:</strong> A promise is considered fulfilled when it has been fully implemented as stated in the manifesto. This includes measurable outcomes that align with the initial commitment and meet the expectations set by the political party.
-    </li>
-    <li>
-      <strong>Violated:</strong> A promise is labeled as violated if the party takes actions directly opposing their commitment or if the stated promise is deliberately disregarded despite being feasible.
-    </li>
-    <li>
-      <strong>In Progress:</strong> Promises marked as in progress are those actively being implemented but have not yet reached completion. This includes initiatives where visible steps are being taken to honor the commitment, though the final result is pending.
-    </li>
-    <li>
-      <strong>Not Implemented:</strong> Promises are categorized as not implemented when no steps or actions have been taken toward fulfilling the commitment. This includes cases where no visible effort or intent to act on the promise is evident.
-    </li>
-    <li>
-      <strong>Partly Implemented:</strong> A promise is deemed partly implemented if some aspects of it have been fulfilled, but significant portions remain unaddressed. This could involve partial efforts that fall short of fully achieving the intended goal.
-    </li>
-  </ol>
+                <p>
+                  We begin by reviewing the manifestos of political parties competing in the election. These manifestos
+                  outline the promises and commitments made to the public. Each promise is then evaluated thoroughly and
+                  categorized into one of the following five categories:
+                </p>
+                <ol class="list-disc space-y-4 font-medium">
+                  <li>
+                    <strong class="text-lg text-green-500">Fulfilled:</strong> Fully implemented
+                    promises that meet the original commitment.
+                  </li>
+                  <li>
+                    <strong class="text-lg" [ngClass]="setTextColor('violated', '')">Violated:</strong> Promises
+                    disregarded or
+                    contradicted by opposing actions.
+                  </li>
+                  <li>
+                    <strong class="text-lg" [ngClass]="setTextColor('inProgress', '')">In Progress:</strong> Promises
+                    currently
+                    under active implementation but not yet completed.
+                  </li>
+                  <li>
+                    <strong class="text-lg" [ngClass]="setTextColor('notImplemented', '')">Not Implemented:</strong>
+                    Promises for
+                    which no visible steps or actions have been taken.
+                  </li>
+                  <li>
+                    <strong class="text-lg text-yellow-400">Partly Implemented:</strong>
+                    Promises partially fulfilled, with significant portions unaddressed.
+                  </li>
+                  <li>
+                    <strong class="text-lg" class="text-purple-900">Not Verified Yet:</strong> This category includes
+                    promises
+                    awaiting updates, independent audits, <br> or further implementation
+                    steps for conclusive evaluation.
+                  </li>
 
-  <h3 class="mt-4 text-lg font-semibold">Why This Matters</h3>
-  <p>
-    By categorizing promises, we provide a clear picture of how political parties perform against their own commitments. Our evaluations empower citizens to make informed decisions, hold leaders accountable, and promote transparency in democratic processes.
-  </p>
+                </ol>
+                <h3 class="mt-4 text-lg font-semibold">Why This Matters</h3>
+                <p>
+                  By categorizing promises, we provide a clear picture of how political parties perform against their
+                  own commitments. Our evaluations empower citizens to make informed decisions, hold leaders
+                  accountable, and promote transparency in democratic processes.
+                </p>
 
-  <p>
-    At Polifacto, our mission is to bridge the gap between promises and delivery, fostering a culture of trust and accountability in Indian politics. Explore our promise evaluations and join us in building a more informed and engaged electorate.
-  </p>
+                <p>
+                  At Polifacto, our mission is to bridge the gap between promises and delivery, fostering a culture of
+                  trust and accountability in Indian politics. Explore our promise evaluations and join us in building a
+                  more informed and engaged electorate.
+                </p>
               </div>
             </div>
           </div>
@@ -595,31 +526,20 @@
 
         <div class="accordion-item" id="kontakty">
           <h2 class="accordion-header" id="heading-kontakty">
-            <button
-              class="accordion-button collapsed !transition-none"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse-kontakty"
-              aria-expanded="true"
-              aria-controls="collapse-kontakty"
-            >
+            <button class="accordion-button collapsed !transition-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-kontakty" aria-expanded="true" aria-controls="collapse-kontakty">
               <font style="vertical-align: inherit">
                 <font style="vertical-align: inherit"> Contacts </font>
               </font>
             </button>
           </h2>
-          <div
-            id="collapse-kontakty"
-            class="accordion-collapse collapse"
-            aria-labelledby="heading-kontakty"
-            data-bs-parent="#kontakty"
-          >
+          <div id="collapse-kontakty" class="accordion-collapse collapse" aria-labelledby="heading-kontakty"
+            data-bs-parent="#kontakty">
             <div class="accordion-body">
               <div class="content">
                 <p>
                   <font style="vertical-align: inherit">
-                    <font style="vertical-align: inherit"
-                      >We value your feedback, questions, and suggestions.
+                    <font style="vertical-align: inherit">We value your feedback, questions, and suggestions.
                       Whether you’re looking to share your thoughts, ask a
                       question, or explore a potential collaboration, we’re here
                       to listen and assist.
@@ -655,7 +575,7 @@
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit">{{
                         "Feedback form"
-                      }}</font>
+                        }}</font>
                     </font>
                   </a>
                   <br />
@@ -667,7 +587,7 @@
                     <font style="vertical-align: inherit">
                       <font style="vertical-align: inherit">{{
                         "info@Polifacto"
-                      }}</font>
+                        }}</font>
                     </font>
                   </a>
                 </p>
