@@ -12,9 +12,12 @@
             <img
               [src]="article?.articleThumbnail"
               class="w-100"
-              [ngClass]="{'p-[100px]': isBrokenImageLoaded}"
+              [ngClass]="{ 'p-[100px]': isBrokenImageLoaded }"
               alt="image"
-              (error)="isBrokenImageLoaded = true; article.articleThumbnail = BrokenImageUrl;" 
+              (error)="
+                isBrokenImageLoaded = true;
+                article.articleThumbnail = BrokenImageUrl
+              "
             />
           </a>
         </div>
@@ -23,7 +26,9 @@
           <!-- <div class="symbol-group">
             <app-speaker [speakers]="article?.articleSpeakerImages" />
           </div> -->
-          <app-statement-assesment [judgement]="article?.articleVerificationStatus" />
+          <app-statement-assesment
+            [judgement]="article?.articleVerificationStatus"
+          />
         </div>
       </div>
 
@@ -40,8 +45,11 @@
           </a>
         </h2>
         <div class="mb-2">
+          <a class="!text-blue-700 hover:!underline" target="_blank" [href]="articleSorce[1]">
+            {{ articleSorce[0] }}
+          </a>
           <i>
-            {{ article?.articleSource + ", " + article?.articlePublishedDate }}
+            {{ ", " + article?.articlePublishedDate }}
           </i>
         </div>
 

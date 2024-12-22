@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ArticleSpeakerComponent } from '../article-speaker/article-speaker.component';
 import { SpeakerComponent } from '../speaker/speaker.component';
@@ -18,10 +18,18 @@ import { BrokenImage } from '../../utils/constants/enums';
   styleUrl: './home-page-card.component.scss',
   animations: [fadeInAndOut]
 })
-export class HomePageCardComponent {
+export class HomePageCardComponent implements OnChanges {
   @Input() article: any = {};
   BrokenImageUrl = BrokenImage.URL
   isBrokenImageLoaded: boolean = false;
+  articleSorce: string[] = [];
 
   constructor(public loader: LoaderService) { }
+
+  ngOnChanges(): void {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+    this.articleSorce = this.article?.articleSource.split('@'); // Splitting the string by '@'
+    
+  }
 }
