@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, HostListener, Input } from "@angular/core";
+import { Component, EventEmitter, HostListener, Input, Output } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { IPoliticalParty } from "../../interfaces/interfaces";
@@ -15,12 +15,17 @@ export class NavSubItemComponent {
   @Input() title: string = "";
   @Input() promises?: IPoliticalParty[];
   isOpen = false;
+  @Output() linkClicked = new EventEmitter();
+
+  handleNavSubItemClick = () => {
+    this.linkClicked.emit()
+  }
 
   toggleIsOpen() {
     this.isOpen = !this.isOpen;
   }
 
-  constructor() {}
+  constructor() { }
 
   private wasInside = false;
 

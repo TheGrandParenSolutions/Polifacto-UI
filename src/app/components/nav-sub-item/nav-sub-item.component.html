@@ -16,7 +16,7 @@
       class="z-[999999] bg-dark divide-y divide-gray-100 rounded-lg shadow-xl dark:bg-gray-700 dark:divide-gray-600 md:absolute mt-4 transition-all duration-500 ">
       <ul class="flex flex-col py-2 text-sm text-gray-700 dark:text-gray-200"
         aria-labelledby="dropdownInformationButton">
-        <li *ngFor="let promise of promises">
+        <li *ngFor="let promise of promises" (click)="handleNavSubItemClick()">
           <a routerLink="promises/{{promise.shortNameOfParty}}/{{promise.startYear}}"
             class="block text-white px-4 py-2  hover:105 transition-all hover: duration-500 border rounded-lg  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-black  hover:!text-black ">
             <font style="vertical-align: inherit;">

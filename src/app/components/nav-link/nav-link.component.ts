@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -12,4 +12,9 @@ import { RouterModule } from '@angular/router';
 export class NavLinkComponent {
   @Input() url: string = "";
   @Input() title: string = "";
+  @Output() linkClicked = new EventEmitter();
+
+  handleNavLinkClick = () => {
+    this.linkClicked.emit()
+  }
 }
