@@ -16,6 +16,7 @@
         <div class="mb-5 mb-lg-10">
           <app-article-tags />
         </div>
+        <div *ngIf="!bottomArticles.length" class="flex items-center justify-center w-full font-bold">No articles found!</div>
         <div class="row row-cols-1 g-5 g-lg-10">
           <app-article-v2-preview *ngFor="let article of topArticles" [type]="'top'" [article]="article" />
         </div>
@@ -28,7 +29,7 @@
           <div class="flex items-center justify-center font-bold">No articles found!</div>
         </div>
       </div>
-      <div class="d-flex justify-content-center my-5 my-lg-10">
+      <div *ngIf="bottomArticles.length" class="d-flex justify-content-center my-5 my-lg-10">
         <app-pagination
           *ngIf="(loader.isLoading$ | async) === false"
           (changePage)="this.paginationConfig.currentPage = $event" />
