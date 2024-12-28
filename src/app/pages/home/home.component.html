@@ -25,9 +25,6 @@
         <div *ngIf="bottomArticles.length" class="row row-cols-1 row-cols-lg-2 g-5 g-lg-10">
           <app-article-v2-preview *ngFor="let article of bottomArticles | paginate: this.paginationConfig" [article]="article" [type]="'bottom'" />
         </div>
-        <div *ngIf="!bottomArticles.length" class="row row-cols-1 row-cols-lg-2 g-5 g-lg-10">
-          <div class="flex items-center justify-center font-bold">No articles found!</div>
-        </div>
       </div>
       <div *ngIf="bottomArticles.length" class="d-flex justify-content-center my-5 my-lg-10">
         <app-pagination
