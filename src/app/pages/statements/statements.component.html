@@ -12,25 +12,69 @@
           Overview of verified statements
         </h1>
       </div>
-    </div>
-    <!--    Filter can be written here later.                   -->
-    <app-filter-form
-      [areFiltersOpen]="false"
-      [pageSize]="this.paginationConfig.itemsPerPage"
-      [currentPage]="this.paginationConfig.currentPage"
-      [totalCount]="this.paginationConfig.totalItems"
-      (handlePageChange)="this.paginationConfig.currentPage = $event"
-      placeholderText="Enter the statement you're looking for"
-      (onSearchInputChange)="filterStatements($event)"
-    >
-      <app-statement-item
-        *ngFor="let statement of statements | paginate : this.paginationConfig"
-        [politicianWithStatements]="statement"
-        [politicianDetails]="statement.politician[0]"
-      />
-      <div class="w-100 flex justify-center" *ngIf="!paginationConfig.totalItems && !(loader.isLoading$ | async)" style="margin: inherit;">
-        <h2><b>No statements found</b></h2>
+      <div
+        id="banner"
+        class="bg-gradient-to-bl from-gray-100 to-lime-50 border-2 border-lime-800 border-solid text-gray-800 py-4 px-6 mb-10 rounded-3xl shadow-md flex items-center justify-between my-3 mx-0"
+      >
+        <div class="flex items-center">
+          <span class="text-lime-600 text-xl mr-3">🔔</span>
+          <div>
+            <h3 class="text-lg md:text-xl font-bold text-lime-700">
+              Important Announcement
+            </h3>
+            <p
+              class="text-sm md:!text-base font-semibold text-gray-800 mt-1 leading-relaxed"
+            >
+              This is the prototype of our user rating system, designed to give you a sneak peek into how this feature will work.
+              <br>
+              Soon, you'll be able to rate the <b>STATEMENTS</b> said by politicians with
+              our user rating system.
+              <a class="!text-green-500 font-bold text-lg !no-underline hover:!underline" href="/about-us"
+          > Learn more
+        </a>
+              <br />
+            </p>
+            <a
+              href="mailto:info.polifacto@gmail.com"
+              class="text-blue-700 font-bold hover:underline"
+              >Contact us</a
+            >
+            or fill out this
+            <a
+              href="https://forms.gle/meqxhjfvqZgNh91AA"
+              target="_blank"
+              class="text-blue-700 font-bold hover:underline"
+              >Form</a
+            >
+            in case of any query!!
+          </div>
+        </div>
       </div>
-    </app-filter-form>
+      <!--    Filter can be written here later.                   -->
+      <app-filter-form
+        [areFiltersOpen]="false"
+        [pageSize]="this.paginationConfig.itemsPerPage"
+        [currentPage]="this.paginationConfig.currentPage"
+        [totalCount]="this.paginationConfig.totalItems"
+        (handlePageChange)="this.paginationConfig.currentPage = $event"
+        placeholderText="Enter the statement you're looking for"
+        (onSearchInputChange)="filterStatements($event)"
+      >
+        <app-statement-item
+          *ngFor="
+            let statement of statements | paginate : this.paginationConfig
+          "
+          [politicianWithStatements]="statement"
+          [politicianDetails]="statement.politician[0]"
+        />
+        <div
+          class="w-100 flex justify-center"
+          *ngIf="!paginationConfig.totalItems && !(loader.isLoading$ | async)"
+          style="margin: inherit"
+        >
+          <h2><b>No statements found</b></h2>
+        </div>
+      </app-filter-form>
+    </div>
   </div>
 </div>
