@@ -7,11 +7,12 @@ import { Router } from '@angular/router';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { LoaderService } from '../../shared/services/loader/loader.service';
 import { fadeInAndOut } from '../../shared/animations/animations';
+import { TooltipDirective } from '../../shared/tooltip/tooltip.directive';
 
 @Component({
   selector: 'app-statement-item',
   standalone: true,
-  imports: [CommonModule, RouterModule, StatementAssesmentComponent, FormsModule, NgxSkeletonLoaderModule],
+  imports: [CommonModule, RouterModule, StatementAssesmentComponent, FormsModule, NgxSkeletonLoaderModule, TooltipDirective],
   templateUrl: './statement-item.component.html',
   styleUrl: './statement-item.component.scss',
   animations: [fadeInAndOut]
@@ -34,14 +35,14 @@ export class StatementItemComponent {
   colors: any = {
     true: "primary",
     false: "red",
-    "no comment": "gray",
+    "no comment": "gray-500",
     misleading: "secondary",
   };
    stats = [
       { label: "True", percentage: 75, type: "bg-primary" },
       { label: "False", percentage: 5, type: "bg-red" },
       { label: "Misleading", percentage: 5, type: "bg-secondary" },
-      { label: "No comment", percentage: 15, type: "bg-gray" }
+      { label: "No comment", percentage: 15, type: "bg-gray-500" }
     ];
   
     currentBgColor = "bg-" + this.colors[this.stats[0].label];

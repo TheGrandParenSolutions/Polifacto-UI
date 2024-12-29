@@ -2,6 +2,3 @@
   <app-home-page-card *ngIf="type === 'top'" [article]="article" />
   <app-article-item *ngIf="type === 'bottom'" [article]="article" />
 </ng-container>
-<div *ngIf="!article" class="flex items-center justify-center">
-  No articles found!
-</div>

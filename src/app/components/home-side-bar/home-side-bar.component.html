@@ -2,22 +2,24 @@
   <div class="w-100 position-relative">
     <h2 class="display-5 fw-bold mb-4">What is Polifacto?</h2>
     <div class="fs-6 mb-4 dark-content">
-      <p class="text-lg font-semibold text-zinc-8">
-        At Polifacto, we empower users with information sources and the necessary context to form their own opinions. Users can then express their perspectives by participating in our interactive rating system, reflecting their understanding and insights.<br />
-        <br />
-        Polifacto does not make judgments or offer conclusions—our role is to present the relevant details and enable users to make informed decisions based on their own understanding<br />
+      <div class="w-100 position-relative">
+        <app-video-player
+          [thumbnail]="'/assets/images/thumbnails/polifacto-thumbnail.png'"
+          [videoSrc]="'/assets/media/polifacto-new.mp4'"
+        ></app-video-player>
+      </div>
+      <p class="text-lg mt-6 font-semibold text-zinc-8">
+        At Polifacto, we empower users with information sources and the necessary context to form their own opinions.
+        <br>
+        <br> Users can then express their perspectives by participating in our interactive rating system, reflecting their understanding and insights.<br />
+        
         <a class="!text-green-500 font-bold text-lg !no-underline hover:!underline" href="/about-us"
           >Learn more
         </a>
       </p>
     </div>
     <!-- Add introduction video  -->
-    <div class="w-100 position-relative">
-      <app-video-player
-        [thumbnail]="'/assets/images/thumbnails/polifacto-thumbnail.png'"
-        [videoSrc]="'/assets/media/polifacto.mp4'"
-      ></app-video-player>
-    </div>
+
     <div class="mt-4">
       <button
         class="btn !bg-[--bg-lime] w-100"

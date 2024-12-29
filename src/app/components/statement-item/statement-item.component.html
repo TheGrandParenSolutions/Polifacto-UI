@@ -56,7 +56,8 @@
             </cite>
 
             <!-- Rating Icons -->
-            <div class="flex flex-row gap-1">
+            <div class="flex flex-row gap-1"
+            [tooltip]="'ability to rate is coming soon'">
               <!-- True -->
               <button (click)="rateStatement('true')"
                 class="flex flex-col items-center group hover:scale-105 transform transition duration-150">
@@ -111,7 +112,9 @@
                 <!-- <span class="text-xs font-medium text-gray-700 mt-1">No Comment</span> -->
               </button>
             </div>
+
           </div>
+          <span class="italic font-extrabold text-zinc-400 mt-2 md:hidden float-end">ability to rate is coming soon</span>
 
 
 
@@ -176,7 +179,7 @@
                 <span class="ml-auto text-sm text-gray-500">5%</span>
               </div>
               <div class="flex items-center space-x-2">
-                <div class="w-4 h-4 rounded-full bg-gray"></div>
+                <div class="w-4 h-4 rounded-full bg-gray-500"></div>
                 <span class="text-sm font-medium text-gray-800">No comment</span>
                 <span class="ml-auto text-sm text-gray-500">15%</span>
               </div>
