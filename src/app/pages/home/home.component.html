@@ -16,7 +16,6 @@
         <div class="mb-5 mb-lg-10">
           <app-article-tags />
         </div>
-        <div *ngIf="!bottomArticles.length" class="flex items-center justify-center w-full font-bold">No articles found!</div>
         <div class="row row-cols-1 g-5 g-lg-10">
           <app-article-v2-preview *ngFor="let article of topArticles" [type]="'top'" [article]="article" />
         </div>
