@@ -94,7 +94,7 @@ export const routes: Routes = [
         path: 'ask-us',
         loadComponent: () => import('./components/ask-question-overlay/ask-question-overlay.component').then((x) => x.AskQuestionOverlayComponent),
         data: {
-            title: 'Ask Us - Polifacto',
+            title: 'Ask Polifacto - Polifacto',
             description: 'Have questions? Reach out to Polifacto for detailed answers and insights.'
         }
     },
