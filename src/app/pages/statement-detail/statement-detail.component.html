@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row g-10">
     <div class="col col-4 col-md-2">
-      <a routerLinkActive="router-link-active"
-        class="d-block position-relative pointer-events-none">
+      <a routerLinkActive="router-link-active" class="d-block position-relative pointer-events-none">
         <span class="symbol symbol-square symbol-circle">
           <img [src]="politicianDetails?.politicianProfilePic" [alt]="politicianDetails?.politicianName" />
         </span>
@@ -69,7 +68,7 @@
       <div class="d-flex flex-wrap align-items-end mb-10">
         <h1 class="display-5 fw-bold me-3">
           <font style="vertical-align: inherit">
-            <font style="vertical-align: inherit">This statement has been verified as</font>
+            <font style="vertical-align: inherit">This statement has been rated as</font>
           </font>
         </h1>
         <app-statement-assesment size="30"
@@ -79,7 +78,7 @@
       <div class="mb-10">
         <h3 class="display-5 fw-bold mb-5">
           <font style="vertical-align: inherit">
-            <font style="vertical-align: inherit">Abbreviated justification</font>
+            <font style="vertical-align: inherit">Abbreviated information</font>
           </font>
         </h3>
         <p class="fs-5">
@@ -94,7 +93,7 @@
       <div class="mb-10">
         <h3 class="display-5 fw-bold mb-5">
           <font style="vertical-align: inherit">
-            <font style="vertical-align: inherit">Full justification</font>
+            <font style="vertical-align: inherit">Full information</font>
           </font>
         </h3>
         <div class="content text-lg">
@@ -105,11 +104,9 @@
             </h2>
             <!-- Paragraph 1 -->
             <p style="color: #171717; line-height: 1.6;">
-              This statement is currently marked as <strong>Unverified</strong> because we have not yet been able to
-              confirm its
-              accuracy. As a small team of two with limited resources, conducting detailed fact-checking can be
-              challenging.
-              However, we are determined to uncover the truth behind such statements.
+              This statement is currently part of a <strong>prototype</strong>. The feature is designed to provide users
+              with relevant information about a statement, allowing them to form their own opinions and make informed
+              decisions.
             </p>
 
             <!-- Paragraph 2 -->
@@ -125,7 +122,8 @@
             <!-- Paragraph 3 -->
             <p style="color: #171717; line-height: 1.6;">
               Interested in joining us?
-              <a class="font-bold" href="mailto:info.polifacto@gmail.com" style="color: #007BFF; text-decoration: none;">
+              <a class="font-bold" href="mailto:info.polifacto@gmail.com"
+                style="color: #007BFF; text-decoration: none;">
                 Contact us
               </a>
               or reach out to us using this

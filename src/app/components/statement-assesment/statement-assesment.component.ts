@@ -14,24 +14,35 @@ import { fadeInAndOut } from "../../shared/animations/animations";
   animations: [fadeInAndOut],
 })
 export class StatementAssesmentComponent {
-  constructor(public loaderService: LoaderService) {}
+  constructor(public loaderService: LoaderService) { }
   colors: any = {
-    truth: "primary",
+    true: "primary",
     false: "red",
-    unverified: "gray",
+    "no comment": "gray",
     misleading: "secondary",
   };
-  @Input() judgement: string = "";
-  currentBgColor = "bg-" + this.colors[this.judgement.toLowerCase()];
+  stats = [
+    { label: "True", percentage: 75, type: "bg-primary" },
+    { label: "False", percentage: 5, type: "bg-red" },
+    { label: "Misleading", percentage: 5, type: "bg-secondary" },
+    { label: "No comment", percentage: 15, type: "bg-gray" }
+  ];
 
-  getBGSpanCss = () => {
-    if (!this.judgement || !this.judgement.length) return "";
-    this.currentBgColor = "bg-" + this.colors[this.judgement.toLowerCase()];
-    return `w-[36px] h-[36px] d-flex align-items-center justify-content-center ${this.currentBgColor} rounded-circle me-2`;
+  @Input() judgement: string = "";
+  currentBgColor = "bg-" + this.colors[this.stats[0].label];
+
+  getBGSpanCss = (judgement: string) => {
+    if (!judgement || !judgement.length) return "";
+    this.currentBgColor = "bg-" + this.colors[judgement.toLowerCase()];
+    return `!w-[36px] !h-[36px] !min-w-[36px] !min-h-[36px] d-flex items-center justify-center ${this.currentBgColor} rounded-circle me-1`;
   };
 
-  getTextColor() {
-    if (!this.judgement || !this.judgement.length) return "";
-    return "text-" + this.colors[this.judgement.toLowerCase()];
+  getTextColor(judgement: string) {
+    return "text-" + this.colors[judgement.toLowerCase()];
   }
+
+  getLeftPercentage(index: number): number {
+    return this.stats.slice(0, index).reduce((sum, bar) => sum + bar.percentage, 0);
+  }
+
 }

@@ -6,12 +6,11 @@
           <div class="px-2">
             <a class="d-block position-relative">
               <span class="symbol symbol-square symbol-circle">
-                <img *ngIf="politicianDetails?.politicianProfilePic" [src]="politicianDetails?.politicianProfilePic" [alt]="politicianDetails?.politicianName" />
+                <img *ngIf="politicianDetails?.politicianProfilePic" [src]="politicianDetails?.politicianProfilePic"
+                  [alt]="politicianDetails?.politicianName" />
                 <ng-container *ngIf="!politicianDetails?.politicianProfilePic">
                   <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                      fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
                       <path opacity="0.4"
                         d="M12 22.01C17.5228 22.01 22 17.5329 22 12.01C22 6.48716 17.5228 2.01001 12 2.01001C6.47715 2.01001 2 6.48716 2 12.01C2 17.5329 6.47715 22.01 12 22.01Z"
                         fill="#292D32" />
@@ -41,19 +40,80 @@
             </h3>
           </div>
         </div>
-        <div class="ps-5">
+
+        <div class="ps-3">
           <blockquote class="p-3 fs-6 !bg-[--bg-lime] text-dark font-bold rounded-m mb-2 position-relative min-h-50px">
             <span class="popover-arrow arrow-east"></span>
             <span class="fs-6 position-relative" dangerouslySetInnerHTML="__html: statement.content">
               {{politicianWithStatements?.statementByPolitician}}
             </span>
           </blockquote>
+          <div class="flex flex-col md:flex-row justify-between items-start py-0">
+            <!-- Politician Details -->
+            <cite class="mb-2 text-xs text-gray-700">
+              {{politicianDetails?.politicianDesignation}} <br />
+              {{politicianWithStatements?.createdAt | date}}
+            </cite>
 
-          <cite class="mb-2 fs-7">
-            {{politicianDetails?.politicianDesignation}}
-            <br>
-            {{politicianWithStatements?.createdAt | date}}
-          </cite>
+            <!-- Rating Icons -->
+            <div class="flex flex-row gap-1">
+              <!-- True -->
+              <button (click)="rateStatement('true')"
+                class="flex flex-col items-center group hover:scale-105 transform transition duration-150">
+                <div
+                  class="w-8 h-8 rounded-full bg-green-500 flex justify-center items-center shadow-md group-hover:shadow-lg group-hover:opacity-90 transition duration-150">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <!-- <span class="text-xs font-medium text-gray-700 mt-1">True</span> -->
+              </button>
+
+              <!-- False -->
+              <button (click)="rateStatement('false')"
+                class="flex flex-col items-center group hover:scale-105 transform transition duration-150">
+                <div
+                  class="w-8 h-8 rounded-full bg-red-500 flex justify-center items-center shadow-md group-hover:shadow-lg group-hover:opacity-90 transition duration-150">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <!-- <span class="text-xs font-medium text-gray-700 mt-1">False</span> -->
+              </button>
+
+              <!-- Misleading -->
+              <button (click)="rateStatement('misleading')"
+                class="flex flex-col items-center group hover:scale-105 transform transition duration-150">
+                <div
+                  class="w-8 h-8 rounded-full bg-yellow-500 flex justify-center items-center shadow-md group-hover:shadow-lg group-hover:opacity-90 transition duration-150">
+                  <svg width="12" height="22" viewBox="0 0 5 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M2.38458 25.9392C1.77482 25.9392 1.25598 25.7199 0.822722 25.2866C0.389467 24.8534 0.170166 24.3292 0.170166 23.7248C0.170166 23.1204 0.389467 22.5962 0.822722 22.1629C1.25598 21.7297 1.78016 21.5104 2.38458 21.5104C2.989 21.5104 3.51319 21.7297 3.94644 22.1629C4.3797 22.5962 4.599 23.1204 4.599 23.7248C4.599 24.1259 4.49737 24.495 4.29946 24.832C4.09621 25.169 3.82877 25.4364 3.49714 25.6397C3.16551 25.8429 2.79109 25.9392 2.38458 25.9392ZM4.05877 0.532227L3.81272 18.6541H0.956443L0.710397 0.532227H4.05877Z"
+                      fill="white" />
+                  </svg>
+                </div>
+                <!-- <span class="text-xs font-medium text-gray-700 mt-1">Misleading</span> -->
+              </button>
+
+              <!-- No Comment -->
+              <button (click)="rateStatement('no comment')"
+                class="flex flex-col items-center group hover:scale-105 transform transition duration-150">
+                <div
+                  class="w-8 h-8 rounded-full bg-gray-500 flex justify-center items-center shadow-md group-hover:shadow-lg group-hover:opacity-90 transition duration-150">
+                  <svg width="12" height="17" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M5.21838 18.8279V18.6782C5.23443 17.111 5.40024 15.8647 5.71047 14.934C6.0207 14.0086 6.46466 13.2544 7.04233 12.6821C7.62001 12.1098 8.30466 11.5803 9.11233 11.0935C9.59373 10.7993 10.0323 10.4463 10.4174 10.0398C10.8026 9.63328 11.1074 9.16258 11.3321 8.6277C11.5567 8.09281 11.6691 7.50444 11.6691 6.85723C11.6691 6.05491 11.4819 5.35421 11.1021 4.76584C10.7223 4.17747 10.2195 3.71747 9.58838 3.40189C8.95721 3.08096 8.25652 2.92049 7.48094 2.92049C6.80698 2.92049 6.15977 3.05956 5.53396 3.3377C4.90815 3.61584 4.38931 4.05444 3.9721 4.65351C3.55489 5.25258 3.30884 6.03886 3.24466 7.007H0.142334C0.20652 5.61095 0.570241 4.41816 1.2335 3.42328C1.8914 2.4284 2.76861 1.66886 3.85443 1.14468C4.94024 0.620491 6.14908 0.358398 7.48094 0.358398C8.92512 0.358398 10.1821 0.647236 11.2519 1.21956C12.3216 1.79189 13.1507 2.58351 13.7391 3.58375C14.3274 4.58398 14.6216 5.72328 14.6216 7.007C14.6216 7.91095 14.4826 8.72398 14.2098 9.45677C13.937 10.1896 13.5412 10.8421 13.0277 11.4144C12.5142 11.9868 11.8991 12.4949 11.177 12.9389C10.4549 13.3882 9.87721 13.8642 9.43861 14.3616C9.00535 14.8591 8.68977 15.4475 8.49187 16.1268C8.29396 16.8061 8.18698 17.6565 8.17094 18.6728V18.8226H5.21838V18.8279ZM6.79628 26.113C6.18652 26.113 5.66768 25.8937 5.23443 25.4605C4.80117 25.0272 4.58187 24.503 4.58187 23.8986C4.58187 23.2942 4.80117 22.77 5.23443 22.3368C5.66768 21.9035 6.19187 21.6842 6.79628 21.6842C7.4007 21.6842 7.92489 21.9035 8.35814 22.3368C8.7914 22.77 9.0107 23.2942 9.0107 23.8986C9.0107 24.2998 8.90907 24.6689 8.71117 25.0058C8.50791 25.3428 8.24582 25.6102 7.90884 25.8135C7.57721 26.0168 7.2028 26.113 6.79628 26.113Z"
+                      fill="white"></path>
+                  </svg>
+                </div>
+                <!-- <span class="text-xs font-medium text-gray-700 mt-1">No Comment</span> -->
+              </button>
+            </div>
+          </div>
+
+
 
 
           <div class="row g-2">
@@ -72,7 +132,7 @@
       </div>
     </div>
     <div class="col col-12 col-md-6 col-lg-5">
-      <app-statement-assesment size="30"  [judgement]="politicianWithStatements.statementJudgement"/>
+      <app-statement-assesment size="30" [judgement]="politicianWithStatements.statementJudgement" />
       <!-- {statement.assessment.shortExplanation === null ? (
           <div class="d-block">
             <div
@@ -87,51 +147,73 @@
         <div class="content fs-6">
           {{politicianWithStatements?.statementInfo}}
         </div>
-        <div class="accordion-content mh-400px overflow-auto mt-4" [ngStyle]="{'height': openExplanation ? '400px': '0px'}">
-          <div *ngIf="politicianWithStatements?.statementCompleteInfo" class="scroll-vertical mh-400px my-5 h-full content fs-6">
+        <div class="accordion-content mh-400px overflow-auto mt-4"
+          [ngStyle]="{'height': openExplanation ? '400px': '0px'}">
+          <div *ngIf="politicianWithStatements?.statementCompleteInfo"
+            class="scroll-vertical mh-400px my-5 h-full content fs-6">
             {{politicianWithStatements?.statementCompleteInfo}}
           </div>
-          <div class="text-base"
-            *ngIf="!statementDetails?.statementCompleteInfo">
-           
+          <div class="py-4 border-t border-gray-200 mt-4">
+            <h3 class="font-semibold text-gray-800 text-lg mb-3">Detailed Breakdown</h3>
+            <p class="text-sm  mb-4">
+              Based on people's ratings, 75% believe this statement is true, 5% disagree, and the remaining consider it
+              either misleading or have decided to not comment.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center space-x-2">
+                <div class="w-4 h-4 rounded-full bg-primary"></div>
+                <span class="text-sm font-medium text-gray-800">True</span>
+                <span class="ml-auto text-sm text-gray-500">75%</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="w-4 h-4 rounded-full bg-red"></div>
+                <span class="text-sm font-medium text-gray-800">False</span>
+                <span class="ml-auto text-sm text-gray-500">5%</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="w-4 h-4 rounded-full bg-secondary"></div>
+                <span class="text-sm font-medium text-gray-800">Misleading</span>
+                <span class="ml-auto text-sm text-gray-500">5%</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="w-4 h-4 rounded-full bg-gray"></div>
+                <span class="text-sm font-medium text-gray-800">No comment</span>
+                <span class="ml-auto text-sm text-gray-500">15%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-sm font-light italic">
             <!-- Paragraph 1 -->
             <p style="color: #171717; line-height: 1.6;">
-              This statement is currently marked as <strong>Unverified</strong> because we have not yet been able to
-              confirm its
-              accuracy. As a small team of two with limited resources, conducting detailed fact-checking can be
-              challenging.
-              However, we are determined to uncover the truth behind such statements.
+              This statement is currently a <strong>Prototype</strong>.
+              <br>
+              Note: This platform gathers user-based ratings, where individuals have marked
+              this statement as <em>true</em>, <em>false</em>, <em>misleading</em>, or <em>no comment</em> based on
+              their own opinions and understanding. The goal of this feature is to provide a collective perspective
+              about the
+              statements, while empowering users to decide the outcome for themselves.
             </p>
 
             <!-- Paragraph 2 -->
             <p style="color: #171717; line-height: 1.6;">
-              We are looking for <strong>dedicated individuals</strong> who share our passion for truth and transparency
-              to join
-              us in this journey. If you're willing to volunteer your time and skills to help research and verify
-              claims, we’d
-              love to have you on board. Together, we can build a platform that prioritizes accountability and factual
-              information.
+              It is important to note that this platform does not do any kind of judgements. Instead, we aggregate
+              and present information, including relevant sources, to enable users to make their own informed decisions.
+              By
+              providing a voting and rating system, we aim to foster transparency and accountability through community
+              engagement.
             </p>
 
             <!-- Paragraph 3 -->
-            <p style="color: #171717; line-height: 1.6;">
-              Interested in joining us?
-              <a class="font-bold" href="mailto:info.polifacto@gmail.com" style="color: #007BFF; text-decoration: none;">
-                Contact us
-              </a>
-              or reach out to us using this
-              <a class="font-bold" href="https://forms.gle/meqxhjfvqZgNh91AA" target="_blank"
-                style="color: #007BFF; text-decoration: none;">
-                Form
-              </a>
-              and let’s work together to unveil the truth.
-            </p>
+
           </div>
+
+
         </div>
         <div class="d-flex justify-content-between align-items-center w-100">
           <a class="accordion-link text-dark text-underline" (click)="openExplanation = !openExplanation">
             {{openExplanation ? 'Hide section':
-            'Know the Whole Truth'}}
+            'Know more about this'}}
           </a>
           <a class="group d-flex text-gray align-items-center text-none cursor-pointer hover:scale-110 hover:!text-black transition-all duration-500 ease-in-out"
             [routerLink]="['/statement-details', sid]" [state]="{politician: politicianDetails}">
@@ -164,67 +246,51 @@
       <div class="col col-12 col-md-6 col-lg-7">
         <div class="d-flex">
           <div class="w-100px min-w-100px">
-            <ngx-skeleton-loader
-                        count="1"
-                        appearance="circle"
-                        [theme]="{background: 'lightgray'}"
-                      >
-            <div class="px-2">
-              <a class="d-block position-relative">
-                <span class="symbol symbol-square symbol-circle">
-                  <img src="/assets/images/kejriwal.jpg" alt="kejriwal" />
-                </span>
-                <div
-                  class="symbol-label d-flex align-items-center justify-content-center w-40px h-40px rounded-circle bg-dark">
-                  <span class="smallest text-white lh-1 text-center p-2">
-                    <font style="vertical-align: inherit;">
-                      <font style="vertical-align: inherit;">
-                      </font>
-                    </font>
+            <ngx-skeleton-loader count="1" appearance="circle" [theme]="{background: 'lightgray'}">
+              <div class="px-2">
+                <a class="d-block position-relative">
+                  <span class="symbol symbol-square symbol-circle">
+                    <img src="/assets/images/kejriwal.jpg" alt="kejriwal" />
                   </span>
-                </div>
-              </a>
-            </div>
-          </ngx-skeleton-loader>
+                  <div
+                    class="symbol-label d-flex align-items-center justify-content-center w-40px h-40px rounded-circle bg-dark">
+                    <span class="smallest text-white lh-1 text-center p-2">
+                      <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                        </font>
+                      </font>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </ngx-skeleton-loader>
 
             <div class="mt-2 text-center w-100">
               <h3 class="fs-6 fs-600">
-                <ngx-skeleton-loader
-                count="1"
-                appearance="line"
-                [theme]="{background: 'lightgray', width: '100%'}"
-              ></ngx-skeleton-loader>
+                <ngx-skeleton-loader count="1" appearance="line"
+                  [theme]="{background: 'lightgray', width: '100%'}"></ngx-skeleton-loader>
               </h3>
             </div>
           </div>
           <div class="ps-5">
-            <ngx-skeleton-loader
-                count="1"
-                appearance="line"
-                [theme]="{background: 'lightgray', height: '50px', width: '500px'}"
-              >
-            <blockquote class="p-3 fs-6 bg-dark text-white rounded-m mb-2 position-relative min-h-50px">
-              <span class="popover-arrow arrow-east"></span>
-              <span class="fs-6 position-relative" >
-              </span>
-            </blockquote>
-          </ngx-skeleton-loader>
-  
+            <ngx-skeleton-loader count="1" appearance="line"
+              [theme]="{background: 'lightgray', height: '50px', width: '500px'}">
+              <blockquote class="p-3 fs-6 bg-dark text-white rounded-m mb-2 position-relative min-h-50px">
+                <span class="popover-arrow arrow-east"></span>
+                <span class="fs-6 position-relative">
+                </span>
+              </blockquote>
+            </ngx-skeleton-loader>
+
             <cite class="mb-2 fs-7">
-              <ngx-skeleton-loader
-                count="1"
-                appearance="line"
-                [theme]="{background: 'lightgray'}"
-              ></ngx-skeleton-loader>
+              <ngx-skeleton-loader count="1" appearance="line"
+                [theme]="{background: 'lightgray'}"></ngx-skeleton-loader>
               <span>, </span>
-              <ngx-skeleton-loader
-                count="1"
-                appearance="line"
-                [theme]="{background: 'lightgray'}"
-              ></ngx-skeleton-loader>
+              <ngx-skeleton-loader count="1" appearance="line"
+                [theme]="{background: 'lightgray'}"></ngx-skeleton-loader>
             </cite>
-  
-  
+
+
             <div class="row g-2">
               <div key={tag.id} class="col col-auto">
                 <div class="d-flex align-items-center">
@@ -233,11 +299,8 @@
                       d="M8.54664 1.77285L13.9073 7.12848C13.9542 7.17501 13.9914 7.23037 14.0168 7.29136C14.0422 7.35236 14.0553 7.41778 14.0553 7.48386C14.0553 7.54993 14.0422 7.61535 14.0168 7.67635C13.9914 7.73734 13.9542 7.7927 13.9073 7.83923L12.9062 8.84028L12.1955 8.12953L12.8462 7.48386L7.8409 2.47859H4.0419V3.47964H3.04085V2.47859C3.04085 2.2131 3.14632 1.95847 3.33405 1.77074C3.52178 1.58301 3.7764 1.47754 4.0419 1.47754H7.8409C8.10596 1.47866 8.35977 1.58486 8.54664 1.77285ZM8.04611 15.4923C7.98024 15.4927 7.91494 15.48 7.85396 15.4551C7.79297 15.4302 7.73751 15.3935 7.69074 15.3471L2.33511 9.98649C2.14711 9.79962 2.04091 9.54581 2.03979 9.28075V5.48175C2.03979 5.21625 2.14526 4.96163 2.333 4.7739C2.52073 4.58617 2.77535 4.4807 3.04085 4.4807H6.83984C7.10491 4.48181 7.35871 4.58802 7.54559 4.77601L12.9062 10.1316C12.9531 10.1782 12.9904 10.2335 13.0158 10.2945C13.0412 10.3555 13.0543 10.4209 13.0543 10.487C13.0543 10.5531 13.0412 10.6185 13.0158 10.6795C12.9904 10.7405 12.9531 10.7959 12.9062 10.8424L8.40148 15.3471C8.35472 15.3935 8.29925 15.4302 8.23827 15.4551C8.17728 15.48 8.11198 15.4927 8.04611 15.4923ZM3.04085 5.48175V9.28075L8.04611 14.286L11.8451 10.487L6.83984 5.48175H3.04085ZM5.04295 8.48491C5.59582 8.48491 6.04401 8.03672 6.04401 7.48386C6.04401 6.93099 5.59582 6.4828 5.04295 6.4828C4.49009 6.4828 4.0419 6.93099 4.0419 7.48386C4.0419 8.03672 4.49009 8.48491 5.04295 8.48491Z"
                       fill="#111827" />
                   </svg>
-                  <span class="fs-7"><ngx-skeleton-loader
-                    count="1"
-                    appearance="line"
-                    [theme]="{background: 'lightgray'}"
-                  ></ngx-skeleton-loader></span>
+                  <span class="fs-7"><ngx-skeleton-loader count="1" appearance="line"
+                      [theme]="{background: 'lightgray'}"></ngx-skeleton-loader></span>
                 </div>
               </div>
             </div>
@@ -248,19 +311,12 @@
         <app-statement-assesment size="30" />
         <div class="accordion">
           <div class="content fs-6">
-            <ngx-skeleton-loader
-                count="1"
-                appearance="line"
-                [theme]="{background: 'lightgray'}"
-              ></ngx-skeleton-loader>
+            <ngx-skeleton-loader count="1" appearance="line" [theme]="{background: 'lightgray'}"></ngx-skeleton-loader>
           </div>
           <div class="accordion-content mh-400px" [ngStyle]="{'height': openExplanation ? '150px': '0px'}">
             <div class="scroll-vertical mh-400px my-5 h-full content fs-6">
-              <ngx-skeleton-loader
-                count="1"
-                appearance="line"
-                [theme]="{background: 'lightgray'}"
-              ></ngx-skeleton-loader>
+              <ngx-skeleton-loader count="1" appearance="line"
+                [theme]="{background: 'lightgray'}"></ngx-skeleton-loader>
             </div>
           </div>
           <div class="d-flex justify-content-between align-items-center w-100">
@@ -268,8 +324,8 @@
               {{openExplanation ? 'Hide section':
               'Know the Whole Truth'}}
             </a>
-            <a class="group d-flex text-gray align-items-center text-none cursor-pointer hover:scale-110 hover:!text-black transition-all duration-500 ease-in-out"
-              >
+            <a
+              class="group d-flex text-gray align-items-center text-none cursor-pointer hover:scale-110 hover:!text-black transition-all duration-500 ease-in-out">
               <!-- <img class="h-15px" src="/assets/srcs/link.svg"/> -->
               <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_922_5912)">
@@ -291,6 +347,5 @@
       </div>
     </div>
   </div>
- 
-</ng-template>
 
+</ng-template>

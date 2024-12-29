@@ -31,4 +31,29 @@ export class StatementItemComponent {
     this.sid = this.politicianWithStatements.statementId;
   }
 
+  colors: any = {
+    true: "primary",
+    false: "red",
+    "no comment": "gray",
+    misleading: "secondary",
+  };
+   stats = [
+      { label: "True", percentage: 75, type: "bg-primary" },
+      { label: "False", percentage: 5, type: "bg-red" },
+      { label: "Misleading", percentage: 5, type: "bg-secondary" },
+      { label: "No comment", percentage: 15, type: "bg-gray" }
+    ];
+  
+    currentBgColor = "bg-" + this.colors[this.stats[0].label];
+  
+    getBGSpanCss = (judgement: string) => {
+      if (!judgement || !judgement.length) return "";
+      this.currentBgColor = "bg-" + this.colors[judgement.toLowerCase()];
+      return `!w-[26px] !h-[26px] !min-w-[26px] !min-h-[26px] d-flex items-center justify-center ${this.currentBgColor} rounded-circle me-1`;
+    };
+  
+    getTextColor(judgement: string) {
+      return "text-" + this.colors[judgement.toLowerCase()];
+    }
+
 }
